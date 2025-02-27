@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aappartel</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header id="top_container"> <!-- Top -->
+		<div id="top_img">
+			<div id="logo-and-langs">
+				<img id="logo" src="./svg/assets/logo.svg">
+				<div id="langs-container">
+					<img class="lang" id="de-lang" src="https://www.aappartel.de/media/mod_languages/images/de.jpg" alt="de">
+					<img class="lang" id="en-lang" src="https://www.aappartel.de/media/mod_languages/images/en.jpg" alt="en">
+				</div>
+			</div>
+		</div>
+			<div id="tittle-and-button">
+				<p id="top-tittle">Apartment</p>
+				<button class="outlined-button">See more</button>
+			</div>
+		<div>
+			
+		</div>
+	</header>
+
+	<article id="booking-container"> <!-- Book now -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Booking</p>
+		</div>
+		<button class="filled-button">Book now</button>
+	</article>
+
+
+	<article id="features-container"> <!-- Features -->
+		<div class="tittles" id="features-tittle"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Features</p>
+		</div>
+
+		<div id="features">
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/shower.svg">
+				<p>Shower</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/bathtub.svg">
+				<p>Bathtub<br>partially</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/fridge.svg">
+				<p>Fridge</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/television.svg">
+				<p>Television</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/stove.svg">
+				<p>Stove</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/kitchenette.svg">
+				<p>Kitchenette</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/hair-dryer.svg">
+				<p>Hair dryer</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/safe.svg">
+				<p>Safe</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/terrace.svg">
+				<p>Terrace<br>(partially)</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/internet.svg">
+				<p>Internet<br>(free of cost)</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/coffee-machine.svg">
+				<p>Coffee<br>machine</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/water-heater.svg">
+				<p>Water heater</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/toaster.svg">
+				<p>Toaster</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/microwave.svg">
+				<p>Microwave</p>
+			</div>
+
+			<div class="feature">
+				<img class="feature-img" src="./svg/features/washcenter.svg">
+				<p>Washcenter<br>(during opening hours)</p>
+			</div>
+
+		</div>
+	</article>
+
+
+	<article id="rooms-container"> <!-- Rooms -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Rooms</p>
+		</div>
+		<div id="rooms">
+
+			<div class="room" onclick="ShowPopup('apart0')">
+				<img class="room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
+				<div class="room-tittle-and-description">
+					<p class="room-tittle">Apartment</p>
+					<p class="room-description">French Bed 140 cm<br>Queen/King-Size-Bett 160/180cm <br>or Twin-Bed on demand</p>
+				</div>
+			</div>
+
+			<div class="room" onclick="ShowPopup('apart1')">
+				<img class="room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
+				<div class="room-tittle-and-description">
+					<p class="room-tittle">Aappart-raum</p>
+					<p class="room-description">Kingsize-Bed 160cm <br>or Twin-Bed <br>on demand</p>
+				</div>
+			</div>
+
+			<div class="room" onclick="ShowPopup('apart2')" id="apart2">
+				<img class="room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
+				<div class="room-tittle-and-description">
+					<p class="room-tittle">Apartment-family</p>
+					<p class="room-description">Two apartments <br>on <br>separate hall</p>
+				</div>
+			</div>
+
+		</div>
+	</article>
+
+	<article id="service-container"> <!-- Service -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Service</p>
+		</div>
+		<div id="services">
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+			<div class="service">
+				<img class="service-img" src="./svg/service/cleaning.svg" alt="room_cleaning">
+				<p class="service-description">Room cleaning</p>
+			</div>
+
+		</div>
+	</article>
+
+	<article id="pricing-container"> <!-- Pricing -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Pricing</p>
+		</div>
+		<div id="pricing">
+			<ul id="pricing-left-text">
+				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
+				<li>Cot (maximum two per room): 10,00 Euro per night</li>
+				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>
+				<li>Children in parents bed free of charge</li>
+				<li>Apartment with terrace: 10,00 € per night extra charge</li>
+				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
+				<li>WLAN free of charge in the Apartments</li>
+				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
+				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>
+			</ul>
+			<div id="pricing-terms">
+				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>
+				<button class="filled-button">Book now</button>
+			</div>
+		</div>
+	</article>
+
+	<article id="gallery-container"> <!-- Gallery -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Gallery</p>
+		</div>
+		<div id="gallery">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+			<img class="gallery-img" src="https://www.aappartel.de/images/aappartel/gallery/aappartel/12_Flur.jpg">
+		</div>
+	</article>
+
+	<article id="contact-container"> <!-- Contact -->
+		<div class="tittles"> <!-- Tittle -->
+			<div class="tittle-line"></div>
+			<p class="tittle">Contact</p>
+		</div>
+		<div id="contact">
+			<div id="contact-top">
+				<div id="contact-info">
+					<div id="contact-phones-and-adress">
+						<a class="link" href="tel:+4952139952455"><p>+49(0) 521 / 399 524 55</p></a>
+						<a class="link" href="tel:+4952139952454"><p>+49(0) 521 / 399 524 54</p></a>
+						<a class="link" href="geo:52.02367129984142, 8.535502252825385"><p>Friedrich-Verleger Straße 1, 33602 Bielefeld</p></a>
+					</div>
+					<div id="contact-buttons">
+						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185"><button class="filled-button rounded-button" id="facebook-button" ><img src="./svg/assets/facebook-logo.svg"></button></a>
+						<button class="filled-button rounded-button">Contact us</button>
+						<button class="filled-button rounded-button">See videos</button>
+						<button class="filled-button rounded-button">info@aappartel.de</button>
+					</div>
+				</div>
+				<div id="contact-terminal">
+					<img id="terminal-img" src="https://www.aappartel.de/images/ariana/ariana.jpg">
+					<div id="terminal-text">
+						<p id="terminal-tittle">24 h. check-in terminal</p>
+						<p id="terminal-description">Our check-in machine is available in 4 languages outside of reception hours.<br>No cash payments possible during these times!</p>
+					</div>
+				</div>
+			</div>
+			<div id="contact-map">
+				<iframe id="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d153.44222514844608!2d8.535457873949545!3d52.02372038652008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ba3d11b82e3a5b%3A0x850334872d4b23a7!2zRnJpZWRyaWNoLVZlcmxlZ2VyLVN0cmHDn2UgMSwgMzM2MDIgQmllbGVmZWxkLCDQk9C10YDQvNCw0L3QuNGP!5e0!3m2!1sru!2sru!4v1740577516499!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</article>
+
+	<footer id="footer-container">
+		<div id="footer">
+			<p class="footer-text">© Aappartel 2011 – 2025</p>
+			<div id="footer-terms">
+				<a class="link" href=""><p class="footer-text">Terms and conditions</p></a>
+				<a class="link" href=""><p class="footer-text">Privacy policy</p></a>
+				<a class="link" href=""><p class="footer-text">Disclaimer</p></a>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<div id="popup-room-wrapper">
+		<div id="popup-room">
+			<img class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
+			<div class="popup-room-bottom">
+				<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M32.875 0H29.75L11 25L29.75 50H32.875L17.875 25L32.875 0Z" fill="#4B5E50" />
+				</svg>
+				<div class="popup-room-text">
+					<p class="popup-room-tittle">Apartment</p>
+					<p class="popup-room-description">French bed French bed French bed</p>
+				</div>
+				<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.125 0H20.25L39 25L20.25 50H17.125L32.125 25L17.125 0Z" fill="#4B5E50" />
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<script src="./animations.js"></script>
+</body>
+
+</html>

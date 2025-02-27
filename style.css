@@ -1,0 +1,754 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*
+Variables
+*/
+
+:root {
+	--white: #ffffff;
+	--line: #2A2722;
+	--dark: #1A1A1A;
+	--background: #F1E9DB;
+	--secondary-background: #718476;
+	--secondary-background-darker: #4B5E50;
+	--font-family: 'Manrope';
+}
+
+html {
+	font-size: 10px;
+	--animation-speed: 0.3s;
+}
+
+/*
+Variables end
+*/
+
+
+/*
+Components
+*/
+
+.outlined-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+	border: 1px solid var(--line);
+	padding: 8px 32px;
+	background-color: transparent;
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.8rem;
+	color: var(--line);
+	cursor: pointer;
+	transition: var(--animation-speed);
+}
+
+.outlined-button:hover {
+	background-color: var(--background);
+	border: 1px solid var(--background);
+	scale: 1.1;
+}
+
+
+.filled-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+	padding: 8px 32px;
+	background: var(--background);
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.8rem;
+	color: var(--line);
+	border: none;
+	cursor: pointer;
+	transition: var(--animation-speed);
+}
+
+
+.filled-button:hover {
+	/*box-shadow: 0 0 12px 12px rgba(0, 0, 0, .2);*/
+	scale: 1.1;
+}
+
+.tittles {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.tittle {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 5.4rem;
+	text-align: center;
+	color: var(--background);
+	scale: 0 0;
+	transition: 1s;
+}
+
+.tittle-line {
+	width: 0px;
+	height: 2px;
+	background: var(--background);
+	transition: 1s;
+}
+
+
+
+
+/*
+Components end
+*/
+
+
+article {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 80px;
+	padding: 110px 40px;
+}
+
+p {
+	transition: var(--animation-speed);
+}
+
+
+#top_container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 60px;
+}
+
+#top_img {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 0px;
+	background: url("https://www.aappartel.de/templates/aappartel/images/intro.jpg") no-repeat center center / cover;
+	padding: 40px 40px;
+	height: 100vh;
+	width: 100%;
+}
+
+#logo {
+	cursor: pointer;
+	width: 245px;
+	height: 64px;
+}
+
+
+.lang {
+	cursor: pointer;
+	width: 60px;
+	height: 31px;
+	transition: var(--animation-speed);
+}
+
+
+#de-lang {
+	opacity: 50%;
+}
+
+#en-lang {
+	opacity: 100%;
+}
+
+#de-lang:hover {
+	opacity: 100%;
+}
+
+#en-lang:hover {
+	
+}
+
+.lang:hover {
+	scale: 1.1;
+	opacity: 100%;
+}
+
+
+#langs-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 20px;
+}
+
+#logo-and-langs {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 40px;
+}
+
+#tittle-and-button {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+	width: 100%;
+}
+
+#top-tittle {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 5.4rem;
+	color: var(--line);
+}
+
+
+
+
+#booking-container {
+	
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://www.aappartel.de/images/aappartel/sections/ausstattung.jpg") no-repeat center center / cover;
+	background-position: center;
+}
+
+
+.feature {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 10px;
+
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 1.8rem;
+	text-align: center;
+	color: var(--line);
+}
+
+.feature-img {
+	width: 120px;
+	height: 120px;
+}
+
+#features {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: row;
+	gap: 60px;
+	max-width: 1600px;
+}
+
+#features-container {
+background: var(--background);
+}
+
+#features-tittle .tittle-line {
+	background: var(--line);
+}
+
+#features-tittle .tittle {
+	color: var(--line);
+}
+
+
+#rooms-container {
+	background: var(--secondary-background-darker);
+}
+
+
+
+#rooms {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 60px;
+}
+
+.room {
+	cursor: pointer;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 0px;
+	background: var(--white);
+	transition: var(--animation-speed);
+}
+
+.room:hover {
+	scale: 1.1;
+}
+
+
+.room-img {
+	height: 300px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.room-tittle-and-description {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 30px;
+	padding: 40px;
+}
+
+.room-tittle {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 4.4rem;
+	color: var(--line);
+}
+
+.room-description {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 2.4rem;
+	color: var(--line);
+	line-height: 150%;
+}
+
+#service-container {
+	background: var(--background);
+}
+
+#services {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+	max-width: 1400px;
+}
+
+.service {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+	padding: 30px;
+	transition: var(--animation-speed);
+	cursor: pointer;
+}
+
+.service:hover {
+	box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.1);
+	border-radius: 16px;
+}
+
+.service-img {
+	width: 150px;
+	height: 150px;
+}
+
+.service-description {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.8rem;
+	text-align: center;
+	color: var(--line);
+}
+
+#service-container .tittle {
+	color: var(--line);
+}
+
+#service-container .tittle-line {
+	background: var(--line);
+}
+
+
+
+
+#pricing-container {
+	background: var(--secondary-background-darker);
+}
+
+#pricing-container .tittle {
+	color: var(--white);
+}
+
+#pricing-container .tittle-line {
+	background: var(--white);
+}
+
+#pricing {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: row;
+	gap: 80px;
+	max-width: 1600px;
+}
+
+#pricing-terms {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+	min-width: 500px;
+}
+
+#pricing-left-text {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.8rem;
+	color: var(--white);
+	list-style: none;
+	line-height: 120%;
+	min-width: 800px;
+}
+
+#pricing-left-text li {
+	margin-bottom: 10px;
+}
+
+#pricing-right-text {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.8rem;
+	color: var(--white);
+	line-height: 120%;
+}
+
+#gallery-container{
+	background: var(--white);
+}
+
+#gallery-container .tittle-line {
+	background: var(--line);
+}
+
+#gallery-container .tittle {
+	color: var(--line);
+}
+
+#gallery {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.gallery-img {
+	width: 564px;
+	height: 400px;
+	transition: var(--animation-speed);
+	cursor: pointer;
+}
+
+.gallery-img:hover {
+	scale: 1.05;
+}
+
+
+#contact-container {
+	background: var(--secondary-background-darker);
+}
+
+#contact-container .tittle {
+	color: var(--background);
+}
+
+#contact-container .tittle-line {
+	background: var(--background);
+}
+
+#contact {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 80px;
+	max-width: 1600px;
+}
+
+#contact-top {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: row;
+	gap: 40px;
+}
+
+#contact-info {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 40px;
+}
+
+#contact-phones-and-adress {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 20px;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 2.8rem;
+	color: var(--white);
+}
+
+#contact-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 20px;
+	width: 600px; /* Fix that */
+}
+
+#facebook-button {
+	padding: 0px 0px;
+	background-color: transparent;
+}
+
+
+.rounded-button {
+	border-radius: 64px;
+}
+
+
+
+#contact-terminal {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 30px;
+	width: 522px;
+}
+
+#terminal-img {
+	width: 522px;
+	height: 370px;
+}
+
+#terminal-text {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#terminal-tittle {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 3.2rem;
+	color: var(--white);
+}
+
+#terminal-description {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 2.4rem;
+	color: var(--white);
+	line-height: 150%;
+}
+
+#contact-map {
+	width: 100%;
+	transition: 0.5s;
+	scale: 0.8 0.8;
+}
+
+
+#footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 80px;
+	padding: 110px 40px;
+	background: var(--dark);
+}
+
+#footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 40px;
+	max-width: 1600px;
+	width: 100%;
+}
+
+.footer-text {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 32px;
+	text-align: center;
+	color: var(--white);
+}
+
+#footer-terms {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 30px;
+}
+
+.link {
+	text-decoration: none;
+	color: var(--white);
+}
+
+
+#popup-room-wrapper {
+	background: rgba(30,30,30, .1);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+
+#popup-room {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+width: 1200px;
+background: var(--white);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+cursor: default;
+}
+
+
+.popup-room-img {
+width: 100%;
+height: 700px;
+object-fit: cover;
+}
+
+.popup-room-bottom {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+padding: 30px;
+width: calc(100% - 60px);
+}
+
+.popup-room-text {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+gap: 20px;
+}
+
+.popup-room-tittle {
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 32px;
+text-align: center;
+color: var(--line);
+}
+
+.popup-room-description {
+font-family: var(--font-family);
+font-weight: 300;
+font-size: 20px;
+text-align: center;
+color: var(--line);
+}
+
+
+html {
+  scrollbar-width: thin;
+}
+
+
+
+@media screen and (max-width: 800px) {
+	html {
+		font-size: 8px;
+	}
+}
+
