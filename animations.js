@@ -1,9 +1,9 @@
 aparts = {
-	"apart0": ["./apartments/apartment/apart0.jpg", "./apartments/apartment/apart1.jpg"],
-	"apart1": [""],
+	"apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
+	"apart1": ["pic1", "pic2"],
 	"apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart0.jpg"]
 }
-images = aparts[0];
+images = aparts["apart0"];
 
 // анимация для линий
 (function () {
@@ -49,13 +49,15 @@ images = aparts[0];
 function ShowPopup(apartId){
 	document.getElementById('popup-room-wrapper').style.display = '';
 	images = aparts[apartId];
+	document.getElementById('popup-room-img').setAttribute('src', images[0])
+
 }
 
 // закрытие просмотра картинок
 const parentDiv = document.getElementById('popup-room-wrapper');
 const childDiv = document.getElementById('popup-room');
-const previous = document.getElementById('previous');
-const next = document.getElementById('next');
+const previous = document.getElementById('popup-room-previous');
+const next = document.getElementById('popup-room-next');
 
 parentDiv.addEventListener('click', () => {
   console.log('Функция родительского div вызвана');
@@ -81,23 +83,28 @@ next.addEventListener('click', (event) => {
 
 function HidePopup(){
 	document.getElementById('popup-room-wrapper').style.display = 'none';
+	now = 0;
 
 }
 
 // перелистывание картинок
 now = 0
-///current = images[now]
+current = images[now]
 function Slyde(type){
 	var img = document.getElementById('popup-room-img');
 	switch (type){
 		case 'next':
-			if (now+1 <= images.length)
-				current = images[now+1]
+			if (now+1 < images.length){
+				current = images[now+1];
+				now+=1;
+			}
 		break;
 		case 'back':
-			if (now-1 >= 0)
-				current = images[now-1]
+			if (now-1 >= 0){
+				current = images[now-1];
+				now-=1;
+			}
 		break;
 	}
-	img.style.src = current;
+	img.setAttribute('src', current);
 }
