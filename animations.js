@@ -47,10 +47,12 @@ images = aparts["apart0"];
 
 // открытие просмотра картинок выбранного апартамента
 function ShowPopup(apartId){
-	document.getElementById('popup-room-wrapper').style.display = '';
+	document.getElementById('popup-room-wrapper').style.display = 'flex';
 	images = aparts[apartId];
 	document.getElementById('popup-room-img').setAttribute('src', images[0])
-
+	document.body.style.overflow = 'hidden';
+	previous.style.opacity = '50%';
+	previous.style.cursor = 'default';
 }
 
 // закрытие просмотра картинок
@@ -84,7 +86,7 @@ next.addEventListener('click', (event) => {
 function HidePopup(){
 	document.getElementById('popup-room-wrapper').style.display = 'none';
 	now = 0;
-
+	document.body.style.overflow = 'auto';
 }
 
 // перелистывание картинок
@@ -92,17 +94,36 @@ now = 0
 current = images[now]
 function Slyde(type){
 	var img = document.getElementById('popup-room-img');
+	
 	switch (type){
 		case 'next':
 			if (now+1 < images.length){
 				current = images[now+1];
 				now+=1;
 			}
+			if (now == images.length-1)
+			{
+				next.style.opacity = '50%';
+				next.style.cursor = 'default';
+			}
+			else{
+				previous.style.opacity = '100%';
+				previous.style.cursor = 'pointer';
+			}
 		break;
 		case 'back':
 			if (now-1 >= 0){
 				current = images[now-1];
 				now-=1;
+			}
+			if (now == 0)
+			{
+				previous.style.opacity = '50%';
+				previous.style.cursor = 'default';
+			}
+			else{
+				next.style.opacity = '100%';
+				next.style.cursor = 'pointer';
 			}
 		break;
 	}
