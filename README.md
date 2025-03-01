@@ -1,5 +1,6 @@
 <p align="center">
   <h2 align="center">Aappartel</h2>
+  <img src="https://github.com/uKreek/aappartel/blob/main/images/View.png"><!img>
 </p>
 
 ## Содержание
