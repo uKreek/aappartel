@@ -211,7 +211,7 @@ p {
 }
 
 #en-lang {
-	opacity: 100%;
+	opacity: 50%;
 }
 
 #de-lang:hover {
@@ -219,7 +219,7 @@ p {
 }
 
 #en-lang:hover {
-	
+	opacity: 100%;
 }
 
 .lang:hover {
@@ -406,6 +406,7 @@ background: var(--background);
 .service-img {
 	width: 150px;
 	height: 150px;
+	filter: invert(0.1) hue-rotate(20deg);
 }
 
 .service-description {
