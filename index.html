@@ -166,47 +166,47 @@
 		</div>
 		<div id="services">
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('id')">
 				<img class="service-img" src="./images/service_icons/room-service.png" alt="Room service">
 				<p class="service-description">Room service</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('service-popup-kitchenette')">
+			<div class="service" onclick="carousel.call('service-popup-kitchenette')">
 				<img class="service-img" src="./images/service_icons/kitchen.png" alt="Kitchen">
 				<p class="service-description">Kitchen</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('service-popup-breakfast')">
+			<div class="service" onclick="carousel.call('service-popup-breakfast')">
 				<img class="service-img" src="./images/service_icons/breakfast.png" alt="Breakfast">
 				<p class="service-description">Breakfast</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('service-popup-reception')">
+			<div class="service" onclick="carousel.call('service-popup-reception')">
 				<img class="service-img" src="./images/service_icons/reception.png" alt="Reception">
 				<p class="service-description">Reception</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('service-popup-bed')">
 				<img class="service-img" src="./images/service_icons/towel.png" alt="Bed Linen and Hand Towels">
 				<p class="service-description">Bed Linen and Hand Towels</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('id')">
 				<img class="service-img" src="./images/service_icons/washing-machine.png" alt="Laundrette Facilities">
 				<p class="service-description">Laundrette Facilities</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('id')">
 				<img class="service-img" src="./images/service_icons/inventory.png" alt="Inventory">
 				<p class="service-description">Inventory</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('service-popup-internet')">
 				<img class="service-img" src="./images/service_icons/internet.png" alt="Internet">
 				<p class="service-description">Internet</p>
 			</div>
 
-			<div class="service" onclick="carousel.show('id')">
+			<div class="service" onclick="carousel.call('service-popup-pets')">
 				<img class="service-img" src="./images/service_icons/pets.png" alt="Pets">
 				<p class="service-description">Pets</p>
 			</div>
@@ -328,35 +328,46 @@
 			</div>
 		</div>
 	</div>
+	
 
-	<!-- Slider for the service popups -->
 
-	<!-- TODO: write wrapper here. by ckicking on the wrapper, divs below should be removed by display	-->
-	<!-- Complete function ShowCarousel in the service_popups.js -->
 
-	<div class="service-popup" id="service-popup-kitchenette">
-    <div>
-      <p class="service-popup-tittle">Kitchenette</p>
-      <p class="service-popup-text">Every one of our apartments has an open plan Kitchenette fitted.<br>Here you can put your kitchen skills to the test</p>
-    </div>
-  </div>
+	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
 
-	<div class="service-popup" id="service-popup-breakfast">
-    <div>
-      <p class="service-popup-tittle">Breakfast</p>
-      <p class="service-popup-text">Breakfast will be from 7:00-9:30 am<br>in the hotel and costs 14€ per person</p>
-    </div>
-  </div>
+	<div class="service-popup" id="service-popup-kitchenette" onclick="carousel.call('service-popup-kitchenette')">
+		<p class="service-popup-tittle">Kitchenette</p>
+		<p class="service-popup-text">Every one of our apartments has an open plan Kitchenette fitted.<br>Here you can put your kitchen skills to the test</p>
+	</div>
 
-	<div class="service-popup" id="service-popup-reception">
-    <div class="service-popup-body">
-      <p class="service-popup-tittle">Reception</p>
-			<div class="service-popup-text">
-				<p class="service-popup-body-text">Hotel Reception - Opening Times</p>
-        <p class="service-popup-text">Monday to Sunday from 7:00 to 15:00 h<br>Check-in after reception time is possible by a Check-in-Terminal</p>
-			</div>
-    </div>
-  </div>
+	<div class="service-popup" id="service-popup-breakfast" onclick="carousel.call('service-popup-breakfast')">
+		<p class="service-popup-tittle">Breakfast</p>
+		<p class="service-popup-text">Breakfast will be from 7:00-9:30 am<br>in the hotel and costs 14€ per person</p>
+	</div>
+
+	<div class="service-popup" id="service-popup-reception" onclick="carousel.call('service-popup-reception')">
+		<p class="service-popup-tittle">Reception</p>
+		<div class="service-popup-info-body">
+			<p class="service-popup-subtittle">Hotel Reception - Opening Times</p>
+			<p class="service-popup-text">Monday to Sunday from 7:00 to 15:00 h<br>Check-in after reception time is possible by a Check-in-Terminal</p>
+		</div>
+	</div>
+
+	<div class="service-popup" id="service-popup-bed" onclick="carousel.call('service-popup-bed')">
+		<p class="service-popup-tittle">Bed Linen and Hand Towels</p>
+		<p class="service-popup-text">Of course there are towels and bed linen in your apartment</p>
+	</div>
+
+
+	<div class="service-popup" id="service-popup-internet" onclick="carousel.call('service-popup-internet')">
+		<p class="service-popup-tittle">Internet</p>
+		<p class="service-popup-text">High Speed Wireless LAN for free</p>
+	</div>
+
+	<div class="service-popup" id="service-popup-pets" onclick="carousel.call('service-popup-pets')">
+		<p class="service-popup-tittle">Pets</p>
+		<p class="service-popup-text">No pets allowed</p>
+	</div>
+
 
 	<script src="./animations.js"></script>
 	<script src="./service_popups.js"></script>

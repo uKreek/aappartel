@@ -9,56 +9,59 @@
 }
 
 
-.service-popup{
-  background: var(--secondary-background-darker);
-	display: none; /* inline block */
-	justify-content: center;
-	flex-direction: column;
-	gap: 30px;
-	padding: 40px 60px;
-}
-
-.service-popup-tittle{
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 44px;
-  color: var(--white);
-}
-
-.service-popup-text{
-	font-family: var(--font-family);
-	font-weight: 400;
-	font-size: 20px;
-	color: var(--white);
-}
-
-.service-popup-body{
+.service-popup {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 	gap: 12px;
+	padding: 40px 60px;
+	background: var(--secondary-background-darker);
+	display: none;
 }
 
-.service-popup-body-text{
+.service-popup-tittle {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 4.4rem;
+	color: var(--white);
+}
+
+
+.service-popup-subtittle {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 3.0rem;
+	color: var(--white);
+}
+
+
+.service-popup-text {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 2.0rem;
+	color: var(--white);
+	line-height: 120%;
+}
+
+.service-popup-info-body {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
 	gap: 6px;
-
-	font-family: var(--font-family);
-	font-weight: 600;
-	font-size: 30px;
-	color: var(--white);
 }
 
 
-.service-popup-center{
+
+
+
+
+
+
+.service-popup-center {
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
+
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -66,18 +69,45 @@
 	cursor: default;
 }
 
-.service-popup-left{
+.service-popup-left {
+	display: flex;
+
+	position: fixed;
+	top: 50%;
+	left: 20%;
+	transform: translate(-100%, -50%);
+	cursor: pointer;
+	filter: blur(4px);
+}
+
+.service-popup-right {
+	display: flex;
+
+	position: fixed;
+	top: 50%;
+	left: 80%;
+	transform: translate(-0%, -50%);
+	cursor: pointer;
+	filter: blur(4px);
+}
+
+.service-popup-left-hidden {
 
 }
 
-.service-popup-right{
+.service-popup-right-hidden {
 
 }
 
-.service-popup-left-hidden{
 
-}
-
-.service-popup-right-hidden{
-
+#service-popups-wrapper {
+	background: rgba(30, 30, 30, .1);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+	cursor: pointer;
+	display: none;
 }
