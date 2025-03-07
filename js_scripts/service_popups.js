@@ -14,16 +14,6 @@ class Carousel {
 		this.hidden_right = null
 	}
 
-	next = () => {
-
-	}
-
-
-	prev = () => {
-	
-	}
-
-
 	call = (id) => {
 		console.log('CALLED')
 		//service-popup-center

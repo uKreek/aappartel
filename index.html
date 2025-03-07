@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Aappartel</title>
-	<link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href="./service_popups.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/service_popups.css">
+	<link rel="stylesheet" href="./css/contact_us_popup.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -132,7 +133,7 @@
 		</div>
 		<div id="rooms">
 
-			<div class="room" onclick="ShowPopup('apart0')">
+			<div class="room" onclick="room_popups.show_popup('apart0')">
 				<img class="room-img" src="./apartments/apartment/0.jpg">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment</p>
@@ -140,7 +141,7 @@
 				</div>
 			</div>
 
-			<div class="room" onclick="ShowPopup('apart1')">
+			<div class="room" onclick="room_popups.show_popup('apart1')">
 				<img class="room-img" src="./apartments/apartment-raum/0.jpg">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Aappart-raum</p>
@@ -148,7 +149,7 @@
 				</div>
 			</div>
 
-			<div class="room" onclick="ShowPopup('apart2')">
+			<div class="room" onclick="room_popups.show_popup('apart2')">
 				<img class="room-img" src="./apartments/apartment-family/apart0.jpg">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment-family</p>
@@ -231,6 +232,24 @@
 				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
 				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>
 			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Feature name</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Cot (maximum two per room)</th>
+						<td>10€ / night</td>
+					</tr>
+					<tr>
+						<th scope="row">Babybed/cot (maximum two per room) for children up to 12 years</th>
+						<td>10€ / night</td>
+					</tr>
+				</tbody>
+			</table>
 			<div id="pricing-terms">
 				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>
 				<button class="filled-button">Book now</button>
@@ -315,20 +334,19 @@
 
 	<!-- Slider for room's popups -->
 
-	<div id="popup-room-wrapper">
-		<div id="popup-room">
-			<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
-			<div class="popup-room-bottom">
-				<button class="popup-room-button" id="popup-room-previous"></button>
-				<div class="popup-room-text">
-					<p class="popup-room-tittle">Apartment</p>
-					<p class="popup-room-description">French bed French bed French bed</p>
-				</div>
-				<button class="popup-room-button" id="popup-room-next"></button>
+	<div id="popup-room-wrapper" onclick="room_popups.hide()"></div>
+	
+	<div id="popup-room">
+		<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg">
+		<div class="popup-room-bottom">
+			<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
+			<div class="popup-room-text">
+				<p class="popup-room-tittle">Apartment</p>
+				<p class="popup-room-description">French bed French bed French bed</p>
 			</div>
+			<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
 		</div>
 	</div>
-	
 
 
 
@@ -369,8 +387,22 @@
 	</div>
 
 
-	<script src="./animations.js"></script>
-	<script src="./service_popups.js"></script>
+
+	<div id="contact-us-popup">
+		<p id="contact-us-popup-tittle">Contact us</p>
+		<div>
+			
+		</div>
+	</div>
+
+
+
+
+	<script src="./js_scripts/animations.js"></script>
+	<script src="./js_scripts/service_popups.js"></script>
+	<script src="./js_scripts/rooms_popups.js"></script>
+
+	
 </body>
 
 </html>

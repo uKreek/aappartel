@@ -1,0 +1,33 @@
+:root {
+	--white: #ffffff;
+	--line: #2A2722;
+	--dark: #1A1A1A;
+	--background: #F1E9DB;
+	--secondary-background: #718476;
+	--secondary-background-darker: #4B5E50;
+	--font-family: 'Manrope';
+}
+
+#contact-us-popup {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 10px;
+	padding: 40px 60px 50px 60px;
+	min-width: 500px;
+	background: var(--secondary-background-darker);
+}
+
+#contact-us-popup-tittle {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 4.4rem;
+	color: var(--white);
+}
+
+
+
+
+
+
