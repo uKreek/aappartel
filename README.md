@@ -1,7 +1,7 @@
-<p align="center">
-  <h2 align="center">Aappartel</h2>
-  <img src="https://github.com/uKreek/aappartel/blob/main/images/View.png"><!img>
-</p>
+<div style="text-align: center">
+  <h2>Aappartel</h2>
+  <img alt="Aappartel Image" src="./images/View.png"/>
+</div>
 
 ## Содержание
 1. [Описание](#описание)
@@ -14,6 +14,9 @@
 
 ## Функции
 - Просмотр картинок апартаментов по нажатию на соответствующий тип апартаментов.
+- Просмотр описаний различных сервисов с помощью листалки типа "карусель".
 
 ## Особенности
 - Отображение местоположения офиса на карте Google прямо на сайте
+- Приятная цветовая гамма.
+- Возможность отправки письма по email.

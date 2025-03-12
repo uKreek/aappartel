@@ -10,24 +10,85 @@
 
 #contact-us-popup {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	justify-content: flex-start;
-	flex-direction: row;
 	gap: 10px;
 	padding: 40px 60px 50px 60px;
-	min-width: 500px;
+	max-width: 500px;
 	background: var(--secondary-background-darker);
 }
 
+#contact-us-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#contact-us-form{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	width: 100%;
+}
+
+.contact-us-input{
+	width: 100%;
+	box-sizing: border-box;
+	height: 4rem;
+	background: var(--secondary-background);
+	border: 1px solid var(--white);
+}
+
+.contact-us-label{
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 24px;
+	color: var(--white);
+}
+
+.contact-form-div{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
 #contact-us-popup-tittle {
+	justify-content: flex-start;
 	font-family: var(--font-family);
 	font-weight: 700;
 	font-size: 4.4rem;
 	color: var(--white);
+	align-self: flex-start;
 }
 
+#contact-us-checkbox-label{
+	align-self: center;
+}
 
+#contact-us-checkbox-div{
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
 
+#contact-us-checkbox{
+	width: 4rem;
+	height: 4rem;
+	accent-color: var(--background);
+}
 
+.contact-us-submit{
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 28px;
+	color: var(--line);
 
-
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	align-self: center;
+}
