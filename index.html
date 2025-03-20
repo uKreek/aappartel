@@ -302,7 +302,7 @@
 					</div>
 					<div id="contact-buttons">
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185"><button class="filled-button rounded-button" id="facebook-button" ><img src="./svg/assets/facebook-logo.svg" alt="facebook logo"></button></a>
-						<button class="filled-button rounded-button">Contact us</button>
+						<button class="filled-button rounded-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
 						<button class="filled-button rounded-button">See videos</button>
 						<button class="filled-button rounded-button">info@aappartel.de</button>
 					</div>
@@ -387,7 +387,7 @@
 	</div>
 
 
-
+	<div id="contact-us-background" onclick="contact_us_popup.hide_contact_us()"></div>
 	<div id="contact-us-popup">
 		<div id="contact-us-wrapper">
 			<p id="contact-us-popup-tittle">Contact us</p>
@@ -424,7 +424,7 @@
 	<script src="./js_scripts/animations.js"></script>
 	<script src="./js_scripts/service_popups.js"></script>
 	<script src="./js_scripts/rooms_popups.js"></script>
-
+	<script src="./js_scripts/contact_us_popup.js"></script>
 	
 </body>
 
