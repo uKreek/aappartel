@@ -6,6 +6,7 @@
 	--secondary-background: #718476;
 	--secondary-background-darker: #4B5E50;
 	--font-family: 'Manrope';
+	--label-size: 2.5rem;
 }
 
 #contact-us-popup {
@@ -55,6 +56,10 @@
 	height: 4rem;
 	background: var(--secondary-background);
 	border: 1px solid var(--white);
+	color: var(--white);
+	font-size: var(--label-size);
+	padding: 0 0 0 10px;
+	cursor: pointer;
 }
 
 .contact-us-label{
