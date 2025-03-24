@@ -29,6 +29,21 @@
 		<div>
 			
 		</div>
+
+		<div class="image-slider-container">
+			<div class="slider-top-element"></div>
+			<div class="slider-middle-element">
+				<div class="slider-button" onclick="showSlide(0)">
+					<div class="slider-dot"></div>
+				</div>
+				<div class="slider-button">
+					<div class="slider-dot" onclick="showSlide(1)"></div>
+				</div>
+				<div class="slider-button">
+					<div class="slider-dot" onclick="showSlide(2)"></div>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<article id="booking-container"> <!-- Book now -->
@@ -394,26 +409,26 @@
 			<form id="contact-us-form">
 
 				<div class="contact-form-div">
-					<label class="contact-us-label" for="first-name">Name</label>
-					<input id="first-name" class="contact-us-input" type="text" aria-label="Name">
+					<label class="contact-us-label" for="contact-us-name">Name</label>
+					<input id="contact-us-name" class="contact-us-input" type="text" aria-label="Name" onchange="contact_us_popup.update_name()">
 				</div>
 				<div class="contact-form-div">
-					<label class="contact-us-label" for="email">Email</label>
-					<input id="email" class="contact-us-input" type="email" aria-label="Email">
+					<label class="contact-us-label" for="contact-us-email">Email</label>
+					<input id="contact-us-email" class="contact-us-input" type="email" aria-label="Email" onchange="contact_us_popup.update_email()">
 				</div>
 				<div class="contact-form-div">
-					<label class="contact-us-label" for="subject">Subject</label>
-					<input id="subject" class="contact-us-input" type="text" aria-label="Subject">
+					<label class="contact-us-label" for="contact-us-subject">Subject</label>
+					<input id="contact-us-subject" class="contact-us-input" type="text" aria-label="Subject" onchange="contact_us_popup.update_subject()">
 				</div>
 				<div class="contact-form-div">
-					<label class="contact-us-label" for="message">Message</label>
-					<input id="message" class="contact-us-input" type="text" aria-label="Message">
+					<label class="contact-us-label" for="contact-us-message">Message</label>
+					<input id="contact-us-message" class="contact-us-input" type="text" aria-label="Message" onchange="contact_us_popup.update_message()">
 				</div>
 				<div class="contact-form-div" id="contact-us-checkbox-div">
 					<label class="contact-us-label" id="contact-us-checkbox-label" for="contact-us-checkbox">Send a copy to yourself</label>
-					<input type="checkbox" class="contact-us-checkbox" id="contact-us-checkbox" title="Send a copy to yourself">
+					<input type="checkbox" class="contact-us-checkbox" id="contact-us-checkbox" title="Send a copy to yourself" onchange="contact_us_popup.checked()">
 				</div>
-				<input type="submit" class="contact-us-submit" content="Submit">
+				<input type="submit" class="contact-us-submit" content="Submit" id="contact-us-submit">
 			</form>
 		</div>
 	</div>
@@ -425,6 +440,7 @@
 	<script src="./js_scripts/service_popups.js"></script>
 	<script src="./js_scripts/rooms_popups.js"></script>
 	<script src="./js_scripts/contact_us_popup.js"></script>
+	<script src="./js_scripts/image_slider.js" defer></script>
 	
 </body>
 

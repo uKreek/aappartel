@@ -179,6 +179,45 @@ p {
 	gap: 60px;
 }
 
+.image-slider-container{
+	/*position: absolute;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/*
+	justify-content: flex-start;
+	align-items: flex-end;
+	*/
+}
+
+.slider-middle-element{
+	align-self: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.slider-button{
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	border-color: var(--line);
+	border-width: 1px;
+	border-style: solid;
+	margin: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	cursor: pointer;
+}
+
+.slider-dot{
+	border-radius: 50%;
+	background-color: var(--line);
+	width: 6px;
+	height: 6px;
+}
+
 #top_img {
 	display: flex;
 	align-items: flex-start;
