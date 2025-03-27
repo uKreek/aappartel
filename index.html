@@ -14,6 +14,8 @@
 <body>
 	<header id="top_container"> <!-- Top -->
 		<div id="top_img">
+
+			<!-- Logo and language selection -->
 			<div id="logo-and-langs">
 				<img id="logo" src="./svg/assets/logo.svg" alt="Logo">
 				<div id="langs-container">
@@ -21,26 +23,31 @@
 					<img class="lang" id="en-lang" src="https://www.aappartel.de/media/mod_languages/images/en.jpg" alt="en">
 				</div>
 			</div>
-		</div>
-			<div id="tittle-and-button">
-				<p id="top-tittle">Apartment</p>
-				<button class="outlined-button">See more</button>
+
+			<!-- Images -->
+			<div class="top-img-container">
+				<div class="top-img-slide" style="background-image: url('./apartments/apartment/0.jpg')"></div>
+				<div class="top-img-slide" style="background-image: url('./apartments/apartment-family/apart0.jpg')"></div>
+				<div class="top-img-slide" style="background-image: url('./apartments/apartment-raum/0.jpg')"></div>
 			</div>
-		<div>
-			
+		</div>
+		<div id="tittle-and-button">
+			<p id="top-tittle">Apartment</p>
+			<button class="outlined-button">See more</button>
 		</div>
 
+		<!-- Buttons for scroll images in top-img-container -->
 		<div class="image-slider-container">
 			<div class="slider-top-element"></div>
 			<div class="slider-middle-element">
-				<div class="slider-button" onclick="showSlide(0)">
+				<div class="slider-button" data-index="0">
 					<div class="slider-dot"></div>
 				</div>
-				<div class="slider-button">
-					<div class="slider-dot" onclick="showSlide(1)"></div>
+				<div class="slider-button" data-index="1">
+					<div class="slider-dot"></div>
 				</div>
-				<div class="slider-button">
-					<div class="slider-dot" onclick="showSlide(2)"></div>
+				<div class="slider-button" data-index="2">
+					<div class="slider-dot"></div>
 				</div>
 			</div>
 		</div>
