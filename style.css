@@ -1,4 +1,17 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/*
+Theme Name: aappartel
+Author: 123
+Description: 123
+Version: 1.0
+*/
+
+
+
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +25,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +37,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -61,11 +74,11 @@ Variables
 	--secondary-background: #718476;
 	--secondary-background-darker: #4B5E50;
 	--font-family: 'Manrope';
+	--animation-speed: 0.3s;
 }
 
 html {
 	font-size: 10px;
-	--animation-speed: 0.3s;
 }
 
 /*
@@ -86,7 +99,7 @@ Components
 	border: 1px solid var(--line);
 	padding: 8px 32px;
 	background-color: transparent;
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 2.8rem;
 	color: var(--line);
@@ -109,7 +122,7 @@ Components
 	gap: 10px;
 	padding: 8px 32px;
 	background: var(--background);
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 2.8rem;
 	color: var(--line);
@@ -133,7 +146,7 @@ Components
 }
 
 .tittle {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 5.4rem;
 	text-align: center;
@@ -143,7 +156,7 @@ Components
 }
 
 .tittle-line {
-	width: 0px;
+	width: 0;
 	height: 2px;
 	background: var(--background);
 	transition: 1s;
@@ -229,7 +242,7 @@ p {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 0px;
+	gap: 0;
 	padding: 40px 40px;
 	height: 100vh;
 	width: 100%;
@@ -318,7 +331,7 @@ p {
 }
 
 #top-tittle {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 300;
 	font-size: 5.4rem;
 	color: var(--line);
@@ -328,7 +341,7 @@ p {
 
 
 #booking-container {
-	
+
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://www.aappartel.de/images/aappartel/sections/ausstattung.jpg") no-repeat center center / cover;
 	background-position: center;
 }
@@ -341,7 +354,7 @@ p {
 	flex-direction: column;
 	gap: 10px;
 
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 600;
 	font-size: 1.8rem;
 	text-align: center;
@@ -364,7 +377,7 @@ p {
 }
 
 #features-container {
-background: var(--background);
+	background: var(--background);
 }
 
 #features-tittle .tittle-line {
@@ -397,7 +410,7 @@ background: var(--background);
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 0px;
+	gap: 0;
 	background: var(--white);
 	transition: var(--animation-speed);
 }
@@ -423,14 +436,14 @@ background: var(--background);
 }
 
 .room-tittle {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 300;
 	font-size: 4.4rem;
 	color: var(--line);
 }
 
 .room-description {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 300;
 	font-size: 2.4rem;
 	color: var(--line);
@@ -474,7 +487,7 @@ background: var(--background);
 }
 
 .service-description {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 2.8rem;
 	text-align: center;
@@ -524,7 +537,7 @@ background: var(--background);
 }
 
 #pricing-left-text {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 2.8rem;
 	color: var(--white);
@@ -538,7 +551,7 @@ background: var(--background);
 }
 
 #pricing-right-text {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 2.8rem;
 	color: var(--white);
@@ -622,7 +635,7 @@ background: var(--background);
 	justify-content: flex-start;
 	flex-direction: column;
 	gap: 20px;
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 300;
 	font-size: 2.8rem;
 	color: var(--white);
@@ -639,7 +652,7 @@ background: var(--background);
 }
 
 #facebook-button {
-	padding: 0px 0px;
+	padding: 0;
 	background-color: transparent;
 }
 
@@ -673,14 +686,14 @@ background: var(--background);
 }
 
 #terminal-tittle {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 3.2rem;
 	color: var(--white);
 }
 
 #terminal-description {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 300;
 	font-size: 2.4rem;
 	color: var(--white);
@@ -716,7 +729,7 @@ background: var(--background);
 }
 
 .footer-text {
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 32px;
 	text-align: center;
@@ -752,57 +765,57 @@ background: var(--background);
 
 
 #popup-room {
-display: none;
-align-items: center;
-justify-content: flex-start;
-flex-direction: column;
-width: 1200px;
-background: var(--white);
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-cursor: default;
+	display: none;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 1200px;
+	background: var(--white);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: default;
 }
 
 
 .popup-room-img {
-width: 100%;
-height: 700px;
-object-fit: cover;
+	width: 100%;
+	height: 700px;
+	object-fit: cover;
 }
 
 .popup-room-bottom {
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-direction: row;
-padding: 30px;
-width: calc(100% - 60px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	padding: 30px;
+	width: calc(100% - 60px);
 }
 
 .popup-room-text {
-display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: column;
-gap: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .popup-room-tittle {
-font-family: var(--font-family);
-font-weight: 300;
-font-size: 32px;
-text-align: center;
-color: var(--line);
+	font-family: var(--font-family), serif;
+	font-weight: 300;
+	font-size: 32px;
+	text-align: center;
+	color: var(--line);
 }
 
 .popup-room-description {
-font-family: var(--font-family);
-font-weight: 300;
-font-size: 20px;
-text-align: center;
-color: var(--line);
+	font-family: var(--font-family), serif;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: center;
+	color: var(--line);
 }
 
 
@@ -818,17 +831,17 @@ color: var(--line);
 
 
 #popup-room-previous {
-	background-image: url("../svg/navigation/left.svg");
+	background-image: url("svg/navigation/left.svg");
 }
 
 #popup-room-next {
-	background-image: url("../svg/navigation/right.svg");
+	background-image: url("svg/navigation/right.svg");
 }
 
 
 
 html {
-  scrollbar-width: thin;
+	scrollbar-width: thin;
 }
 
 
@@ -843,33 +856,237 @@ html {
 table {
 	border-collapse: collapse;
 	border: 2px solid rgb(140 140 140);
-	font-family: var(--font-family);
+	font-family: var(--font-family), serif;
 	font-size: 2.4rem;
 	letter-spacing: 1px;
-  }
-  
-  caption {
+}
+
+caption {
 	caption-side: bottom;
 	padding: 10px;
 	font-weight: bold;
-  }
-  
-  thead,
-  tfoot {
+}
+
+thead,
+tfoot {
 	background-color: rgb(228 240 245);
-  }
-  
-  th,
-  td {
+}
+
+th,
+td {
 	background-color: white;
 	border: 1px solid rgb(160 160 160);
 	padding: 8px 10px;
-  }
-  
-  td:last-of-type {
+}
+
+td:last-of-type {
 	text-align: center;
-  }
-  
-  tbody > tr:nth-of-type(even) {
+}
+
+tbody > tr:nth-of-type(even) {
 	background-color: rgb(237 238 242);
-  }
+}
+
+
+
+#contact-us-popup {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 10px;
+	padding: 40px 60px 50px 60px;
+	max-width: 500px;
+	background-color: var(--secondary-background-darker);
+}
+
+#contact-us-background {
+	background: rgba(30, 30, 30, .1);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	display: none;
+}
+
+#contact-us-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#contact-us-form{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	width: 100%;
+}
+
+.contact-us-input{
+	width: 100%;
+	box-sizing: border-box;
+	height: 4rem;
+	background: var(--secondary-background);
+	border: 1px solid var(--white);
+	color: var(--white);
+	font-size: 2.5rem;
+	padding: 0 0 0 10px;
+	cursor: pointer;
+}
+
+.contact-us-label{
+	font-family: var(--font-family), serif;
+	font-weight: 400;
+	font-size: 24px;
+	color: var(--white);
+}
+
+.contact-form-div{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#contact-us-popup-tittle {
+	justify-content: flex-start;
+	font-family: var(--font-family), serif;
+	font-weight: 700;
+	font-size: 4.4rem;
+	color: var(--white);
+	align-self: flex-start;
+}
+
+#contact-us-checkbox-label{
+	align-self: center;
+}
+
+#contact-us-checkbox-div{
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+#contact-us-checkbox{
+	width: 4rem;
+	height: 4rem;
+	accent-color: var(--background);
+}
+
+.contact-us-submit{
+	font-family: var(--font-family), serif;
+	font-weight: 400;
+	font-size: 28px;
+	color: var(--line);
+
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	align-self: center;
+}
+
+
+
+.service-popup {
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 12px;
+	padding: 40px 60px;
+	background: var(--secondary-background-darker);
+	display: none;
+}
+
+.service-popup-tittle {
+	font-family: var(--font-family), serif;
+	font-weight: 700;
+	font-size: 4.4rem;
+	color: var(--white);
+}
+
+
+.service-popup-subtittle {
+	font-family: var(--font-family), serif;
+	font-weight: 600;
+	font-size: 3.0rem;
+	color: var(--white);
+}
+
+
+.service-popup-text {
+	font-family: var(--font-family), serif;
+	font-weight: 400;
+	font-size: 2.0rem;
+	color: var(--white);
+	line-height: 120%;
+}
+
+.service-popup-info-body {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.service-popup-center {
+	display: flex;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: default;
+}
+
+.service-popup-left {
+	display: flex;
+
+	position: fixed;
+	top: 50%;
+	left: 20%;
+	transform: translate(-100%, -50%);
+	cursor: pointer;
+	filter: blur(4px);
+}
+
+.service-popup-right {
+	display: flex;
+
+	position: fixed;
+	top: 50%;
+	left: 80%;
+	transform: translate(-0%, -50%);
+	cursor: pointer;
+	filter: blur(4px);
+}
+
+.service-popup-left-hidden {
+
+}
+
+.service-popup-right-hidden {
+
+}
+
+
+#service-popups-wrapper {
+	background: rgba(30, 30, 30, .1);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	display: none;
+}

@@ -3,9 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Aappartel</title>
-	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./css/service_popups.css">
-	<link rel="stylesheet" href="./css/contact_us_popup.css">
+<!--	<link rel="stylesheet" href="style.css">-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
