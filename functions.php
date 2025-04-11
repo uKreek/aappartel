@@ -1,17 +1,11 @@
 <?php
-function my_custom_theme_styles() {
-    wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css');
+function my_theme_enqueue_styles() {
+    // Подключаем Bootstrap из CDN
+    wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' );
+
+    // Подключаем свой файл style.css, указывая Bootstrap в качестве зависимости
+    wp_enqueue_style( 'my-theme-style', get_stylesheet_uri(), array( 'bootstrap' ) );
 }
-add_action('wp_enqueue_scripts', 'my_custom_theme_styles');
-
-
-
-//function my_theme_enqueue_styles()
-//{
-//    wp_enqueue_style('main-style', get_stylesheet_uri());
-//}
-//
-//add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
-
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 ?>

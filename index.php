@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Aappartel</title>
-<!--	<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
 			<div id="logo-and-langs">
 				<img id="logo" src="./svg/assets/logo.svg" alt="Logo">
 				<div id="langs-container">
-					<img class="lang" id="de-lang" src="https://www.aappartel.de/media/mod_languages/images/de.jpg" alt="de">
-					<img class="lang" id="en-lang" src="https://www.aappartel.de/media/mod_languages/images/en.jpg" alt="en">
+					<img class="lang" id="de-lang" src="./images/de.jpg" alt="de">
+					<img class="lang" id="en-lang" src="./images/en.jpg" alt="en">
 				</div>
 			</div>
 
@@ -283,8 +283,8 @@
 			<p class="tittle">Gallery</p>
 		</div>
 		<div id="gallery">
-			<img class="gallery-img" src="./images/gallery/0.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/1.jpg" alt="gallery image">
+			<img class="gallery-img" src="<?php echo wp_get_attachment_url(17); ?>" alt="gallery image">
+			<img class="gallery-img" src="<?php echo wp_get_attachment_url(16); ?>" alt="gallery image">
 			<img class="gallery-img" src="./images/gallery/2.jpg" alt="gallery image">
 			<img class="gallery-img" src="./images/gallery/3.jpg" alt="gallery image">
 			<img class="gallery-img" src="./images/gallery/4.jpg" alt="gallery image">
@@ -440,12 +440,12 @@
 
 
 
-
-	<script src="./js_scripts/animations.js"></script>
-	<script src="./js_scripts/service_popups.js"></script>
-	<script src="./js_scripts/rooms_popups.js"></script>
-	<script src="./js_scripts/contact_us_popup.js"></script>
-	<script src="./js_scripts/image_slider.js" defer></script>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
+	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/animations.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/service_popups.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/rooms_popups.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/contact_us_popup.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/image_slider.js" defer></script>
 	
 </body>
 
