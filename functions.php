@@ -1,11 +1,19 @@
 <?php
-function my_theme_enqueue_styles() {
-    // Подключаем Bootstrap из CDN
-    wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' );
 
-    // Подключаем свой файл style.css, указывая Bootstrap в качестве зависимости
-    wp_enqueue_style( 'my-theme-style', get_stylesheet_uri(), array( 'bootstrap' ) );
+/*
+Подключение стилей и скриптов
+*/
+
+add_action('wp_enqueue_scripts', 'aappartel_scripts');
+
+function aappartel_scripts() {
+    wp_enqueue_style('style', get_stylesheet_uri());
+
+    wp_enqueue_script('animations', get_template_directory_uri() . '/js_scripts/animations.js', array(), '1.0', true);
+    wp_enqueue_script('contact-us', get_template_directory_uri() . '/js_scripts/contact_us_popup.js', array(), '1.0', true);
+    wp_enqueue_script('image-slider', get_template_directory_uri() . '/js_scripts/image_slider.js', array(), '1.0', true);
+    wp_enqueue_script('rooms_popups', get_template_directory_uri() . '/js_scripts/rooms_popups.js', array(), '1.0', true);
+    wp_enqueue_script('service-popups', get_template_directory_uri() . '/js_scripts/service_popups.js', array(), '1.0', true);
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 ?>

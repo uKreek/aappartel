@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Aappartel</title>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <?php wp_head(); ?>
 </head>
 
 <body>
@@ -438,15 +438,7 @@
 		</div>
 	</div>
 
-
-
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
-	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/animations.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/service_popups.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/rooms_popups.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/contact_us_popup.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js_scripts/image_slider.js" defer></script>
-	
+	<?php wp_footer(); ?>
 </body>
 
 </html>
