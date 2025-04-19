@@ -105,6 +105,7 @@ Components
 	color: var(--line);
 	cursor: pointer;
 	transition: var(--animation-speed);
+	border-radius: 64px;
 }
 
 .outlined-button:hover {
@@ -129,6 +130,7 @@ Components
 	border: none;
 	cursor: pointer;
 	transition: var(--animation-speed);
+	border-radius: 64px;
 }
 
 
@@ -175,12 +177,13 @@ article {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 80px;
-	padding: 110px 40px;
+	gap: clamp(40px, 8vh, 80px);
+	padding: clamp(50px, 10vh, 110px) clamp(15px, 4vw, 40px);
 }
 
 p {
-	transition: var(--animation-speed);
+	/*transition: var(--animation-speed);*/
+	font-size: 2rem;
 }
 
 
@@ -338,10 +341,7 @@ p {
 }
 
 
-
-
 #booking-container {
-
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://www.aappartel.de/images/aappartel/sections/ausstattung.jpg") no-repeat center center / cover;
 	background-position: center;
 }
@@ -362,8 +362,9 @@ p {
 }
 
 .feature-img {
-	width: 120px;
-	height: 120px;
+	width: clamp(40px, 15vw, 120px);
+	aspect-ratio: 1;
+	object-fit: contain;
 }
 
 #features {
@@ -372,7 +373,7 @@ p {
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: row;
-	gap: 60px;
+	gap: clamp(40px, 4vw, 60px);
 	max-width: 1600px;
 }
 
@@ -397,22 +398,24 @@ p {
 
 #rooms {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	flex-direction: row;
-	gap: 60px;
+	flex-wrap: wrap; /* Разрешаем перенос */
+	align-items: stretch; /* Выравниваем карточки по высоте */
+	justify-content: center; /* Центрируем */
+	gap: clamp(20px, 4vw, 60px); /* Адаптивный gap */
+	width: 100%;
 }
 
 .room {
 	cursor: pointer;
 	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
 	flex-direction: column;
 	gap: 0;
 	background: var(--white);
 	transition: var(--animation-speed);
+	flex: 1 1 clamp(280px, 80vw, 400px);
+	max-width: 450px;
+	border-radius: 8px;
+	overflow: hidden;
 }
 
 .room:hover {
@@ -421,9 +424,10 @@ p {
 
 
 .room-img {
-	height: 300px;
+	height: clamp(200px, 40vh, 300px); /* Адаптивная высота */
 	width: 100%;
-	object-fit: cover;
+	object-fit: cover; /* Изображение покрывает область */
+	display: block; /* Уберет возможный нижний отступ */
 }
 
 .room-tittle-and-description {
@@ -431,15 +435,17 @@ p {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 30px;
-	padding: 40px;
+	gap: clamp(15px, 2vh, 25px); /* Адаптивный gap */
+	padding: clamp(10px, 5vw, 30px); /* Адаптивные отступы */
+	flex-grow: 1; /* Позволит этому блоку занять доступное пространство по высоте */
 }
 
 .room-tittle {
 	font-family: var(--font-family), serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 4.4rem;
 	color: var(--line);
+	line-height: 1.2;
 }
 
 .room-description {
@@ -447,7 +453,7 @@ p {
 	font-weight: 300;
 	font-size: 2.4rem;
 	color: var(--line);
-	line-height: 150%;
+	line-height: 1.5;
 }
 
 #service-container {
@@ -460,8 +466,9 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	gap: 10px;
+	gap: clamp(10px, 3vw, 15px);
 	max-width: 1400px;
+	width: 100%;
 }
 
 .service {
@@ -469,21 +476,24 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 20px;
-	padding: 30px;
+	gap: clamp(10px, 2vh, 20px);
+	padding: clamp(15px, 3vw, 30px);
 	transition: var(--animation-speed);
 	cursor: pointer;
+	flex: 1 1 clamp(200px, 40vw, 280px);
+	border-radius: 16px;
+	background-color: rgba(255, 255, 255, 0.5)
 }
 
 .service:hover {
-	box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.1);
-	border-radius: 16px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Улучшенная тень */
+	transform: translateY(-5px); /* Эффект приподнимания */
 }
 
 .service-img {
-	width: 150px;
-	height: 150px;
-	filter: invert(0.1) hue-rotate(20deg);
+	width: clamp(64px, 20vw, 150px);
+	height: auto;
+	aspect-ratio: 1;
 }
 
 .service-description {
@@ -576,14 +586,18 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	gap: 20px;
+	gap: clamp(10px, 2vw, 20px);
+	width: 100%;
 }
 
 .gallery-img {
-	width: 564px;
-	height: 400px;
+    width: clamp(280px, 45vw, 564px); /* Адаптивная ширина */
+    height: auto; /* Авто-высота */
+    aspect-ratio: 1.4;
+    max-width: 100%; /* Не больше ширины контейнера */
 	transition: var(--animation-speed);
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 .gallery-img:hover {
@@ -605,11 +619,12 @@ p {
 
 #contact {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 80px;
+	gap: clamp(40px, 8vh, 80px); /* Адаптивный gap */
 	max-width: 1600px;
+	width: 100%;
 }
 
 #contact-top {
@@ -618,15 +633,18 @@ p {
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: row;
-	gap: 40px;
+	gap: clamp(30px, 6vw, 40px);
+	width: 100%;
 }
 
 #contact-info {
 	display: flex;
-	align-items: flex-start;
+	align-items: stretch;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 40px;
+	gap: clamp(25px, 5vh, 40px); /* Адаптивный gap */
+    flex: 1 1 50%; /* Занимает половину, гибкий */
+    min-width: 280px;
 }
 
 #contact-phones-and-adress {
@@ -634,11 +652,14 @@ p {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 20px;
+	gap: clamp(10px, 2vh, 20px);
 	font-family: var(--font-family), serif;
-	font-weight: 300;
-	font-size: 2.8rem;
 	color: var(--white);
+	line-height: 1.5;
+}
+
+#contact-phones-and-adress a p{
+	font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
 #contact-buttons {
@@ -647,8 +668,8 @@ p {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: row;
-	gap: 20px;
-	width: 600px; /* Fix that */
+	gap: clamp(10px, 2vw, 20px);
+	width: 100%;
 }
 
 #facebook-button {
@@ -668,13 +689,18 @@ p {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: 30px;
-	width: 522px;
+	gap: clamp(15px, 3vh, 30px);
+    flex: 1 1 40%; /* Занимает меньше места, гибкий */
+    min-width: 280px;
 }
 
 #terminal-img {
-	width: 522px;
-	height: 370px;
+	/* width: 522px; height: 370px; - Убираем */
+    width: 100%; /* На всю ширину */
+	height: auto;
+	max-height: 50vh;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 #terminal-text {
@@ -712,18 +738,19 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 80px;
-	padding: 110px 40px;
+	gap: clamp(40px, 8vh, 80px);
+	padding: clamp(50px, 5vh, 110px) clamp(15px, 2vw, 40px);
+	width: 100%;
 	background: var(--dark);
 }
 
 #footer {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+	flex-wrap: wrap; /* Перенос */
+	align-items: center; /* Выравнивание по центру */
+	justify-content: space-around; /* Распределяем элементы */
 	flex-direction: row;
-	gap: 40px;
+	gap: clamp(20px, 4vw, 40px); /* Адаптивный gap */
 	max-width: 1600px;
 	width: 100%;
 }
@@ -731,9 +758,11 @@ p {
 .footer-text {
 	font-family: var(--font-family), serif;
 	font-weight: 400;
-	font-size: 32px;
+	font-size: 2.5rem;
 	text-align: center;
 	color: var(--white);
+	flex-basis: 100%; /* Займет всю строку на мобильных */
+    order: 2; /* Поставим ниже ссылок на мобильных */
 }
 
 #footer-terms {
@@ -742,7 +771,8 @@ p {
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: row;
-	gap: 30px;
+	gap: clamp(15px, 3vw, 30px);
+	order: 1
 }
 
 .link {
@@ -846,11 +876,7 @@ html {
 
 
 
-@media screen and (max-width: 800px) {
-	html {
-		font-size: 8px;
-	}
-}
+
 
 
 table {
@@ -964,11 +990,11 @@ tbody > tr:nth-of-type(even) {
 	align-self: flex-start;
 }
 
-#contact-us-checkbox-label{
+#contact-us-checkbox-label {
 	align-self: center;
 }
 
-#contact-us-checkbox-div{
+#contact-us-checkbox-div {
 	display: flex;
 	flex-direction: row;
 	gap: 12px;
@@ -980,7 +1006,7 @@ tbody > tr:nth-of-type(even) {
 	accent-color: var(--background);
 }
 
-.contact-us-submit{
+.contact-us-submit {
 	font-family: var(--font-family), serif;
 	font-weight: 400;
 	font-size: 28px;
@@ -1090,3 +1116,16 @@ tbody > tr:nth-of-type(even) {
 	cursor: pointer;
 	display: none;
 }
+
+
+
+
+
+
+html {
+	font-size: clamp(8px, 0.5vw, 20px);
+}
+
+
+
+
