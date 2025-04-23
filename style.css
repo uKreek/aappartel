@@ -62,9 +62,13 @@ table {
 
 
 
-/*
-Variables
-*/
+
+
+
+
+
+
+
 
 :root {
 	--white: #ffffff;
@@ -78,17 +82,10 @@ Variables
 }
 
 html {
-	font-size: 10px;
+	font-size: clamp(10px, 0.6vw, 40px);
+	/*font-size: 40px;*/
 }
 
-/*
-Variables end
-*/
-
-
-/*
-Components
-*/
 
 .outlined-button {
 	display: flex;
@@ -97,7 +94,7 @@ Components
 	flex-direction: row;
 	gap: 10px;
 	border: 1px solid var(--line);
-	padding: 8px 32px;
+	padding: clamp(8px, 0.25vw, 16px) clamp(32px, 1vw, 64px);
 	background-color: transparent;
 	font-family: var(--font-family), serif;
 	font-weight: 400;
@@ -135,7 +132,6 @@ Components
 
 
 .filled-button:hover {
-	/*box-shadow: 0 0 12px 12px rgba(0, 0, 0, .2);*/
 	scale: 1.1;
 }
 
@@ -166,12 +162,6 @@ Components
 
 
 
-
-/*
-Components end
-*/
-
-
 article {
 	display: flex;
 	align-items: center;
@@ -182,18 +172,60 @@ article {
 }
 
 p {
-	/*transition: var(--animation-speed);*/
 	font-size: 2rem;
 }
 
 
-#top_container {
+#top-container {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: row;
-	gap: 60px;
+	gap: clamp(10px, 3vw, 60px);
+	width: 100%;
+	height: 100vh;
 }
+
+#top-container-preview-image {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+
+#top-container-right {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	align-items: center;
+	gap: clamp(10px, 3vw, 50px);
+}
+
+#top-container-right-text {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(4px, 1vh, 20px);
+}
+
+
+
+h1 {
+	font-family: var(--font-family), serif;
+	font-size: 5.5rem;
+	font-weight: 500;
+}
+
+h2 {
+	font-family: var(--font-family), serif;
+	font-size: 4rem;
+	font-weight: 400;
+}
+
+
+
+
+
 
 .image-slider-container{
 	/*position: absolute;*/
@@ -316,6 +348,7 @@ p {
 }
 
 #logo-and-langs {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -342,7 +375,11 @@ p {
 
 
 #booking-container {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://www.aappartel.de/images/aappartel/sections/ausstattung.jpg") no-repeat center center / cover;
+<<<<<<< Updated upstream
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+=======
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+>>>>>>> Stashed changes
 	background-position: center;
 }
 
@@ -406,6 +443,7 @@ p {
 }
 
 .room {
+	user-select: none;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
@@ -740,7 +778,7 @@ p {
 	flex-direction: column;
 	gap: clamp(40px, 8vh, 80px);
 	padding: clamp(50px, 5vh, 110px) clamp(15px, 2vw, 40px);
-	width: 100%;
+	max-width: 100%;
 	background: var(--dark);
 }
 
@@ -791,6 +829,8 @@ p {
 	height: 100%;
 	cursor: pointer;
 	display: none;
+	padding: clamp(10px, 12vw, 1000px);
+	box-sizing: border-box;
 }
 
 
@@ -799,19 +839,17 @@ p {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
-	width: 1200px;
+	width: 100%;
+	height: 100%;
 	background: var(--white);
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	cursor: default;
+	border-radius: 16px;
 }
 
 
 .popup-room-img {
 	width: 100%;
-	height: 700px;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -1122,9 +1160,7 @@ tbody > tr:nth-of-type(even) {
 
 
 
-html {
-	font-size: clamp(8px, 0.5vw, 20px);
-}
+
 
 
 

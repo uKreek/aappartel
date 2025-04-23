@@ -10,54 +10,69 @@
 </head>
 
 <body>
-	<header id="top_container"> <!-- Top -->
-		<div id="top_img">
-
-			<!-- Logo and language selection -->
-			<div id="logo-and-langs">
-				<img id="logo" src="./svg/assets/logo.svg" alt="Logo">
-				<div id="langs-container">
-					<img class="lang" id="de-lang" src="./images/de.jpg" alt="de">
-					<img class="lang" id="en-lang" src="./images/en.jpg" alt="en">
-				</div>
-			</div>
-
-			<!-- Images -->
-			<div class="top-img-container">
-				<div class="top-img-slide" style="background-image: url('./apartments/apartment/0.jpg')"></div>
-				<div class="top-img-slide" style="background-image: url('./apartments/apartment-family/apart0.jpg')"></div>
-				<div class="top-img-slide" style="background-image: url('./apartments/apartment-raum/0.jpg')"></div>
-			</div>
-		</div>
-		<div id="tittle-and-button">
-			<p id="top-tittle">Apartment</p>
-			<button class="outlined-button">See more</button>
-		</div>
-
-		<!-- Buttons for scroll images in top-img-container -->
-		<div class="image-slider-container">
-			<div class="slider-top-element"></div>
-			<div class="slider-middle-element">
-				<div class="slider-button" data-index="0">
-					<div class="slider-dot"></div>
-				</div>
-				<div class="slider-button" data-index="1">
-					<div class="slider-dot"></div>
-				</div>
-				<div class="slider-button" data-index="2">
-					<div class="slider-dot"></div>
-				</div>
-			</div>
-		</div>
+	<header id="top-container"> <!-- Top -->
+        <div id="top-container-preview-image">
+           <div id="logo-and-langs">
+                <img id="logo" src="./svg/assets/logo.svg" alt="Logo">
+                <div id="langs-container">
+                    <img class="lang" id="de-lang" src="./images/de.jpg" alt="de">
+                    <img class="lang" id="en-lang" src="./images/en.jpg" alt="en">
+                </div>
+            </div>
+            <!-- Images -->
+            <?php
+            $image_id_1 = get_field('main_image_1', get_option('page_on_front')); // id картинки
+            if ($image_id_1) {
+                $image_url_1 = wp_get_attachment_url($image_id_1);
+            }
+            $image_id_2 = get_field('main_image_2', get_option('page_on_front')); // id картинки
+            if ($image_id_2) {
+                $image_url_2 = wp_get_attachment_url($image_id_2);
+            }
+            $image_id_3 = get_field('main_image_3', get_option('page_on_front')); // id картинки
+            if ($image_id_3) {
+                $image_url_3 = wp_get_attachment_url($image_id_3);
+            }
+            ?>
+            <div class="top-img-container">
+                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_1);?>')"></div>
+                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_2);?>')"></div>
+                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_3);?>')"></div>
+            </div>
+        </div>
+        <div id="top-container-right">
+            <div id="top-container-right-text">
+                <h1>Apartment</h1>
+                <h2>from 99$</h2>
+            </div>
+            <div id="top-container-right-nav">
+                <div class="image-slider-container">
+                    <div class="slider-top-element"></div>
+                    <div class="slider-middle-element">
+                        <div class="slider-button" data-index="0">
+                            <div class="slider-dot"></div>
+                        </div>
+                        <div class="slider-button" data-index="1">
+                            <div class="slider-dot"></div>
+                        </div>
+                        <div class="slider-button" data-index="2">
+                            <div class="slider-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</header>
+
+
     <?php
-    $image_id = get_field('main_image', get_option('page_on_front')); // id картинки
-    if ($image_id) {
-        $image_url = wp_get_attachment_url($image_id);
+    $booking_id = get_field('booking_image', get_option('page_on_front')); // id картинки
+    if ($booking_id) {
+        $booking_url = wp_get_attachment_url($booking_id);
     }
     ?>
-    <img src="<?php echo esc_url($image_url);?>" style="height: 300px; width: 300px"></img>
-	<article id="booking-container"> <!-- Book now -->
+
+	<article id="booking-container" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<?php echo esc_url($booking_url);?>') no-repeat center center / cover;")"> <!-- Book now -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
 			<p class="tittle">Booking</p>
@@ -241,47 +256,47 @@
 		</div>
 	</article>
 
-	<article id="pricing-container"> <!-- Pricing -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<p class="tittle">Pricing</p>
-		</div>
-		<div id="pricing">
-			<ul id="pricing-left-text">
-				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
-				<li>Cot (maximum two per room): 10,00 Euro per night</li>
-				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>
-				<li>Children in parents bed free of charge</li>
-				<li>Apartment with terrace: 10,00 € per night extra charge</li>
-				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
-				<li>WLAN free of charge in the Apartments</li>
-				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
-				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>
-			</ul>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Feature name</th>
-						<th scope="col">Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">Cot (maximum two per room)</th>
-						<td>10€ / night</td>
-					</tr>
-					<tr>
-						<th scope="row">Babybed/cot (maximum two per room) for children up to 12 years</th>
-						<td>10€ / night</td>
-					</tr>
-				</tbody>
-			</table>
-			<div id="pricing-terms">
-				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>
-				<button class="filled-button">Book now</button>
-			</div>
-		</div>
-	</article>
+<!--	<article id="pricing-container"> <!-- Pricing -->-->
+<!--		<div class="tittles">-->
+<!--			<div class="tittle-line"></div>-->
+<!--			<p class="tittle">Pricing</p>-->
+<!--		</div>-->
+<!--		<div id="pricing">-->
+<!--			<ul id="pricing-left-text">-->
+<!--				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>-->
+<!--				<li>Cot (maximum two per room): 10,00 Euro per night</li>-->
+<!--				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>-->
+<!--				<li>Children in parents bed free of charge</li>-->
+<!--				<li>Apartment with terrace: 10,00 € per night extra charge</li>-->
+<!--				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>-->
+<!--				<li>WLAN free of charge in the Apartments</li>-->
+<!--				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>-->
+<!--				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>-->
+<!--			</ul>-->
+<!--			<table>-->
+<!--				<thead>-->
+<!--					<tr>-->
+<!--						<th scope="col">Feature name</th>-->
+<!--						<th scope="col">Price</th>-->
+<!--					</tr>-->
+<!--				</thead>-->
+<!--				<tbody>-->
+<!--					<tr>-->
+<!--						<th scope="row">Cot (maximum two per room)</th>-->
+<!--						<td>10€ / night</td>-->
+<!--					</tr>-->
+<!--					<tr>-->
+<!--						<th scope="row">Babybed/cot (maximum two per room) for children up to 12 years</th>-->
+<!--						<td>10€ / night</td>-->
+<!--					</tr>-->
+<!--				</tbody>-->
+<!--			</table>-->
+<!--			<div id="pricing-terms">-->
+<!--				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>-->
+<!--				<button class="filled-button">Book now</button>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</article>-->
 
 	<article id="gallery-container"> <!-- Gallery -->
 		<div class="tittles"> <!-- Tittle -->
@@ -360,7 +375,7 @@
 
 	<!-- Slider for room's popups -->
 
-	<div id="popup-room-wrapper" onclick="room_popups.hide()"></div>
+	<div id="popup-room-wrapper" onclick="room_popups.hide()">
 	
 	<div id="popup-room">
 		<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
@@ -373,7 +388,7 @@
 			<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
 		</div>
 	</div>
-
+    </div>
 
 
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
