@@ -50,7 +50,13 @@
 			</div>
 		</div>
 	</header>
-
+    <?php
+    $image_id = get_field('main_image', get_option('page_on_front')); // id картинки
+    if ($image_id) {
+        $image_url = wp_get_attachment_url($image_id);
+    }
+    ?>
+    <img src="<?php echo esc_url($image_url);?>" style="height: 300px; width: 300px"></img>
 	<article id="booking-container"> <!-- Book now -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
@@ -328,7 +334,7 @@
 					</div>
 				</div>
 				<div id="contact-terminal">
-					<img id="terminal-img" src="https://www.aappartel.de/images/ariana/ariana.jpg">
+					<img id="terminal-img" src="./images/others/ariana.jpg">
 					<div id="terminal-text">
 						<p id="terminal-tittle">24 h. check-in terminal</p>
 						<p id="terminal-description">Our check-in machine is available in 4 languages outside of reception hours.<br>No cash payments possible during these times!</p>
