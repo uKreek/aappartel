@@ -20,24 +20,16 @@
                 </div>
             </div>
             <!-- Images -->
-            <?php
-            $image_id_1 = get_field('main_image_1', get_option('page_on_front')); // id картинки
-            if ($image_id_1) {
-                $image_url_1 = wp_get_attachment_url($image_id_1);
-            }
-            $image_id_2 = get_field('main_image_2', get_option('page_on_front')); // id картинки
-            if ($image_id_2) {
-                $image_url_2 = wp_get_attachment_url($image_id_2);
-            }
-            $image_id_3 = get_field('main_image_3', get_option('page_on_front')); // id картинки
-            if ($image_id_3) {
-                $image_url_3 = wp_get_attachment_url($image_id_3);
-            }
-            ?>
             <div class="top-img-container">
-                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_1);?>')"></div>
-                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_2);?>')"></div>
-                <div class="top-img-slide" style="background-image: url('<?php echo esc_url($image_url_3);?>')"></div>
+                <?php
+                $image_id_list = [get_field('main_image_1', get_option('page_on_front')), get_field('main_image_2', get_option('page_on_front')), get_field('main_image_3', get_option('page_on_front'))];
+                foreach ($image_id_list as $image_id) {
+                    if ($image_id) {
+                        $image_url = wp_get_attachment_url($image_id);
+                        echo '<div class="top-img-slide" style="background-image: url(' . esc_url($image_url) . ')"></div>';
+                    }
+                }
+                ?>
             </div>
         </div>
         <div id="top-container-right">
@@ -67,6 +59,7 @@
 
     <?php
     $booking_id = get_field('booking_image', get_option('page_on_front')); // id картинки
+    $booking_url = '';
     if ($booking_id) {
         $booking_url = wp_get_attachment_url($booking_id);
     }
@@ -304,27 +297,26 @@
 			<p class="tittle">Gallery</p>
 		</div>
 		<div id="gallery">
-			<img class="gallery-img" src="<?php echo wp_get_attachment_url(17); ?>" alt="gallery image">
-			<img class="gallery-img" src="<?php echo wp_get_attachment_url(16); ?>" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/2.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/3.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/4.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/5.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/6.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/7.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/8.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/9.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/10.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/11.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/12.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/13.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/14.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/15.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/16.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/17.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/18.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/19.jpg" alt="gallery image">
-			<img class="gallery-img" src="./images/gallery/20.jpg" alt="gallery image">
+            <?php
+            $str = 'page_on_front';
+            $gallery_id_list = [get_field('image_1', get_option($str)), get_field('image_2', get_option($str)),
+                get_field('image_3', get_option($str)),get_field('image_4', get_option($str)),
+                get_field('image_5', get_option($str)),get_field('image_6', get_option($str)),
+                get_field('image_7', get_option($str)),get_field('image_8', get_option($str)),
+                get_field('image_9', get_option($str)),get_field('image_10', get_option($str)),
+                get_field('image_11', get_option($str)),get_field('image_12', get_option($str)),
+                get_field('image_13', get_option($str)),get_field('image_14', get_option($str)),
+                get_field('image_15', get_option($str)),get_field('image_16', get_option($str)),
+                get_field('image_17', get_option($str)),get_field('image_18', get_option($str)),
+                get_field('image_19', get_option($str)),get_field('image_20', get_option($str)),
+                get_field('image_21', get_option($str)),];
+            foreach ($gallery_id_list as $gallery_id) {
+                if ($gallery_id) {
+                    $gallery_url = wp_get_attachment_url($gallery_id);
+                    echo '<img class="gallery-img" src="' . esc_url($gallery_url) . '" alt="gallery image"></img>';
+                }
+            }
+            ?>
 		</div>
 	</article>
 
