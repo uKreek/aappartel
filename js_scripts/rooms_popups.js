@@ -114,9 +114,3 @@ class RoomPopup {
 }
 
 const room_popups = new RoomPopup(aparts)
-
-console.log("now:", room_popups.now);
-console.log("apart id:", room_popups.apart_id);
-console.log("current:", room_popups.current)
-console.log("aparts:", room_popups.aparts)
-console.log("images:", room_popups.images)

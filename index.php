@@ -73,6 +73,21 @@
 		<button class="filled-button">Book now</button>
 	</article>
 
+    <?php
+    $onfront = get_option('page_on_front');
+    $feature_ids = [get_field('shower_image', $onfront), get_field('bathtub_image', $onfront), get_field('fridge_image', $onfront),
+        get_field('television_image', $onfront), get_field('stove_image', $onfront), get_field('kitchenette_image', $onfront),
+        get_field('hairdryer_image', $onfront), get_field('safe_image', $onfront), get_field('terrace_image', $onfront),
+        get_field('internet_image', $onfront), get_field('coffee_image', $onfront), get_field('waterheater_image', $onfront),
+        get_field('toaster_image', $onfront), get_field('microwave_image', $onfront), get_field('washcenter_image', $onfront),];
+
+    $feature_urls = [];
+    foreach ($feature_ids as $feature_id) {
+        if ($feature_id) {
+            array_push($feature_urls, wp_get_attachment_url($feature_id));
+        }
+    }
+    ?>
 
 	<article id="features-container"> <!-- Features -->
 		<div class="tittles" id="features-tittle"> <!-- Tittle -->
@@ -82,80 +97,80 @@
 
 		<div id="features">
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/shower.svg" alt="shower image">
-				<p>Shower</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[0])?>" alt="shower image">
+                <p>Shower</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/bathtub.svg" alt="bathtub image">
-				<p>Bathtub<br>partially</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[1])?>" alt="bathtub image">
+                <p>Bathtub<br>partially</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/fridge.svg" alt="fridge image">
-				<p>Fridge</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[2])?>" alt="fridge image">
+                <p>Fridge</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/television.svg" alt="television image">
-				<p>Television</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[3])?>" alt="television image">
+                <p>Television</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/stove.svg" alt="stove image">
-				<p>Stove</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[4])?>" alt="stove image">
+                <p>Stove</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/kitchenette.svg" alt="kitchenette image">
-				<p>Kitchenette</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[5])?>" alt="kitchenette image">
+                <p>Kitchenette</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/hair-dryer.svg" alt="hair dryer image">
-				<p>Hair dryer</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[6])?>" alt="hair dryer image">
+                <p>Hair dryer</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/safe.svg" alt="safe image">
-				<p>Safe</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[7])?>" alt="safe image">
+                <p>Safe</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/terrace.svg" alt="terrace image">
-				<p>Terrace<br>(partially)</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[8])?>" alt="terrace image">
+                <p>Terrace<br>(partially)</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/internet.svg" alt="internet image">
-				<p>Internet<br>(free of cost)</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[9])?>" alt="internet image">
+                <p>Internet<br>(free of cost)</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/coffee-machine.svg" alt="coffee machine image">
-				<p>Coffee<br>machine</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[10])?>" alt="coffee machine image">
+                <p>Coffee<br>machine</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/water-heater.svg" alt="water heater image">
-				<p>Water heater</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[11])?>" alt="water heater image">
+                <p>Water heater</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/toaster.svg" alt="toaster image">
-				<p>Toaster</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[12])?>" alt="toaster image">
+                <p>Toaster</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/microwave.svg" alt="microwave image">
-				<p>Microwave</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[13])?>" alt="microwave image">
+                <p>Microwave</p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="./svg/features/washcenter.svg" alt="wash center image">
-				<p>Washcenter<br>(during opening hours)</p>
-			</div>
+            <div class="feature">
+                <img class="feature-img" src="<?php echo esc_url($feature_urls[14])?>" alt="wash center image">
+                <p>Washcenter<br>(during opening hours)</p>
+            </div>
 
 		</div>
 	</article>
@@ -166,6 +181,28 @@
 			<p class="tittle">Rooms</p>
 		</div>
 		<div id="rooms">
+
+            <?php
+            $apartment_ids = [get_field('apartment_0', $onfront), get_field('apartment_1', $onfront),
+                get_field('apartment_2', $onfront), get_field('apartment_3', $onfront),
+                get_field('apartment_4', $onfront), get_field('apartment_family_0', $onfront),
+                get_field('apartment_family_1', $onfront), get_field('apartment_family_2', $onfront),
+                get_field('apartment_family_3', $onfront), get_field('apartment_raum_0', $onfront)];
+
+            $apartment_urls = [];
+            foreach ($apartment_ids as $apartment_id) {
+                if ($apartment_id) {
+                    array_push($apartment_urls, wp_get_attachment_url($apartment_id));
+                }
+            }
+            ?>
+            <script>
+                aparts = {
+                    "apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
+                    "apart1": ["./apartments/apartment-raum/0.jpg"],
+                    "apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart1.jpg", "./apartments/apartment-family/apart2.jpg", "./apartments/apartment-family/apart3.jpg"]
+                }
+            </script>
 
 			<div class="room" onclick="room_popups.show_popup('apart0')">
 				<img class="room-img" src="./apartments/apartment/0.jpg" alt="apartment image">
