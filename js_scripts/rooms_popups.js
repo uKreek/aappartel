@@ -1,8 +1,14 @@
-let aparts = {
-    "apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
-    "apart1": ["./apartments/apartment-raum/0.jpg"],
-    "apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart1.jpg", "./apartments/apartment-family/apart2.jpg", "./apartments/apartment-family/apart3.jpg"]
-}
+// let aparts = {
+//     "apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
+//     "apart1": ["./apartments/apartment-raum/0.jpg"],
+//     "apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart1.jpg", "./apartments/apartment-family/apart2.jpg", "./apartments/apartment-family/apart3.jpg"]
+// }
+let aparts = [];
+
+document.addEventListener('DOMContentLoaded', function (){
+    aparts = apartments;
+    console.log(aparts);
+})
 
 class RoomPopup {
 	constructor(aparts) {
@@ -12,7 +18,7 @@ class RoomPopup {
         this.apart_id = null
         this.current = null
         this.aparts = aparts
-        this.images = this.aparts["apart0"]
+        this.images = this.aparts['apart0']
         this.previous = document.getElementById('popup-room-previous')
         this.next = document.getElementById('popup-room-next')
         this.now = 0
@@ -25,13 +31,17 @@ class RoomPopup {
 			this.next.style.cursor = 'pointer';
 
 
-
+        console.log(this.images);
         this.now = 0;
+        console.log('now = ', this.now);
         this.apart_id = apart_id;
+        console.log('apart id =', apart_id);
         this.wrapper.style.display = 'flex';
         this.popup_room.style.display = 'flex';
         this.images = this.aparts[this.apart_id];
+        console.log(this.images);
         this.current = this.images[this.now];
+        console.log('current:', this.current);
 	    this.room_image.setAttribute('src', this.current);
 	    document.body.style.overflow = 'hidden';
 

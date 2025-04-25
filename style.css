@@ -83,7 +83,6 @@ table {
 
 html {
 	font-size: clamp(10px, 0.6vw, 40px);
-	/*font-size: 40px;*/
 }
 
 
@@ -272,18 +271,6 @@ h2 {
 	height: 6px;
 }
 
-#top_img {
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-direction: column;
-	gap: 0;
-	padding: 40px 40px;
-	height: 100vh;
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-}
 
 .top-img-container {
 	position: absolute;
@@ -314,6 +301,7 @@ h2 {
 	width: 60px;
 	height: 31px;
 	transition: var(--animation-speed);
+	border-radius: 4px;
 }
 
 
@@ -353,8 +341,9 @@ h2 {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: row;
-	gap: 40px;
+	gap: clamp(10px, 1vw, 40px);
 	z-index: 1;
+	padding: clamp(8px, 3vh, 40px);
 }
 
 #tittle-and-button {
@@ -715,6 +704,11 @@ h2 {
 	background-color: transparent;
 }
 
+#facebook-button img {
+	height: 100%;
+	width: 100%;
+}
+
 
 .rounded-button {
 	border-radius: 64px;
@@ -1068,6 +1062,7 @@ tbody > tr:nth-of-type(even) {
 	padding: 40px 60px;
 	background: var(--secondary-background-darker);
 	display: none;
+	border-radius: 8px;
 }
 
 .service-popup-tittle {
@@ -1104,7 +1099,6 @@ tbody > tr:nth-of-type(even) {
 
 .service-popup-center {
 	display: flex;
-
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -1114,24 +1108,24 @@ tbody > tr:nth-of-type(even) {
 
 .service-popup-left {
 	display: flex;
-
 	position: fixed;
 	top: 50%;
 	left: 20%;
 	transform: translate(-100%, -50%);
 	cursor: pointer;
-	filter: blur(4px);
+	/*filter: blur(4px);*/
+	user-select: none;
 }
 
 .service-popup-right {
 	display: flex;
-
 	position: fixed;
 	top: 50%;
 	left: 80%;
 	transform: translate(-0%, -50%);
 	cursor: pointer;
-	filter: blur(4px);
+	/*filter: blur(4px);*/
+	user-select: none;
 }
 
 .service-popup-left-hidden {

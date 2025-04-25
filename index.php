@@ -206,16 +206,9 @@
                 }
             }
             ?>
-            <script>
-                aparts = {
-                    "apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
-                    "apart1": ["./apartments/apartment-raum/0.jpg"],
-                    "apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart1.jpg", "./apartments/apartment-family/apart2.jpg", "./apartments/apartment-family/apart3.jpg"]
-                }
-            </script>
 
 			<div class="room" onclick="room_popups.show_popup('apart0')">
-				<img class="room-img" src="./apartments/apartment/0.jpg" alt="apartment image">
+				<img class="room-img" src="<?php echo esc_url($apartment_urls[0])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment</p>
 					<p class="room-description">French Bed 140 cm<br>Queen/King-Size-Bett 160/180cm <br>or Twin-Bed on demand</p>
@@ -223,7 +216,7 @@
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart1')">
-				<img class="room-img" src="./apartments/apartment-raum/0.jpg" alt="apartment image">
+				<img class="room-img" src="<?php echo esc_url($apartment_urls[5])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Aappart-raum</p>
 					<p class="room-description">Kingsize-Bed 160cm <br>or Twin-Bed <br>on demand</p>
@@ -231,7 +224,7 @@
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart2')">
-				<img class="room-img" src="./apartments/apartment-family/apart0.jpg" alt="apartment image">
+				<img class="room-img" src="<?php echo esc_url($apartment_urls[9])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment-family</p>
 					<p class="room-description">Two apartments <br>on <br>separate hall</p>
