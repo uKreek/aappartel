@@ -38,8 +38,8 @@ function aappartel_scripts() {
 //    ];
 
     $apartment_urls_0 = [esc_url($apartments_id_url[0]), esc_url($apartments_id_url[1]), esc_url($apartments_id_url[2]), esc_url($apartments_id_url[3]), esc_url($apartments_id_url[4])];
-    $apartment_urls_1 = [esc_url($apartments_id_url[5]), esc_url($apartments_id_url[6]), esc_url($apartments_id_url[7]), esc_url($apartments_id_url[8])];
-    $apartment_urls_2 = [esc_url($apartments_id_url[9])];
+    $apartment_urls_1 = [esc_url($apartments_id_url[9])];
+    $apartment_urls_2 = [esc_url($apartments_id_url[5]), esc_url($apartments_id_url[6]), esc_url($apartments_id_url[7]), esc_url($apartments_id_url[8])];
 
     wp_localize_script('rooms_popups', 'apartments', [
         'apart0' => $apartment_urls_0,

@@ -1,13 +1,8 @@
-// let aparts = {
-//     "apart0": ["./apartments/apartment/0.jpg", "./apartments/apartment/1.jpg", "./apartments/apartment/2.jpg", "./apartments/apartment/3.jpg", "./apartments/apartment/4.jpg"],
-//     "apart1": ["./apartments/apartment-raum/0.jpg"],
-//     "apart2": ["./apartments/apartment-family/apart0.jpg", "./apartments/apartment-family/apart1.jpg", "./apartments/apartment-family/apart2.jpg", "./apartments/apartment-family/apart3.jpg"]
-// }
-let aparts = [];
+let aparts = apartments;
 
 document.addEventListener('DOMContentLoaded', function (){
     aparts = apartments;
-    console.log(aparts);
+    console.log('aparts: ', aparts);
 })
 
 class RoomPopup {
