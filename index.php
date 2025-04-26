@@ -76,10 +76,10 @@
     }
     ?>
 
-	<article id="booking-container" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<?php echo esc_url($booking_url);?>') no-repeat center center / cover;")"> <!-- Book now -->
+	<article id="booking-container" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<?php echo esc_url($booking_url);?>') no-repeat center center / cover;"> <!-- Book now -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Booking</p>
+			<h3 class="tittle">Booking</h3 class="tittle">
 		</div>
 		<button class="filled-button">Book now</button>
 	</article>
@@ -102,7 +102,7 @@
 	<article id="features-container"> <!-- Features -->
 		<div class="tittles" id="features-tittle"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Features</p>
+			<h3 class="tittle">Features</h3 class="tittle">
 		</div>
 
 		<div id="features">
@@ -188,7 +188,7 @@
 	<article id="rooms-container"> <!-- Rooms -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Rooms</p>
+			<h3 class="tittle">Rooms</h3 class="tittle">
 		</div>
 		<div id="rooms">
 
@@ -211,7 +211,7 @@
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[0])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment</p>
-					<p class="room-description">French Bed 140 cm<br>Queen/King-Size-Bett 160/180cm <br>or Twin-Bed on demand</p>
+					<p class="room-description">French Bed 140 cm Queen/King-Size-Bett 160/180cm or Twin-Bed on demand</p>
 				</div>
 			</div>
 
@@ -219,7 +219,7 @@
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[5])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Aappart-raum</p>
-					<p class="room-description">Kingsize-Bed 160cm <br>or Twin-Bed <br>on demand</p>
+					<p class="room-description">Kingsize-Bed 160cm or Twin-Bed on demand</p>
 				</div>
 			</div>
 
@@ -227,7 +227,7 @@
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[9])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
 					<p class="room-tittle">Apartment-family</p>
-					<p class="room-description">Two apartments <br>on <br>separate hall</p>
+					<p class="room-description">Two apartments on separate hall</p>
 				</div>
 			</div>
 
@@ -237,7 +237,7 @@
 	<article id="service-container"> <!-- Service -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Service</p>
+			<h3 class="tittle">Service</h3 class="tittle">
 		</div>
 		<div id="services">
 
@@ -307,7 +307,7 @@
 <!--	<article id="pricing-container"> <!-- Pricing -->-->
 <!--		<div class="tittles">-->
 <!--			<div class="tittle-line"></div>-->
-<!--			<p class="tittle">Pricing</p>-->
+<!--			<h3 class="tittle">Pricing</h3 class="tittle">-->
 <!--		</div>-->
 <!--		<div id="pricing">-->
 <!--			<ul id="pricing-left-text">-->
@@ -349,7 +349,7 @@
 	<article id="gallery-container"> <!-- Gallery -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Gallery</p>
+			<h3 class="tittle">Gallery</h3 class="tittle">
 		</div>
 		<div id="gallery">
             <?php
@@ -378,7 +378,7 @@
 	<article id="contact-container"> <!-- Contact -->
 		<div class="tittles"> <!-- Tittle -->
 			<div class="tittle-line"></div>
-			<p class="tittle">Contact</p>
+			<h3 class="tittle">Contact</h3 class="tittle">
 		</div>
 		<div id="contact">
 
