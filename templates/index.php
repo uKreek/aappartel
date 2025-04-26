@@ -1,3 +1,10 @@
+<?php
+/*
+ * Template Name: Shablone
+ * Template Post Type: post, page, product
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
