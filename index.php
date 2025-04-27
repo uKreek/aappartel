@@ -441,7 +441,7 @@
 
 	<!-- Slider for room's popups -->
 
-	<div id="popup-room-wrapper" onclick="room_popups.hide()">
+	<div id="popup-room-wrapper" onclick="room_popups.hide()"></div>
 	
 	<div id="popup-room">
 		<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
@@ -454,7 +454,7 @@
 			<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
 		</div>
 	</div>
-    </div>
+
 
 
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
