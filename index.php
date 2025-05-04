@@ -40,7 +40,7 @@
             <!-- Images -->
             <div class="top-img-container">
                 <?php
-                $image_id_list = [get_field('main_image_1', get_option('page_on_front')), get_field('main_image_2', get_option('page_on_front')), get_field('main_image_3', get_option('page_on_front'))];
+                $image_id_list = [get_field('main_image_1', $onfront), get_field('main_image_2', $onfront), get_field('main_image_3', $onfront)];
                 foreach ($image_id_list as $image_id) {
                     if ($image_id) {
                         $image_url = wp_get_attachment_url($image_id);
@@ -52,8 +52,32 @@
         </div>
         <div id="top-container-right">
             <div id="top-container-right-text">
+
+                <?php
+                $args = array(
+                    'post_type'      => 'page',
+                    'meta_key'       => '_wp_page_template',
+                    'meta_value'     => 'templates/template-settings-page.php',
+                    'posts_per_page' => 1,
+                    'fields'         => 'ids', // Получаем только ID
+                );
+
+                $pages_with_template = get_posts( $args );
+                $price_page_id = 0;
+
+                if ( ! empty( $pages_with_template ) ) {
+                    $price_page_id = $pages_with_template[0];
+                }
+
+                // Если ID страницы найден, получаем значение поля ACF
+                $price_title = '';
+                if ( $price_page_id ) {
+                    $price_title = get_field( 'title_price', $price_page_id );
+                }
+                ?>
+
                 <h1>Apartment</h1>
-                <h2>from 99$</h2>
+                <h2><?php echo esc_html($price_title); ?></h2>
             </div>
             <div id="top-container-right-nav">
                 <div class="image-slider-container">
@@ -311,47 +335,29 @@
 		</div>
 	</article>
 
-<!--	<article id="pricing-container"> <!-- Pricing -->-->
-<!--		<div class="tittles">-->
-<!--			<div class="tittle-line"></div>-->
-<!--			<h3 class="tittle">Pricing</h3 class="tittle">-->
-<!--		</div>-->
-<!--		<div id="pricing">-->
-<!--			<ul id="pricing-left-text">-->
-<!--				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>-->
-<!--				<li>Cot (maximum two per room): 10,00 Euro per night</li>-->
-<!--				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>-->
-<!--				<li>Children in parents bed free of charge</li>-->
-<!--				<li>Apartment with terrace: 10,00 € per night extra charge</li>-->
-<!--				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>-->
-<!--				<li>WLAN free of charge in the Apartments</li>-->
-<!--				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>-->
-<!--				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>-->
-<!--			</ul>-->
-<!--			<table>-->
-<!--				<thead>-->
-<!--					<tr>-->
-<!--						<th scope="col">Feature name</th>-->
-<!--						<th scope="col">Price</th>-->
-<!--					</tr>-->
-<!--				</thead>-->
-<!--				<tbody>-->
-<!--					<tr>-->
-<!--						<th scope="row">Cot (maximum two per room)</th>-->
-<!--						<td>10€ / night</td>-->
-<!--					</tr>-->
-<!--					<tr>-->
-<!--						<th scope="row">Babybed/cot (maximum two per room) for children up to 12 years</th>-->
-<!--						<td>10€ / night</td>-->
-<!--					</tr>-->
-<!--				</tbody>-->
-<!--			</table>-->
-<!--			<div id="pricing-terms">-->
-<!--				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>-->
-<!--				<button class="filled-button">Book now</button>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</article>-->
+	<article id="pricing-container"> <!-- Pricing -->
+		<div class="tittles">
+			<div class="tittle-line"></div>
+			<h3 class="tittle">Pricing</h3 class="tittle">
+		</div>
+		<div id="pricing">
+			<ul id="pricing-left-text">
+				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
+				<li>Cot (maximum two per room): 10,00 Euro per night</li>
+				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>
+				<li>Children in parents bed free of charge</li>
+				<li>Apartment with terrace: 10,00 € per night extra charge</li>
+				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
+				<li>WLAN free of charge in the Apartments</li>
+				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
+				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>
+			</ul>
+			<div id="pricing-terms">
+				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>
+				<button class="filled-button">Book now</button>
+			</div>
+		</div>
+	</article>
 
 	<article id="gallery-container"> <!-- Gallery -->
 		<div class="tittles"> <!-- Tittle -->
