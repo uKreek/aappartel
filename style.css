@@ -158,7 +158,7 @@ article {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: clamp(40px, 10vh, 80px);
+	gap: clamp(40px, 5vh, 80px);
 	padding: clamp(50px, 10vh, 110px) clamp(15px, 4vw, 40px);
 }
 
