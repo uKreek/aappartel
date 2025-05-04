@@ -1065,7 +1065,7 @@ tbody > tr:nth-of-type(even) {
 .service-popup-tittle {
 	font-family: var(--font-family), serif;
 	font-weight: 700;
-	font-size: 4.4rem;
+	font-size: 3rem;
 	color: var(--white);
 }
 
