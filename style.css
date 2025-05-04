@@ -222,14 +222,6 @@ h3 {
 }
 
 
-
-
-
-
-
-
-
-
 .image-slider-container{
 	/*position: absolute;*/
 	display: flex;
@@ -293,7 +285,7 @@ h3 {
 	transition: transform 1s ease;
 }
 
-#logo {
+#logo { /*TODO fix hardcode*/
 	cursor: pointer;
 	width: 245px;
 	height: 64px;
@@ -305,7 +297,7 @@ h3 {
 	width: 60px;
 	height: 31px;
 	transition: var(--animation-speed);
-	border-radius: 4px;
+	/*border-radius: 4px;*/
 }
 
 
