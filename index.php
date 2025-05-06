@@ -59,7 +59,7 @@
                     'meta_key'       => '_wp_page_template',
                     'meta_value'     => 'templates/template-settings-page.php',
                     'posts_per_page' => 1,
-                    'fields'         => 'ids', // Получаем только ID
+                    'fields'         => 'ids',
                 );
 
                 $pages_with_template = get_posts( $args );
@@ -69,10 +69,16 @@
                     $price_page_id = $pages_with_template[0];
                 }
 
-                // Если ID страницы найден, получаем значение поля ACF
+
                 $price_title = '';
+                $cot_price = '';
+                $babybed_price = '';
+                $apartment_with_terrace = '';
                 if ( $price_page_id ) {
-                    $price_title = get_field( 'title_price', $price_page_id );
+                    $price_title = get_field('title_price', $price_page_id );
+                    $cot_price = get_field('cot_price', $price_page_id );
+                    $babybed_price = get_field('baby_price', $price_page_id );
+                    $apartment_with_terrace = get_field('apartment_with_terrace', $price_page_id );
                 }
                 ?>
 
@@ -343,10 +349,10 @@
 		<div id="pricing">
 			<ul id="pricing-left-text">
 				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
-				<li>Cot (maximum two per room): 10,00 Euro per night</li>
-				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10,00 Euro per night</li>
+				<li>Cot (maximum two per room): <?php echo esc_html($cot_price); ?> Euro per night</li>
+				<li>Babybed/cot (maximum two per room) for children up to 12 years: <?php echo esc_html($babybed_price); ?> Euro per night</li>
 				<li>Children in parents bed free of charge</li>
-				<li>Apartment with terrace: 10,00 € per night extra charge</li>
+				<li>Apartment with terrace: <?php echo esc_html($apartment_with_terrace); ?> € per night extra charge</li>
 				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
 				<li>WLAN free of charge in the Apartments</li>
 				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
