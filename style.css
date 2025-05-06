@@ -221,6 +221,10 @@ h3 {
 	gap: clamp(4px, 3vh, 20px);
 }
 
+#top-container-right-nav{
+	height: 100%;
+}
+
 
 .image-slider-container{
 	/*position: absolute;*/
@@ -231,6 +235,25 @@ h3 {
 	justify-content: flex-start;
 	align-items: flex-end;
 	*/
+	height: 100%;
+	margin-top: 10px;
+}
+
+.slider-top-element{
+	width: 28px;
+	height: 28px;
+	align-self: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#slider-top-image{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .slider-middle-element{
@@ -902,7 +925,6 @@ h3 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	overflow: hidden;
 }
 
 
@@ -1216,6 +1238,42 @@ tbody > tr:nth-of-type(even) {
 	display: none;
 }
 
+.nav-container{
+	position: fixed;
+	background: var(--white);
+	border-radius: 16px;
+	display: none;
+	padding: 2rem;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 10%;
+	top: 0;
+	right: 0;
+}
+
+.nav-close-button{
+	cursor: pointer;
+	height: 4rem;
+	width: 4rem;
+	display: flex;
+	align-self: flex-end;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nav-buttons-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-button{
+	font-family: var(--font-family);
+	font-size: 1.8rem;
+	margin: 0.8rem;
+	text-decoration: none;
+	color: var(--dark);
+}
 
 
 

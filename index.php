@@ -87,7 +87,17 @@
             </div>
             <div id="top-container-right-nav">
                 <div class="image-slider-container">
-                    <div class="slider-top-element"></div>
+
+                    <?php
+                    $menu_image = get_field('menu_image', $onfront);
+
+                    if ($menu_image) {
+                        $menu_url = wp_get_attachment_url($menu_image);
+                    } ?>
+
+                    <div class="slider-top-element">
+                        <div id="slider-top-image" style="background-image: url('<?php echo esc_url($menu_url); ?>')" onclick="navigation.show_navigation()"></div>
+                    </div>
                     <div class="slider-middle-element">
                         <div class="slider-button" data-index="0">
                             <div class="slider-dot"></div>
@@ -451,8 +461,29 @@
 		</div>
 	</footer>
 
-	<!-- Slider for room's popups -->
+    <?php
+    $nav_close_id = get_field('nav_close_image', $onfront);
 
+    if ($nav_close_id) {
+        $nav_close_url = wp_get_attachment_url($nav_close_id);
+    } ?>
+
+    <!-- Navigation popup -->
+    <div id="nav_container" class="nav-container">
+        <div class="nav-close-button" style="background-image: url('<?php echo esc_url($nav_close_url); ?>')" onclick="navigation.hide_navigation()"></div>
+        <div class="nav-buttons-container">
+            <a class="nav-button" href="#features-container">Features</a>
+            <a class="nav-button" href="#rooms-container">Rooms</a>
+            <a class="nav-button" href="#service-container">Service</a>
+            <a class="nav-button" href="#pricing-container">Pricing</a>
+            <a class="nav-button" href="#gallery-container">Gallery</a>
+            <a class="nav-button" href="#contact-container">Contact us</a>
+            <a class="nav-button" href="#footer-container">Our partners</a>
+            <a class="nav-button" href="#footer-container">About</a>
+        </div>
+    </div>
+
+	<!-- Slider for room's popups -->
 	<div id="popup-room-wrapper" onclick="room_popups.hide()"></div>
 	
 	<div id="popup-room">
@@ -461,14 +492,13 @@
 			<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
 			<div class="popup-room-text">
 				<p class="popup-room-tittle">Apartment</p>
-				<p class="popup-room-description">French bed French bed French bed</p>
+				<p class="popup-room-description">Images</p>
 			</div>
 			<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
 		</div>
 	</div>
 
-
-
+    <!-- Slider for service's popups -->
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
 
 	<div class="service-popup" id="service-popup-kitchenette" onclick="carousel.call('service-popup-kitchenette')">
@@ -494,7 +524,6 @@
 		<p class="service-popup-text">Of course there are towels and bed linen in your apartment</p>
 	</div>
 
-
 	<div class="service-popup" id="service-popup-internet" onclick="carousel.call('service-popup-internet')">
 		<p class="service-popup-tittle">Internet</p>
 		<p class="service-popup-text">High Speed Wireless LAN for free</p>
@@ -505,7 +534,7 @@
 		<p class="service-popup-text">No pets allowed</p>
 	</div>
 
-
+    <!-- Contact us popup -->
 	<div id="contact-us-background" onclick="contact_us_popup.hide_contact_us()"></div>
 	<div id="contact-us-popup">
 		<div id="contact-us-wrapper">
