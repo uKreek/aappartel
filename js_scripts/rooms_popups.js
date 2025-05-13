@@ -118,4 +118,8 @@ class RoomPopup {
     }
 }
 
+document.getElementById('popup-room').addEventListener('click', (event) => {
+    event.stopPropagation();
+});
+
 const room_popups = new RoomPopup(aparts)

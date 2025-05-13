@@ -430,7 +430,9 @@
 						<a class="link" href="geo:52.02367129984142, 8.535502252825385"><p>Friedrich-Verleger Straße 1, 33602 Bielefeld</p></a>
 					</div>
 					<div id="contact-buttons">
-						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185"><button class="filled-button rounded-button" id="facebook-button" ><img src="<?php echo esc_url($contact_urls[0])?>" alt="facebook logo"></button></a>
+						<a class="filled-button rounded-button" href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185">
+                            <button class="filled-button rounded-button">Facebook</button>
+                        </a>
 						<button class="filled-button rounded-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
 						<button class="filled-button rounded-button">See videos</button>
 						<button class="filled-button rounded-button">info@aappartel.de</button>
@@ -484,19 +486,21 @@
     </div>
 
 	<!-- Slider for room's popups -->
-	<div id="popup-room-wrapper" onclick="room_popups.hide()"></div>
-	
-	<div id="popup-room">
-		<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
-		<div class="popup-room-bottom">
-			<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
-			<div class="popup-room-text">
-				<p class="popup-room-tittle">Apartment</p>
-				<p class="popup-room-description">Images</p>
-			</div>
-			<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
-		</div>
-	</div>
+	<div id="popup-room-wrapper" onclick="room_popups.hide()">
+        <div id="popup-room">
+            <div class="popup-img-wrapper">
+                <img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
+            </div>
+            <div class="popup-room-bottom">
+                <button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
+                <div class="popup-room-text">
+                    <p class="popup-room-tittle">Apartment</p>
+                    <p class="popup-room-description">Images</p>
+                </div>
+                <button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Slider for service's popups -->
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
