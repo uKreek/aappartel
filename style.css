@@ -248,6 +248,10 @@ h3 {
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor: pointer;
+	@media (pointer: coarse) and (hover: none){
+		width: 64px;
+		height: 64px;
+	}
 }
 
 #slider-top-image{
@@ -271,6 +275,7 @@ h3 {
 	border-color: var(--line);
 	border-width: 1px;
 	border-style: solid;
+	opacity: 50%;
 	margin-top: 7px;
 	margin-bottom: 7px;
 	display: flex;
@@ -279,10 +284,17 @@ h3 {
 	align-content: center;
 	cursor: pointer;
 	transition: transform 0.5s;
+
+	@media (pointer: coarse) and (hover: none){
+		width: 64px;
+		height: 64px;
+		border-width: 3px;
+	}
 }
 
 .slider-button.active {
-	border-style: dashed;
+	border-style: solid;
+	opacity: 100%;
 	transition: transform 0.5s;
 }
 
@@ -562,7 +574,6 @@ h3 {
 
 #pricing-container {
 	background: var(--secondary-background-darker);
-	padding: 40px 20px;
 }
 
 #pricing-container .tittle {

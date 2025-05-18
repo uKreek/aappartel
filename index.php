@@ -82,7 +82,7 @@
                 }
                 ?>
 
-                <h1>Apartment</h1>
+                <h1 style="text-shadow: 1px 1px 3px #000;">Apartment</h1>
                 <h2><?php echo esc_html($price_title); ?></h2>
             </div>
             <div id="top-container-right-nav">
@@ -430,7 +430,7 @@
 						<a class="link" href="geo:52.02367129984142, 8.535502252825385"><p>Friedrich-Verleger Straße 1, 33602 Bielefeld</p></a>
 					</div>
 					<div id="contact-buttons">
-						<a class="filled-button rounded-button" href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185">
+						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
                             <button class="filled-button rounded-button">Facebook</button>
                         </a>
 						<button class="filled-button rounded-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
