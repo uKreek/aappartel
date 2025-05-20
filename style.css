@@ -136,6 +136,16 @@ html {
 	scale: 1.1;
 }
 
+
+.svg-button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+}
+
+
 .tittles {
 	display: flex;
 	align-items: center;
@@ -200,7 +210,9 @@ h3 {
 	flex-direction: row;
 	gap: clamp(10px, 3vw, 60px);
 	width: 100%;
+	max-width: 100%;
 	height: 100vh;
+	overflow: hidden;
 }
 
 #top-container-preview-image {
@@ -288,12 +300,6 @@ h3 {
 	align-content: center;
 	cursor: pointer;
 	transition: transform 0.5s;
-
-	@media (pointer: coarse) and (hover: none){
-		width: 64px;
-		height: 64px;
-		border-width: 3px;
-	}
 }
 
 .slider-button.active {
@@ -485,10 +491,10 @@ h3 {
 
 
 .room-img {
-	height: clamp(200px, 40vh, 300px); /* Адаптивная высота */
+	height: clamp(200px, 40vh, 300px);
 	width: 100%;
-	object-fit: cover; /* Изображение покрывает область */
-	display: block; /* Уберет возможный нижний отступ */
+	object-fit: cover;
+	display: block;
 }
 
 .room-tittle-and-description {
@@ -496,9 +502,9 @@ h3 {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: clamp(15px, 2vh, 25px); /* Адаптивный gap */
-	padding: clamp(10px, 5vw, 30px); /* Адаптивные отступы */
-	flex-grow: 1; /* Позволит этому блоку занять доступное пространство по высоте */
+	padding: clamp(10px, 5vw, 30px);
+	flex-grow: 1;
+	gap: 6px;
 }
 
 .room-tittle {
@@ -515,6 +521,7 @@ h3 {
 	font-size: 2rem;
 	color: var(--line);
 	line-height: 1.5;
+	opacity: 0.75;
 }
 
 #service-container {
@@ -547,8 +554,8 @@ h3 {
 }
 
 .service:hover {
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Улучшенная тень */
-	transform: translateY(-5px); /* Эффект приподнимания */
+	box-shadow: 0 6px 16px rgba(68, 41, 0, 0.103);
+	transform: translateY(-5px);
 }
 
 .service-img {
@@ -649,7 +656,6 @@ h3 {
 		min-width: auto; /* Сбрасываем min-width */
 		width: 100%; /* Элементы занимают всю доступную ширину контейнера */
 		max-width: none; /* Сбрасываем max-width, если он мешает */
-		font-size: 2rem; /* Пример: уменьшаем размер шрифта на маленьких экранах */
 		padding: 0 10px; /* Добавляем небольшие горизонтальные отступы */
 		box-sizing: border-box;
 	}
@@ -663,10 +669,6 @@ h3 {
 	.filled-button {
 		width: 100%; /* Кнопка может стать шире */
 		max-width: 300px; /* Ограничиваем максимальную ширину кнопки */
-	}
-
-	#pricing-container .tittle {
-		font-size: 3rem; /* Пример: уменьшаем размер заголовка */
 	}
 }
 
@@ -726,7 +728,7 @@ h3 {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: clamp(40px, 8vh, 80px); /* Адаптивный gap */
+	gap: clamp(40px, 8vh, 80px);
 	max-width: 1600px;
 	width: 100%;
 }
@@ -746,8 +748,8 @@ h3 {
 	align-items: stretch;
 	justify-content: flex-start;
 	flex-direction: column;
-	gap: clamp(25px, 5vh, 40px); /* Адаптивный gap */
-    flex: 1 1 50%; /* Занимает половину, гибкий */
+	gap: clamp(25px, 5vh, 40px);
+    flex: 1 1 50%;
     min-width: 280px;
 }
 
@@ -802,17 +804,16 @@ h3 {
 	justify-content: flex-start;
 	flex-direction: column;
 	gap: clamp(15px, 3vh, 30px);
-    flex: 1 1 40%; /* Занимает меньше места, гибкий */
+    flex: 1 1 40%;
     min-width: 280px;
 }
 
 #terminal-img {
-	/* width: 522px; height: 370px; - Убираем */
-    width: 100%; /* На всю ширину */
+  width: 100%; 
 	height: auto;
 	max-height: 50vh;
-   object-fit: cover;
-   border-radius: 8px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 #terminal-text {
@@ -881,7 +882,7 @@ h3 {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	flex-direction: row;
 	gap: clamp(15px, 3vw, 30px);
 	order: 1
@@ -907,7 +908,7 @@ h3 {
 	box-sizing: border-box;
 	align-items: center;
 	@media (pointer: coarse) and (hover: none) {
-		padding: 10vw;
+		padding: 20vw 0;
 	}
 }
 
@@ -918,7 +919,7 @@ h3 {
 	margin: 0 auto;
 	height: 100%;
 	border: 1px solid #ccc;
-	border-radius: 12px;
+	/* border-radius: 12px; */
 	overflow: hidden;
 	background: #fff;
 }
@@ -1248,8 +1249,9 @@ tbody > tr:nth-of-type(even) {
 	display: none;
 }
 
-.nav-container{
+.nav-container {
 	position: fixed;
+	align-items: flex-end;
 	background: var(--white);
 	border-radius: 16px;
 	display: none;
@@ -1258,32 +1260,24 @@ tbody > tr:nth-of-type(even) {
 	flex-direction: column;
 	top: 10px;
 	right: 10px;
-	box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.20);
+	box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nav-close-button{
-	cursor: pointer;
-	height: 4rem;
-	width: 4rem;
-	display: flex;
-	align-self: flex-end;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-}
 
-.nav-buttons-container{
+.nav-buttons-container {
 	display: flex;
 	flex-direction: column;
 }
 
-.nav-button{
+.nav-button {
 	font-family: var(--font-family);
-	font-size: 1.8rem;
+	font-size: 2.2rem;
 	margin: 0.8rem;
 	text-decoration: none;
 	color: var(--dark);
+	-webkit-tap-highlight-color: transparent;
 }
+
 
 
 
