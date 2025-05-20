@@ -18,7 +18,10 @@ images = aparts["apart0"];
 					entry.target.style.width = '130px';
 				}
 			});
-		});
+		}, {
+			threshold: 1
+		}
+	);
 
 		observer.observe(rects[i]);
 	}
@@ -38,6 +41,8 @@ images = aparts["apart0"];
 					entry.target.style.scale = '1 1';
 				}
 			});
+		}, {
+			threshold: 1
 		});
 
 		observer.observe(rects[i]);
