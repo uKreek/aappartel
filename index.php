@@ -18,26 +18,50 @@
 </head>
 
 <body>
+	<header>
+		<?php
+		$onfront = get_option('page_on_front');
+
+		$main_ids = [get_field('logo_image', $onfront), get_field('deutch_image', $onfront), get_field('english_image', $onfront)];
+		$main_urls = [];
+		foreach ($main_ids as $main_id) {
+			if ($main_id) {array_push($main_urls, wp_get_attachment_url($main_id));}
+		}
+		?>
+
+		<div id="langs-container">
+			<img class="lang" id="de-lang" src="<?php echo esc_url($main_urls[1])?>" alt="de">
+			<img class="lang" id="en-lang" src="<?php echo esc_url($main_urls[2])?>" alt="en">
+		</div>
+
+		<img id="logo" src="<?php echo esc_url($main_urls[0])?>" alt="Logo">
+
+		<button class="svg-button" onclick="navigation.show_navigation()">
+			<svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<mask id="mask0_523_713" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="13" width="44" height="18">
+					<path d="M44 13H0V30.1111H44V13Z" fill="white" />
+				</mask>
+				<g mask="url(#mask0_523_713)">
+					<path d="M0 14.5569L44 14.5569" stroke="#2A2722" stroke-width="2.93333" />
+					<path d="M44 27.9197L0 27.9198" stroke="#2A2722" stroke-width="2.93333" />
+				</g>
+			</svg>
+		</button>
+	</header>
+
+
+	<article id="landing-container">
+		<img class="landing-container-img" alt="TEMPORARY PLACEHOLDER">
+		<div id="landing-container-text">
+			<h1>Apartment</h1>
+			<h2>from 99$</h2>
+		</div>
+	</article>
+
+
+
 	<header id="top-container"> <!-- Top -->
 		<div id="top-container-preview-image">
-		   <div id="logo-and-langs">
-
-			   <?php
-			   $onfront = get_option('page_on_front');
-
-			   $main_ids = [get_field('logo_image', $onfront), get_field('deutch_image', $onfront), get_field('english_image', $onfront)];
-			   $main_urls = [];
-			   foreach ($main_ids as $main_id) {
-				   if ($main_id) {array_push($main_urls, wp_get_attachment_url($main_id));}
-			   }
-			   ?>
-
-				<img id="logo" src="<?php echo esc_url($main_urls[0])?>" alt="Logo">
-				<div id="langs-container">
-					<img class="lang" id="de-lang" src="<?php echo esc_url($main_urls[1])?>" alt="de">
-					<img class="lang" id="en-lang" src="<?php echo esc_url($main_urls[2])?>" alt="en">
-				</div>
-			</div>
 			<!-- Images -->
 			<div class="top-img-container">
 				<?php
@@ -436,11 +460,11 @@
 					</div>
 					<div id="contact-buttons">
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
-							<button class="filled-button rounded-button">Facebook</button>
+							<button class="outlined-button">Facebook</button>
 						</a>
-						<button class="filled-button rounded-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
-						<button class="filled-button rounded-button">See videos</button>
-						<button class="filled-button rounded-button">info@aappartel.de</button>
+						<button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
+						<button class="outlined-button">See videos</button>
+						<button class="outlined-button">info@aappartel.de</button>
 					</div>
 				</div>
 				<div id="contact-terminal">
@@ -479,8 +503,8 @@
 	<nav id="nav_container" class="nav-container">
 		<button class="svg-button" onclick="navigation.hide_navigation()">
 			<svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect x="12.2725" y="13.4539" width="1.7561" height="35.122" transform="rotate(-45 12.2725 13.4539)" fill="#2A2722" />
-				<rect x="12.8936" y="38.2888" width="1.7561" height="35.122" transform="rotate(-135 12.8936 38.2888)" fill="#2A2722" />
+				<rect x="12" y="13.4143" width="2" height="35.122" transform="rotate(-45 12 13.4143)" fill="#2A2722" />
+				<rect x="12.8936" y="38.2888" width="2" height="35.122" transform="rotate(-135 12.8936 38.2888)" fill="#2A2722" />
 			</svg>
 		</button>
 		<div class="nav-buttons-container">
