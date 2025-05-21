@@ -49,12 +49,54 @@
 		</button>
 	</header>
 
+    <?php
+    $args = array(
+        'post_type'      => 'page',
+        'meta_key'       => '_wp_page_template',
+        'meta_value'     => 'templates/template-settings-page.php',
+        'posts_per_page' => 1,
+        'fields'         => 'ids',
+    );
+
+    $pages_with_template = get_posts( $args );
+    $price_page_id = 0;
+
+    if ( ! empty( $pages_with_template ) ) {
+        $price_page_id = $pages_with_template[0];
+    }
+
+
+    $price_title = '';
+    $cot_price = '';
+    $babybed_price = '';
+    $apartment_with_terrace = '';
+    if ( $price_page_id ) {
+        $price_title = get_field('title_price', $price_page_id );
+        $cot_price = get_field('cot_price', $price_page_id );
+        $babybed_price = get_field('baby_price', $price_page_id );
+        $apartment_with_terrace = get_field('apartment_with_terrace', $price_page_id );
+    }
+    ?>
 
 	<article id="landing-container">
-		<img class="landing-container-img" alt="TEMPORARY PLACEHOLDER">
+		<!--<img class="landing-container-img" alt="TEMPORARY PLACEHOLDER">-->
+        <div id="top-container-preview-image">
+            <!-- Images -->
+            <div class="top-img-container">
+                <?php
+                $image_id_list = [get_field('main_image_1', $onfront), get_field('main_image_2', $onfront), get_field('main_image_3', $onfront)];
+                foreach ($image_id_list as $image_id) {
+                    if ($image_id) {
+                        $image_url = wp_get_attachment_url($image_id);
+                        echo '<div class="top-img-slide" style="background-image: url(' . esc_url($image_url) . ')"></div>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
 		<div id="landing-container-text">
 			<h1>Apartment</h1>
-			<h2>from 99$</h2>
+            <h2><?php echo esc_html($price_title); ?></h2>
 		</div>
 	</article>
 
@@ -77,35 +119,6 @@
 		</div>
 		<div id="top-container-right">
 			<div id="top-container-right-text">
-
-				<?php
-				$args = array(
-					'post_type'      => 'page',
-					'meta_key'       => '_wp_page_template',
-					'meta_value'     => 'templates/template-settings-page.php',
-					'posts_per_page' => 1,
-					'fields'         => 'ids',
-				);
-
-				$pages_with_template = get_posts( $args );
-				$price_page_id = 0;
-
-				if ( ! empty( $pages_with_template ) ) {
-					$price_page_id = $pages_with_template[0];
-				}
-
-
-				$price_title = '';
-				$cot_price = '';
-				$babybed_price = '';
-				$apartment_with_terrace = '';
-				if ( $price_page_id ) {
-					$price_title = get_field('title_price', $price_page_id );
-					$cot_price = get_field('cot_price', $price_page_id );
-					$babybed_price = get_field('baby_price', $price_page_id );
-					$apartment_with_terrace = get_field('apartment_with_terrace', $price_page_id );
-				}
-				?>
 
 				<h1>Apartment</h1>
 				<h2><?php echo esc_html($price_title); ?></h2>
@@ -462,7 +475,7 @@
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
-						<button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
+<!--						<button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>-->
 						<button class="outlined-button">See videos</button>
 						<button class="outlined-button">info@aappartel.de</button>
 					</div>
