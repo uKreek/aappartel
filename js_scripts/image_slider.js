@@ -1,7 +1,7 @@
 class Slider {
     constructor() {
-        this.currentIndex = 0; // начинаем с первого слайда
-        this.slides = document.querySelectorAll('.top-img-slide');
+        this.currentIndex = 0;
+        this.slides = document.querySelectorAll('.landing-image-slide');
         //this.buttons = document.querySelectorAll('.slider-button');
 
         this.init();
@@ -10,41 +10,46 @@ class Slider {
     init() {
         //this.addEventListeners();
         this.startAutoSlide();
-        this.updateActiveButton();
+        //this.updateActiveButton();
     }
 
-    // добавление листенеров для кнопок
-    // addEventListeners() {
-    //     this.buttons.forEach(button => {
-    //         button.addEventListener('click', () => {
-    //             const index = parseInt(button.getAttribute('data-index'));
-    //             this.changeSlide(index);
-    //         });
-    //     });
-    // }
+    /*
+    adding listeners for buttons
+    addEventListeners() {
+        this.buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const index = parseInt(button.getAttribute('data-index'));
+                this.changeSlide(index);
+            });
+        });
+    }
+    */
 
-    // зменение текущего изображения по индексу
+    // changing current image by index
     changeSlide(index) {
-        this.currentIndex = index; // переход к следующему слайду
-        const offset = -this.currentIndex * 100; // смещение для слайдов
+        this.currentIndex = index;
+
+        const offset = -this.currentIndex * 100;
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].style.transform = `translateX(${offset}%)`;
         }
-        this.updateActiveButton();
+        //this.updateActiveButton();
     }
 
-    // выделяет кнопку, соответствующую картинке по индексу
-    // updateActiveButton() {
-    //     this.buttons.forEach((button, i) => {
-    //         if (i === this.currentIndex) {
-    //             button.classList.add('active');
-    //         } else {
-    //             button.classList.remove('active');
-    //         }
-    //     });
-    // }
+    /*
+    selects the button corresponding to the image by index
+    updateActiveButton() {
+        this.buttons.forEach((button, i) => {
+            if (i === this.currentIndex) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+    */
 
-    // автоматическая прокрутка картинок
+    // automatic scrolling of pictures
     startAutoSlide() {
         setInterval(() => {
             this.currentIndex = (this.currentIndex + 1) % this.slides.length; // Переход к следующему слайду
@@ -55,6 +60,6 @@ class Slider {
 
 const image_slider = new Slider();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     image_slider;
 });

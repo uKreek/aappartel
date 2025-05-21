@@ -80,15 +80,15 @@
 
 	<article id="landing-container">
 		<!--<img class="landing-container-img" alt="TEMPORARY PLACEHOLDER">-->
-        <div id="top-container-preview-image">
+        <div id="landing-container-divider">
             <!-- Images -->
-            <div class="top-img-container">
+            <div class="landing-container-divider-images">
                 <?php
                 $image_id_list = [get_field('main_image_1', $onfront), get_field('main_image_2', $onfront), get_field('main_image_3', $onfront)];
                 foreach ($image_id_list as $image_id) {
                     if ($image_id) {
                         $image_url = wp_get_attachment_url($image_id);
-                        echo '<div class="top-img-slide" style="background-image: url(' . esc_url($image_url) . ')"></div>';
+                        echo '<div class="landing-image-slide" style="background-image: url(' . esc_url($image_url) . ')"></div>';
                     }
                 }
                 ?>
@@ -99,62 +99,6 @@
             <h2><?php echo esc_html($price_title); ?></h2>
 		</div>
 	</article>
-
-
-
-	<header id="top-container"> <!-- Top -->
-		<div id="top-container-preview-image">
-			<!-- Images -->
-			<div class="top-img-container">
-				<?php
-				$image_id_list = [get_field('main_image_1', $onfront), get_field('main_image_2', $onfront), get_field('main_image_3', $onfront)];
-				foreach ($image_id_list as $image_id) {
-					if ($image_id) {
-						$image_url = wp_get_attachment_url($image_id);
-						echo '<div class="top-img-slide" style="background-image: url(' . esc_url($image_url) . ')"></div>';
-					}
-				}
-				?>
-			</div>
-		</div>
-		<div id="top-container-right">
-			<div id="top-container-right-text">
-
-				<h1>Apartment</h1>
-				<h2><?php echo esc_html($price_title); ?></h2>
-			</div>
-			<div id="top-container-right-nav">
-				<div class="image-slider-container">
-
-					<?php
-					$menu_image = get_field('menu_image', $onfront);
-
-					if ($menu_image) {
-						$menu_url = wp_get_attachment_url($menu_image);
-					} ?>
-
-
-						<button class="svg-button" onclick="navigation.show_navigation()">
-							<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M30 1H0" stroke="#2A2722" stroke-width="2" />
-								<path d="M30 11H0" stroke="#2A2722" stroke-width="2" />
-							</svg>
-						</button>
-					<div class="slider-middle-element">
-						<div class="slider-button" data-index="0">
-							<div class="slider-dot"></div>
-						</div>
-						<div class="slider-button" data-index="1">
-							<div class="slider-dot"></div>
-						</div>
-						<div class="slider-button" data-index="2">
-							<div class="slider-dot"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
 
 
 	<?php

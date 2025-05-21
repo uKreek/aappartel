@@ -69,7 +69,6 @@ table {
 
 
 
-
 :root {
 	--white: #ffffff;
 	--line: #2A2722;
@@ -131,8 +130,6 @@ html {
 	transition: var(--animation-speed);
 	border-radius: 0;
 }
-
-
 .filled-button:hover {
 	scale: 1.1;
 }
@@ -155,15 +152,12 @@ html {
 	gap: 30px;
 }
 
-
-
 .tittle-line {
 	width: 0;
 	height: 3px;
 	background: var(--background);
 	transition: 1s;
 }
-
 
 
 article {
@@ -219,7 +213,6 @@ header {
 }
 
 
-
 #landing-container {
 	display: flex;
 	flex-direction: column;
@@ -249,11 +242,16 @@ header {
 .landing-container-img {
 	width: 100%;
 	max-height: 100%;
-
 }
 
+#landing-container-divider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
 
-
+/*
 #top-container {
 	display: flex;
 	align-items: center;
@@ -266,14 +264,6 @@ header {
 	overflow: hidden;
 	display: none;
 }
-
-#top-container-preview-image {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-}
-
 
 #top-container-right {
 	display: flex;
@@ -294,7 +284,7 @@ header {
 	padding: clamp(8px, 3vh, 40px);
 	box-sizing: border-box;
 }
-
+*/
 
 .image-slider-container{
 	/*position: absolute;*/
@@ -368,13 +358,13 @@ header {
 }
 
 
-.top-img-container {
+.landing-container-divider-images {
 	display: flex;
 	width: 300%;
-	height: 100vh;
+	aspect-ratio: 2.5;
 }
 
-.top-img-slide {
+.landing-image-slide {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -382,12 +372,12 @@ header {
 	transition: transform 1s ease;
 }
 
+
 #logo { /*TODO fix hardcode*/
 	cursor: pointer;
 	width: auto;
 	height: 44px;
 }
-
 
 .lang {
 	cursor: pointer;
@@ -509,7 +499,6 @@ header {
 }
 
 
-
 #rooms {
 	display: flex;
 	flex-wrap: wrap;
@@ -532,7 +521,6 @@ header {
 	border-radius: 0;
 	overflow: hidden;
 }
-
 .room:hover {
 	scale: 1.05;
 }
@@ -600,7 +588,6 @@ header {
 	border-radius: 0;
 	background-color: rgba(255, 255, 255, 1)
 }
-
 .service:hover {
 	box-shadow: 0 6px 16px rgba(68, 41, 0, 0.103);
 	transform: translateY(-5px);
@@ -631,8 +618,6 @@ header {
 #service-container .tittle-line {
 	background: var(--line);
 }
-
-
 
 
 #pricing-container {
@@ -695,32 +680,31 @@ header {
 	text-align: left;
 }
 
-/* Медиазапрос для экранов шириной до 768px */
 @media (max-width: 768px) {
 	#pricing {
-		flex-direction: column; /* Меняем направление флекс-элементов на колонку */
-		gap: 40px; /* Уменьшаем или изменяем отступ между элементами */
-		align-items: center; /* Центрируем элементы по горизонтали в колонке */
+		flex-direction: column;
+		gap: 40px;
+		align-items: center;
 	}
 
 	#pricing-left-text,
 	#pricing-terms {
-		min-width: auto; /* Сбрасываем min-width */
-		width: 100%; /* Элементы занимают всю доступную ширину контейнера */
-		max-width: none; /* Сбрасываем max-width, если он мешает */
-		padding: 0 10px; /* Добавляем небольшие горизонтальные отступы */
+		min-width: auto;
+		width: 100%;
+		max-width: none;
+		padding: 0 10px;
 		box-sizing: border-box;
 	}
 
 	#pricing-terms {
-		align-items: center; /* Центрируем содержимое pricing-terms */
-		text-align: center; /* Центрируем текст в pricing-terms */
+		align-items: center;
+		text-align: center;
 	}
 
 
 	.filled-button, .outlined-button {
-		width: 100%; /* Кнопка может стать шире */
-		max-width: 300px; /* Ограничиваем максимальную ширину кнопки */
+		width: 100%;
+		max-width: 300px;
 	}
 
 	#contact-buttons a {
@@ -728,7 +712,6 @@ header {
 		max-width: 300px;
 	}
 }
-
 
 
 #gallery-container{
@@ -754,10 +737,10 @@ header {
 }
 
 .gallery-img {
-    width: clamp(280px, 45vw, 564px); /* Адаптивная ширина */
-    height: auto; /* Авто-высота */
+    width: clamp(280px, 45vw, 564px);
+    height: auto;
     aspect-ratio: 1.4;
-    max-width: 100%; /* Не больше ширины контейнера */
+    max-width: 100%;
 	transition: var(--animation-speed);
 	cursor: pointer;
 	border-radius: 0;
@@ -864,7 +847,6 @@ header {
 }
 
 
-
 #contact-terminal {
 	display: flex;
 	align-items: flex-start;
@@ -926,11 +908,11 @@ header {
 
 #footer {
 	display: flex;
-	flex-wrap: wrap; /* Перенос */
-	align-items: center; /* Выравнивание по центру */
-	justify-content: space-around; /* Распределяем элементы */
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
 	flex-direction: row;
-	gap: clamp(20px, 4vw, 40px); /* Адаптивный gap */
+	gap: clamp(20px, 4vw, 40px);
 	max-width: 1600px;
 	width: 100%;
 }
@@ -1048,8 +1030,6 @@ header {
 	color: var(--line);
 }
 
-
-
 .popup-room-button {
 	width: 50px;
 	height: 50px;
@@ -1058,7 +1038,6 @@ header {
 	background: transparent;
 	cursor: pointer;
 }
-
 
 #popup-room-previous {
 	background-image: url("svg/navigation/left.svg");
@@ -1069,14 +1048,9 @@ header {
 }
 
 
-
 html {
 	scrollbar-width: thin;
 }
-
-
-
-
 
 
 table {
@@ -1112,7 +1086,6 @@ td:last-of-type {
 tbody > tr:nth-of-type(even) {
 	background-color: rgb(237 238 242);
 }
-
 
 
 #contact-us-popup {
@@ -1221,7 +1194,6 @@ tbody > tr:nth-of-type(even) {
 }
 
 
-
 .service-popup {
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -1240,14 +1212,12 @@ tbody > tr:nth-of-type(even) {
 	color: var(--white);
 }
 
-
 .service-popup-subtittle {
 	font-family: var(--font-family), serif;
 	font-weight: 600;
 	font-size: 3.0rem;
 	color: var(--white);
 }
-
 
 .service-popup-text {
 	font-family: var(--font-family), serif;
@@ -1305,7 +1275,6 @@ tbody > tr:nth-of-type(even) {
 
 }
 
-
 #service-popups-wrapper {
 	background: rgba(30, 30, 30, .1);
 	backdrop-filter: blur(10px);
@@ -1317,6 +1286,7 @@ tbody > tr:nth-of-type(even) {
 	cursor: pointer;
 	display: none;
 }
+
 
 .nav-container {
 	z-index: 1001;
@@ -1333,7 +1303,6 @@ tbody > tr:nth-of-type(even) {
 	box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .nav-buttons-container {
 	display: flex;
 	flex-direction: column;
@@ -1347,8 +1316,6 @@ tbody > tr:nth-of-type(even) {
 	color: var(--dark);
 	-webkit-tap-highlight-color: transparent;
 }
-
-
 
 
 @media (max-width: 768px ) {
