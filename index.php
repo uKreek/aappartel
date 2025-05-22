@@ -465,6 +465,7 @@
 			</svg>
 		</button>
 		<div class="nav-buttons-container">
+			<a class="nav-button" href="#booking-container">Booking</a>
 			<a class="nav-button" href="#features-container">Features</a>
 			<a class="nav-button" href="#rooms-container">Rooms</a>
 			<a class="nav-button" href="#service-container">Service</a>
@@ -503,14 +504,14 @@
 
 	<div class="service-popup" id="service-popup-breakfast" onclick="carousel.call('service-popup-breakfast')">
 		<p class="service-popup-tittle">Breakfast</p>
-		<p class="service-popup-text">Breakfast will be from 7:00-9:30 am<br>in the hotel and costs 14€ per person</p>
+		<p class="service-popup-text">Breakfast will be from 7:00 to 9:30<br>in the hotel and costs 14€ per person</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-reception" onclick="carousel.call('service-popup-reception')">
 		<p class="service-popup-tittle">Reception</p>
 		<div class="service-popup-info-body">
-			<p class="service-popup-subtittle">Hotel Reception - Opening Times</p>
-			<p class="service-popup-text">Monday to Sunday from 7:00 to 15:00 h<br>Check-in after reception time is possible by a Check-in-Terminal</p>
+			<p class="service-popup-subtittle">Hotel Reception – Opening Times</p>
+			<p class="service-popup-text">Monday to Sunday from 7:00 to 15:00<br>Check-in after reception time is possible by a Check-in-Terminal</p>
 		</div>
 	</div>
 

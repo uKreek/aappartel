@@ -545,7 +545,7 @@ header {
 
 .room-tittle {
 	font-family: var(--font-family), serif;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 3.5rem;
 	color: var(--line);
 	line-height: 1.2;
@@ -954,7 +954,7 @@ header {
 	height: 100%;
 	cursor: pointer;
 	display: none;
-	padding: clamp(10px, 2vw, 1000px);
+	padding: 0 clamp(16px, 5vw, 1000px);
 	box-sizing: border-box;
 	align-items: center;
 	@media (pointer: coarse) and (hover: none) {
@@ -1207,24 +1207,25 @@ tbody > tr:nth-of-type(even) {
 
 .service-popup-tittle {
 	font-family: var(--font-family), serif;
-	font-weight: 700;
-	font-size: 3rem;
+	font-weight: 500;
+	font-size: 4.4rem;
 	color: var(--white);
+	display: none;
 }
 
 .service-popup-subtittle {
 	font-family: var(--font-family), serif;
-	font-weight: 600;
-	font-size: 3.0rem;
+	font-weight: 400;
+	font-size: 3rem;
 	color: var(--white);
 }
 
 .service-popup-text {
 	font-family: var(--font-family), serif;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 2.0rem;
 	color: var(--white);
-	line-height: 120%;
+	line-height: 1.3;
 }
 
 .service-popup-info-body {
@@ -1253,6 +1254,7 @@ tbody > tr:nth-of-type(even) {
 	cursor: pointer;
 	/*filter: blur(4px);*/
 	user-select: none;
+	display: none;
 }
 
 .service-popup-right {
@@ -1265,6 +1267,7 @@ tbody > tr:nth-of-type(even) {
 	cursor: pointer;
 	/*filter: blur(4px);*/
 	user-select: none;
+	display: none;
 }
 
 .service-popup-left-hidden {
@@ -1311,6 +1314,7 @@ tbody > tr:nth-of-type(even) {
 .nav-button {
 	font-family: var(--font-family);
 	font-size: 2.2rem;
+	font-weight: 300;
 	margin: 0.8rem;
 	text-decoration: none;
 	color: var(--dark);
