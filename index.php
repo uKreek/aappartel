@@ -67,19 +67,12 @@
 
 
     $price_title = '';
-    $cot_price = '';
-    $babybed_price = '';
-    $apartment_with_terrace = '';
     if ( $price_page_id ) {
         $price_title = get_field('title_price', $price_page_id );
-        $cot_price = get_field('cot_price', $price_page_id );
-        $babybed_price = get_field('baby_price', $price_page_id );
-        $apartment_with_terrace = get_field('apartment_with_terrace', $price_page_id );
     }
     ?>
 
 	<article id="landing-container">
-		<!--<img class="landing-container-img" alt="TEMPORARY PLACEHOLDER">-->
         <div id="landing-container-divider">
             <!-- Images -->
             <div class="landing-container-divider-images">
@@ -96,7 +89,7 @@
         </div>
 		<div id="landing-container-text">
 			<h1>Apartment</h1>
-            <h2><?php echo esc_html($price_title); ?></h2>
+            <h2><span>from </span><?php echo esc_html($price_title); ?><span></span></h2>
 		</div>
 	</article>
 
@@ -345,10 +338,10 @@
 		<div id="pricing">
 			<ul id="pricing-left-text">
 				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
-				<li>Cot (maximum two per room): <?php echo esc_html($cot_price); ?> Euro per night</li>
-				<li>Babybed/cot (maximum two per room) for children up to 12 years: <?php echo esc_html($babybed_price); ?> Euro per night</li>
+				<li>Cot (maximum two per room): 10.00 Euro per night</li>
+				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10.00 Euro per night</li>
 				<li>Children in parents bed free of charge</li>
-				<li>Apartment with terrace: <?php echo esc_html($apartment_with_terrace); ?> € per night extra charge</li>
+				<li>Apartment with terrace: 10.00 € per night extra charge</li>
 				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
 				<li>WLAN free of charge in the Apartments</li>
 				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
@@ -419,7 +412,6 @@
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
-<!--						<button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>-->
 						<button class="outlined-button">See videos</button>
 						<button class="outlined-button">info@aappartel.de</button>
 					</div>
@@ -528,38 +520,6 @@
 	<div class="service-popup" id="service-popup-pets" onclick="carousel.call('service-popup-pets')">
 		<p class="service-popup-tittle">Pets</p>
 		<p class="service-popup-text">No pets allowed</p>
-	</div>
-
-	<!-- Contact us popup -->
-	<div id="contact-us-background" onclick="contact_us_popup.hide_contact_us()"></div>
-	<div id="contact-us-popup">
-		<div id="contact-us-wrapper">
-			<p id="contact-us-popup-tittle">Contact us</p>
-			<form id="contact-us-form">
-
-				<div class="contact-form-div">
-					<label class="contact-us-label" for="contact-us-name">Name</label>
-					<input id="contact-us-name" class="contact-us-input" type="text" aria-label="Name" onchange="contact_us_popup.update_name()">
-				</div>
-				<div class="contact-form-div">
-					<label class="contact-us-label" for="contact-us-email">Email</label>
-					<input id="contact-us-email" class="contact-us-input" type="email" aria-label="Email" onchange="contact_us_popup.update_email()">
-				</div>
-				<div class="contact-form-div">
-					<label class="contact-us-label" for="contact-us-subject">Subject</label>
-					<input id="contact-us-subject" class="contact-us-input" type="text" aria-label="Subject" onchange="contact_us_popup.update_subject()">
-				</div>
-				<div class="contact-form-div">
-					<label class="contact-us-label" for="contact-us-message">Message</label>
-					<input id="contact-us-message" class="contact-us-input" type="text" aria-label="Message" onchange="contact_us_popup.update_message()">
-				</div>
-				<div class="contact-form-div" id="contact-us-checkbox-div">
-					<label class="contact-us-label" id="contact-us-checkbox-label" for="contact-us-checkbox">Send a copy to yourself</label>
-					<input type="checkbox" class="contact-us-checkbox" id="contact-us-checkbox" title="Send a copy to yourself" onchange="contact_us_popup.checked()">
-				</div>
-				<input type="submit" class="contact-us-submit" content="Submit" id="contact-us-submit">
-			</form>
-		</div>
 	</div>
 
 	<?php wp_footer(); ?>
