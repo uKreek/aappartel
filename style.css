@@ -69,6 +69,7 @@ table {
 
 
 
+
 :root {
 	--white: #ffffff;
 	--line: #2A2722;
@@ -87,6 +88,11 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 2rem;
+}
 
 .outlined-button {
 	display: flex;
@@ -700,12 +706,7 @@ header {
 	aspect-ratio: 1.4;
 	max-width: 100%;
 	transition: var(--animation-speed);
-	cursor: pointer;
 	border-radius: 0;
-}
-
-.gallery-img:hover {
-	scale: 1.05;
 }
 
 
@@ -898,7 +899,7 @@ header {
 	height: 100%;
 	cursor: pointer;
 	display: none;
-	padding: 0 clamp(16px, 5vw, 1000px);
+	padding: clamp(16px, 1vw, 1000px) clamp(16px, 5vw, 1000px);
 	box-sizing: border-box;
 	align-items: center;
 	@media (pointer: coarse) and (hover: none) {
@@ -916,6 +917,7 @@ header {
 	border: 1px solid #ccc;
 	overflow: hidden;
 	background: #fff;
+	cursor: default;
 }
 
 .popup-img-wrapper{

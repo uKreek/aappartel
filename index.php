@@ -67,8 +67,10 @@
 
 
     $price_title = '';
+    $booking_link = '';
     if ( $price_page_id ) {
         $price_title = get_field('title_price', $price_page_id );
+        $booking_link = get_field('booking_link', $price_page_id );
     }
     ?>
 
@@ -107,7 +109,7 @@
 			<div class="tittle-line"></div>
 			<h3 class="tittle">Booking</h3 class="tittle">
 		</div>
-		<button class="filled-button">Book now</button>
+		<button class="filled-button"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 	</article>
 
 	<?php
@@ -479,7 +481,7 @@
 				<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
 				<div class="popup-room-text">
 					<p class="popup-room-tittle">Apartment</p>
-					<p class="popup-room-description">Images</p>
+                    <button class="outlined-button popup-room-description"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 				</div>
 				<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
 			</div>
