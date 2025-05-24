@@ -30,8 +30,8 @@
 		?>
 
 		<div id="langs-container">
-			<img class="lang" id="de-lang" src="<?php echo esc_url($main_urls[1])?>" alt="de">
-			<img class="lang" id="en-lang" src="<?php echo esc_url($main_urls[2])?>" alt="en">
+			<button class="svg-button"><a id="en"><img class="lang" id="de-lang" src="<?php echo esc_url($main_urls[1])?>" alt="de"></a></button>
+			<button class="svg-button"><a id="de"><img class="lang" id="en-lang" src="<?php echo esc_url($main_urls[2])?>" alt="en"></a></button>
 		</div>
 
 		<img id="logo" src="<?php echo esc_url($main_urls[0])?>" alt="Logo">

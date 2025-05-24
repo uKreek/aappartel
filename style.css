@@ -75,7 +75,7 @@ table {
 	--dark: #1A1A1A;
 	--background: #F1E9DB;
 	--secondary-background: #718476;
-	--secondary-background-darker: #4B5E50;
+	--secondary-background-darker: #354339;
 	--font-family: 'Geologica';
 	--animation-speed: 0.3s;
 }
@@ -350,20 +350,8 @@ header {
 }
 
 
-#de-lang {
+.lang-disabled {
 	opacity: 50%;
-}
-
-#en-lang {
-	opacity: 100%;
-}
-
-#de-lang:hover {
-	opacity: 100%;
-}
-
-#en-lang:hover {
-	opacity: 100%;
 }
 
 .lang:hover {
