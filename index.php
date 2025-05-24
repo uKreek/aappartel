@@ -68,9 +68,15 @@
 
     $price_title = '';
     $booking_link = '';
+    $apartment_text = '';
+    $apartment_raum_text = '';
+    $apartment_family_text = '';
     if ( $price_page_id ) {
         $price_title = get_field('title_price', $price_page_id );
         $booking_link = get_field('booking_link', $price_page_id );
+        $apartment_text = get_field('apartment_text', $price_page_id );
+        $apartment_raum_text = get_field('apartment_raum_text', $price_page_id );
+        $apartment_family_text = get_field('apartment_family_text', $price_page_id );
     }
     ?>
 
@@ -238,24 +244,24 @@
 			<div class="room" onclick="room_popups.show_popup('apart0')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[0])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
-					<p class="room-tittle">Apartment</p>
-					<p class="room-description">French Bed 140 cm Queen/King-Size-Bett 160/180cm or Twin-Bed on demand</p>
+					<p id="room-tittle-1" class="room-tittle">Apartment</p>
+					<p class="room-description"><?php echo esc_html($apartment_text); ?></p>
 				</div>
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart1')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[5])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
-					<p class="room-tittle">Aappart-raum</p>
-					<p class="room-description">Kingsize-Bed 160cm or Twin-Bed on demand</p>
+					<p id="room-tittle-2" class="room-tittle">Aappart-raum</p>
+					<p class="room-description"><?php echo esc_html($apartment_raum_text); ?></p>
 				</div>
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart2')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[9])?>" alt="apartment image">
 				<div class="room-tittle-and-description">
-					<p class="room-tittle">Apartment-family</p>
-					<p class="room-description">Two apartments on separate hall</p>
+					<p id="room-tittle-3" class="room-tittle">Apartment-family</p>
+					<p class="room-description"><?php echo esc_html($apartment_family_text); ?></p>
 				</div>
 			</div>
 
@@ -480,7 +486,7 @@
 			<div class="popup-room-bottom">
 				<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
 				<div class="popup-room-text">
-					<p class="popup-room-tittle">Apartment</p>
+					<p id="popup-room-tittle" class="popup-room-tittle">Apartment</p>
                     <button class="outlined-button popup-room-description"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 				</div>
 				<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>

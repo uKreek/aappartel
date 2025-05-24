@@ -16,6 +16,11 @@ class RoomPopup {
         this.previous = document.getElementById('popup-room-previous')
         this.next = document.getElementById('popup-room-next')
         this.now = 0
+
+        this.tittle_1 = document.getElementById('room-tittle-1')
+        this.tittle_2 = document.getElementById('room-tittle-2')
+        this.tittle_3 = document.getElementById('room-tittle-3')
+        this.popup_tittle = document.getElementById('popup-room-tittle')
     }
 
     show_popup = (apart_id) => {
@@ -23,6 +28,16 @@ class RoomPopup {
         this.previous.style.cursor = 'pointer';
         this.next.style.opacity = '100%';
         this.next.style.cursor = 'pointer';
+
+        if (apart_id === 'apart0'){
+            this.popup_tittle.textContent = this.tittle_1.textContent;
+        }
+        else if (apart_id === 'apart1'){
+            this.popup_tittle.textContent = this.tittle_2.textContent;
+        }
+        else{
+            this.popup_tittle.textContent = this.tittle_3.textContent;
+        }
 
         this.now = 0;
         this.apart_id = apart_id;
