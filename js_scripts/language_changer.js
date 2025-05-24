@@ -8,17 +8,16 @@ function getCurrentLanguage() {
             return 'de';
         }
     }
-    // Если нет языкового префикса, предполагаем язык по умолчанию (например, русский)
-    return 'en'; // Замените на код языка вашего сайта по умолчанию
+    return 'en';
 }
 
 const currentLang = getCurrentLanguage();
-console.log('dfmwffndsf');
-if (currentLang === "de"){
-    document.getElementById('en-lang').classList.add("lang-disabled")
-}
-else{
+console.log(currentLang);
+if (currentLang === "en") {
     document.getElementById('de-lang').classList.add("lang-disabled")
+}
+else {
+    document.getElementById('en-lang').classList.add("lang-disabled")
 }
 
 document.getElementById('en').href = '/wordpress/de';
