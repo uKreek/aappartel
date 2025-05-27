@@ -217,6 +217,7 @@ header {
 	background: #fff;
 	width: -webkit-fill-available;
 	width: -moz-available;
+	border-bottom: 1px solid #d7d7d7;
 }
 
 
