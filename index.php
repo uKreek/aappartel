@@ -512,7 +512,7 @@
 	<div id="popup-room-wrapper" onclick="room_popups.hide()">
 		<div id="popup-room">
 			<div class="popup-img-wrapper">
-				<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
+				<img id="popup-room-img" class="popup-room-img" alt="popup room image">
 			</div>
 			<div class="popup-room-bottom">
 				<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>

@@ -5,7 +5,6 @@ class Navigation {
     }
 
     show_navigation = () => {
-        console.log('starting function show_navigation() ...');
         this.nav_container.style.display = 'flex';
     }
 
