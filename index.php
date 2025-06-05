@@ -71,12 +71,27 @@
     $apartment_text = '';
     $apartment_raum_text = '';
     $apartment_family_text = '';
+    $pricing_texts = [];
+    $pricing_right_text = '';
+
     if ( $price_page_id ) {
         $price_title = get_field('title_price', $price_page_id );
         $booking_link = get_field('booking_link', $price_page_id );
         $apartment_text = get_field('apartment_text', $price_page_id );
         $apartment_raum_text = get_field('apartment_raum_text', $price_page_id );
         $apartment_family_text = get_field('apartment_family_text', $price_page_id );
+        $pricing_right_text = get_field('pricing_right_text', $price_page_id );
+
+        $i = 1;
+        while (true) {
+            $field_name = 'pricing_text_' . $i;
+            $pricing_text = get_field($field_name, $price_page_id);
+
+            if ($pricing_text) {
+                array_push($pricing_texts, esc_html($pricing_text));
+                $i++;
+            } else {break;}
+        }
     }
     ?>
 
@@ -382,18 +397,34 @@
 		</div>
 		<div id="pricing">
 			<ul id="pricing-left-text">
-				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>
-				<li>Cot (maximum two per room): 10.00 Euro per night</li>
-				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10.00 Euro per night</li>
-				<li>Children in parents bed free of charge</li>
-				<li>Apartment with terrace: 10.00 € per night extra charge</li>
-				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>
-				<li>WLAN free of charge in the Apartments</li>
-				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>
-				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>
+
+                <?php
+                if (count($pricing_texts) > 0) {
+                    // Предполагаем, что все массивы имеют одинаковую длину
+                    $count = count($pricing_texts);
+
+                    for ($i = 0; $i < $count; $i++) {
+                        ?>
+                        <li><?php echo esc_html($pricing_texts[$i])?></li>
+                        <?php
+                    }
+                } else {
+                    echo '<p>There is no available prices</p>';
+                }
+                ?>
+
+<!--				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>-->
+<!--				<li>Cot (maximum two per room): 10.00 Euro per night</li>-->
+<!--				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10.00 Euro per night</li>-->
+<!--				<li>Children in parents bed free of charge</li>-->
+<!--				<li>Apartment with terrace: 10.00 € per night extra charge</li>-->
+<!--				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>-->
+<!--				<li>WLAN free of charge in the Apartments</li>-->
+<!--				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>-->
+<!--				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>-->
 			</ul>
 			<div id="pricing-terms">
-				<p id="pricing-right-text"> All prices are incl. using the kitchen. The kitchen cleaning will be done at check-out. Prices in Euro incl. VAT, engine, water, heating and Check-out-cleaning (valid for the Apartment-Hotel). Mistakes and changes to reserve.</p>
+				<p id="pricing-right-text"><?php echo esc_html($pricing_right_text)?></p>
 				<button class="filled-button">Book now</button>
 			</div>
 		</div>
@@ -406,25 +437,20 @@
 		</div>
 		<div id="gallery">
 			<?php
-			$str = 'page_on_front';
-			$gallery_id_list = [get_field('image_1', get_option($str)), get_field('image_2', get_option($str)),
-				get_field('image_3', get_option($str)),get_field('image_4', get_option($str)),
-				get_field('image_5', get_option($str)),get_field('image_6', get_option($str)),
-				get_field('image_7', get_option($str)),get_field('image_8', get_option($str)),
-				get_field('image_9', get_option($str)),get_field('image_10', get_option($str)),
-				get_field('image_11', get_option($str)),get_field('image_12', get_option($str)),
-				get_field('image_13', get_option($str)),get_field('image_14', get_option($str)),
-				get_field('image_15', get_option($str)),get_field('image_16', get_option($str)),
-				get_field('image_17', get_option($str)),get_field('image_18', get_option($str)),
-				get_field('image_19', get_option($str)),get_field('image_20', get_option($str)),
-				get_field('image_21', get_option($str)),];
-			foreach ($gallery_id_list as $gallery_id) {
-				if ($gallery_id) {
-					$gallery_url = wp_get_attachment_url($gallery_id);
-					echo '<img class="gallery-img" src="' . esc_url($gallery_url) . '" alt="gallery image"></img>';
-				}
-			}
-			?>
+            $gallery_ids = [];
+            for ($i = 1;; $i++) {
+                if (get_field('image_' . $i, get_option($onfront))) {
+                    array_push($gallery_ids, get_field('image_' . $i, get_option($onfront)));
+                }
+                else break;
+            }
+            foreach ($gallery_ids as $gall_id) {
+                if ($gall_id) {
+                    $gall_url = wp_get_attachment_url($gall_id);
+                    echo '<img class="gallery-img" src="' . esc_url($gall_url) . '" alt="gallery image"></img>';
+                }
+            }
+            ?>
 		</div>
 	</article>
 
@@ -458,7 +484,9 @@
 							<button class="outlined-button">Facebook</button>
 						</a>
 						<button class="outlined-button">See videos</button>
-						<button class="outlined-button">info@aappartel.de</button>
+						<a class="link" href="mailto:info@aappartel.de">
+                            <button class="outlined-button">info@aappartel.de</button>
+                        </a>
 					</div>
 				</div>
 				<div id="contact-terminal">
@@ -474,6 +502,113 @@
 			</div>
 		</div>
 	</article>
+
+    <article id="partners-container">
+        <div class="tittles"> <!-- Tittle -->
+            <div class="tittle-line"></div>
+            <h3 class="tittle">Our partners</h3 class="tittle">
+        </div>
+
+        <div class="partners-wrapper">
+
+            <?php
+            $partner_image_urls = [];
+
+            $i = 1;
+            while (true) {
+                $field_name = 'partner_image_' . $i;
+                $partner_image_id = get_field($field_name, $onfront);
+
+                if ($partner_image_id) {
+                    $partner_image_url = wp_get_attachment_url($partner_image_id);
+                    array_push($partner_image_urls, esc_url($partner_image_url));
+                    $i++;
+                }
+                else{break;}
+            }
+
+            $args = array(
+                'post_type'      => 'page',
+                'meta_key'       => '_wp_page_template',
+                'meta_value'     => 'templates/template-text-settings.php',
+                'posts_per_page' => 1,
+                'fields'         => 'ids',
+            );
+
+            $pages_with_template = get_posts( $args );
+            $price_page_id = 0;
+
+            if ( ! empty( $pages_with_template ) ) {
+                $price_page_id = $pages_with_template[0];
+            }
+
+            $partner_titles = [];
+            $partner_descriptions = [];
+
+            if ( $price_page_id ) {
+                // titles
+                $i = 1;
+                while (true) {
+                    $field_name = 'partner_title_' . $i;
+                    $partner_title = get_field($field_name, $price_page_id);
+
+                    if ($partner_title) {
+                        array_push($partner_titles, esc_html($partner_title));
+                        $i++;
+                    } else {break;}
+                }
+
+                // descriptions
+                $i = 1;
+                while (true) {
+                    $field_name = 'partner_description_' . $i;
+                    $partner_description = get_field($field_name, $price_page_id);
+
+                    if ($partner_description) {
+                        array_push($partner_descriptions, esc_html($partner_description));
+                        $i++;
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            if (count($partner_image_urls) > 0 && count($partner_titles) > 0 && count($partner_descriptions) > 0) {
+                // Предполагаем, что все массивы имеют одинаковую длину
+                $count = min(count($partner_image_urls), count($partner_titles), count($partner_descriptions));
+
+                for ($i = 0; $i < $count; $i++) {
+                    ?>
+                    <div class="partner">
+                        <img class="partner-logo" alt="partner logo" src="<?php echo esc_url($partner_image_urls[$i]); ?>"/>
+                        <div class="partner-text">
+                            <h4 class="partner-title"><?php echo esc_html($partner_titles[$i]); ?></h4>
+                            <h5 class="partner-description"><?php echo esc_html($partner_descriptions[$i]); ?></h5>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo '<p>Нет доступных партнёров.</p>';
+            }
+            ?>
+
+<!--            <div class="partner">-->
+<!--                <img class="partner-logo" alt="partner logo" src="--><?php //echo esc_url($main_urls[1])?><!--"/>-->
+<!--                <div class="partner-text">-->
+<!--                    <h4 class="partner-title">first</h4>-->
+<!--                    <h5 class="partner-description">description</h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="partner">-->
+<!--                <img class="partner-logo" alt="partner logo" src="--><?php //echo esc_url($main_urls[2])?><!--"/>-->
+<!--                <div class="partner-text">-->
+<!--                    <h4 class="partner-title">second</h4>-->
+<!--                    <h5 class="partner-description">description</h5>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </article>
 
 	<footer id="footer-container">
 		<div id="footer">

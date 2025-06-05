@@ -857,6 +857,56 @@ header {
 }
 
 
+.partners-container{
+	background: var(--white);
+}
+
+#partners-container .tittle-line {
+	background: var(--line);
+}
+
+#partners-container .tittle {
+	color: var(--line);
+}
+
+.partners-wrapper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 3rem;
+	justify-content: center;
+}
+
+.partner{
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.partner-logo{
+	width: 20vw;
+	height: auto;
+}
+
+.partner-text{
+	display: flex;
+	flex-direction: column;
+	gap: clamp(2px, 0.5vw, 4px);
+}
+
+.partner-title{
+	font-family: var(--font-family), serif;
+	font-weight: 400;
+	font-size: 3rem;
+}
+
+.partner-description{
+	font-family: var(--font-family), serif;
+	font-weight: 300;
+	opacity: 0.85;
+	font-size: 2rem;
+}
+
 #footer-container {
 	display: flex;
 	align-items: center;
