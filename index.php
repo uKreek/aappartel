@@ -274,101 +274,103 @@
 			<h3 class="tittle">Service</h3 class="tittle">
 		</div>
 		<div id="services">
+
 			<?php
-//			$service_ids = [get_field('roomservice_image', $onfront), get_field('kitchen_image', $onfront),
-//				get_field('breakfast_image', $onfront), get_field('reception_image', $onfront),
-//				get_field('linentowels_image', $onfront), get_field('laundrette_image', $onfront),
-//				get_field('inventory_image', $onfront), get_field('service_internet_image', $onfront),
-//				get_field('pets_image', $onfront)];
-//
-//			$service_urls = [];
-//			foreach ($service_ids as $service_id) {
-//				if ($service_id) {
-//					array_push($service_urls, wp_get_attachment_url($service_id));
-//				}
-//			}
+			$service_ids = [get_field('roomservice_image', $onfront), get_field('kitchen_image', $onfront),
+				get_field('breakfast_image', $onfront), get_field('reception_image', $onfront),
+				get_field('linentowels_image', $onfront), get_field('laundrette_image', $onfront),
+				get_field('inventory_image', $onfront), get_field('service_internet_image', $onfront),
+				get_field('pets_image', $onfront)];
 
-            $service_image_ids = [];
-            $service_label_ids = [];
+			$service_urls = [];
+			foreach ($service_ids as $service_id) {
+				if ($service_id) {
+					array_push($service_urls, wp_get_attachment_url($service_id));
+				}
+			}
 
-            for ($i = 1;; $i++) {
-                if (get_field('service_image_' . $i, get_option($onfront))) {
-                    array_push($service_image_ids, get_field('service_image_' . $i, get_option($onfront)));
-                }
-                else break;
+            // $service_image_ids = [];
+            // $service_label_ids = [];
 
-                if ($price_page_id){
-                    if (get_field('service_text_' . $i, $price_page_id)) {
-                        array_push($service_label_ids, get_field('service_text_' . $i, $price_page_id));
-                    }
-                    else break;
-                }
-                else break;
+            // for ($i = 1;; $i++) {
+            //     if (get_field('service_image_' . $i, get_option($onfront))) {
+            //         array_push($service_image_ids, get_field('service_image_' . $i, get_option($onfront)));
+            //     }
+            //     else break;
 
-                $image_url = wp_get_attachment_url(get_field('service_image_' . $i, get_option($onfront)));
-                $id = 'id';
-                echo '<div class="service" onclick="carousel.call(' . $id . ')">';
-                echo '<img class="service-img" src=' . esc_url($image_url) . '>';
-                echo '<p class="service-description">' . esc_html(get_field('service_text_' . $i, $price_page_id)) . '</p>';
-                echo '</div>';
-            }
+            //     if ($price_page_id){
+            //         if (get_field('service_text_' . $i, $price_page_id)) {
+            //             array_push($service_label_ids, get_field('service_text_' . $i, $price_page_id));
+            //         }
+            //         else break;
+            //     }
+            //     else break;
 
-//            foreach ($service_label_ids as $label_id) {
-//                if ($label_id) {
-//                    $label_html = wp_get_attachment_url($label_id);
-//
-//                    echo '<div class="service" onclick="carousel.call(' . "id" .')">';
-//                    echo '<img class="service-img" src=' . esc_url($service_image_ids) . '>';
-//                    echo '<p class="service-description">' . esc_html($label_html) . '</p>';
-//                    echo '</div>';
-//                }
-//            }
-            ?>
+            //     $image_url = wp_get_attachment_url(get_field('service_image_' . $i, get_option($onfront)));
+            //     $id = 'id';
+            //     echo '<div class="service" onclick="carousel.call(' . $id . ')">';
+            //     echo '<img class="service-img" src=' . esc_url($image_url) . '>';
+            //     echo '<p class="service-description">' . esc_html(get_field('service_text_' . $i, $price_page_id)) . '</p>';
+            //     echo '</div>';
+            // }
 
-<!--			<div class="service" onclick="carousel.call('id')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[0])?><!--" alt="Room service">-->
-<!--				<p class="service-description">Room service</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-kitchenette')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[1])?><!--" alt="Kitchen">-->
-<!--				<p class="service-description">Kitchen</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-breakfast')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[2])?><!--" alt="Breakfast">-->
-<!--				<p class="service-description">Breakfast</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-reception')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[3])?><!--" alt="Reception">-->
-<!--				<p class="service-description">Reception</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-bed')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[4])?><!--" alt="Bed Linen and Hand Towels">-->
-<!--				<p class="service-description">Bed Linen and Hand Towels</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('id')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[5])?><!--" alt="Laundrette Facilities">-->
-<!--				<p class="service-description">Laundrette Facilities</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('id')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[6])?><!--" alt="Inventory">-->
-<!--				<p class="service-description">Inventory</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-internet')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[7])?><!--" alt="Internet">-->
-<!--				<p class="service-description">Internet</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="service" onclick="carousel.call('service-popup-pets')">-->
-<!--				<img class="service-img" src="--><?php //echo esc_url($service_urls[8])?><!--" alt="Pets">-->
-<!--				<p class="service-description">Pets</p>-->
-<!--			</div>-->
+        //    foreach ($service_label_ids as $label_id) {
+        //        if ($label_id) {
+        //            $label_html = wp_get_attachment_url($label_id);
+
+        //            echo '<div class="service" onclick="carousel.call(' . "id" .')">';
+        //            echo '<img class="service-img" src=' . esc_url($service_image_ids) . '>';
+        //            echo '<p class="service-description">' . esc_html($label_html) . '</p>';
+        //            echo '</div>';
+        //        }
+        //    }
+           ?>
+
+
+			<div class="service" onclick="carousel.call('service-popup-room')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[0])?>" alt="Room service">
+				<p class="service-description">Room service</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-kitchenette')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[1])?>" alt="Kitchen">
+				<p class="service-description">Kitchen</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-breakfast')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[2])?>" alt="Breakfast">
+				<p class="service-description">Breakfast</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-reception')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[3])?>" alt="Reception">
+				<p class="service-description">Reception</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-bed')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[4])?>" alt="Bed Linen and Hand Towels">
+				<p class="service-description">Bed Linen and Hand Towels</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-laundry')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[5])?>" alt="Laundrette Facilities">
+				<p class="service-description">Laundrette Facilities</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('id')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[6])?>" alt="Inventory">
+				<p class="service-description">Inventory</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-internet')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[7])?>" alt="Internet">
+				<p class="service-description">Internet</p>
+			</div>
+
+			<div class="service" onclick="carousel.call('service-popup-pets')">
+				<img class="service-img" src="<?php echo esc_url($service_urls[8])?>" alt="Pets">
+				<p class="service-description">Pets</p>
+			</div>
 
 		</div>
 	</article>
@@ -404,20 +406,25 @@
 		</div>
 		<div id="gallery">
 			<?php
-            $gallery_ids = [];
-            for ($i = 1;; $i++) {
-                if (get_field('image_' . $i, get_option($onfront))) {
-                    array_push($gallery_ids, get_field('image_' . $i, get_option($onfront)));
-                }
-                else break;
-            }
-            foreach ($gallery_ids as $gall_id) {
-                if ($gall_id) {
-                    $gall_url = wp_get_attachment_url($gall_id);
-                    echo '<img class="gallery-img" src="' . esc_url($gall_url) . '" alt="gallery image"></img>';
-                }
-            }
-            ?>
+			$str = 'page_on_front';
+			$gallery_id_list = [get_field('image_1', get_option($str)), get_field('image_2', get_option($str)),
+				get_field('image_3', get_option($str)),get_field('image_4', get_option($str)),
+				get_field('image_5', get_option($str)),get_field('image_6', get_option($str)),
+				get_field('image_7', get_option($str)),get_field('image_8', get_option($str)),
+				get_field('image_9', get_option($str)),get_field('image_10', get_option($str)),
+				get_field('image_11', get_option($str)),get_field('image_12', get_option($str)),
+				get_field('image_13', get_option($str)),get_field('image_14', get_option($str)),
+				get_field('image_15', get_option($str)),get_field('image_16', get_option($str)),
+				get_field('image_17', get_option($str)),get_field('image_18', get_option($str)),
+				get_field('image_19', get_option($str)),get_field('image_20', get_option($str)),
+				get_field('image_21', get_option($str)),];
+			foreach ($gallery_id_list as $gallery_id) {
+				if ($gallery_id) {
+					$gallery_url = wp_get_attachment_url($gallery_id);
+					echo '<img class="gallery-img" src="' . esc_url($gallery_url) . '" alt="gallery image"></img>';
+				}
+			}
+			?>
 		</div>
 	</article>
 
@@ -450,7 +457,6 @@
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
-                        <button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
 						<button class="outlined-button">See videos</button>
 						<button class="outlined-button">info@aappartel.de</button>
 					</div>
@@ -512,7 +518,7 @@
 	<div id="popup-room-wrapper" onclick="room_popups.hide()">
 		<div id="popup-room">
 			<div class="popup-img-wrapper">
-				<img id="popup-room-img" class="popup-room-img" alt="popup room image">
+				<img id="popup-room-img" class="popup-room-img" src="https://www.aappartel.de/images/aappartel/rooms/l/IMG_5554-min.jpg" alt="popup room image">
 			</div>
 			<div class="popup-room-bottom">
 				<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
@@ -527,6 +533,14 @@
 
 	<!-- Slider for service's popups -->
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
+
+	<div class="service-popup" id="service-popup-room" onclick="carousel.call('service-popup-room')">
+		<p class="service-popup-tittle">room</p>
+		<p class="service-popup-subtittle">Room cleaning</p>
+		<p class="service-popup-text">Apartment cleaning every 2 days (excluding bed linen).<br>For bookings of 7 nights or more: additional weekly bed linen change</p>
+		<p class="service-popup-subtittle">Final cleaning</p>
+		<p class="service-popup-text">Final cleaning of the apartment is included in all overnight rates, except for long-term stays of 30 nights or more.</p>
+	</div>
 
 	<div class="service-popup" id="service-popup-kitchenette" onclick="carousel.call('service-popup-kitchenette')">
 		<p class="service-popup-tittle">Kitchenette</p>
@@ -546,41 +560,23 @@
 		</div>
 	</div>
 
-    <!-- Contact us popup -->
-    <div id="contact-us-background" onclick="contact_us_popup.hide_contact_us()"></div>
-    <div id="contact-us-popup">
-        <div id="contact-us-wrapper">
-            <p id="contact-us-popup-tittle">Contact us</p>
-            <form id="contact-us-form">
-
-                <div class="contact-form-div">
-                    <label class="contact-us-label" for="contact-us-name">Name</label>
-                    <input id="contact-us-name" class="contact-us-input" type="text" aria-label="Name" onchange="contact_us_popup.update_name()">
-                </div>
-                <div class="contact-form-div">
-                    <label class="contact-us-label" for="contact-us-email">Email</label>
-                    <input id="contact-us-email" class="contact-us-input" type="email" aria-label="Email" onchange="contact_us_popup.update_email()">
-                </div>
-                <div class="contact-form-div">
-                    <label class="contact-us-label" for="contact-us-subject">Subject</label>
-                    <input id="contact-us-subject" class="contact-us-input" type="text" aria-label="Subject" onchange="contact_us_popup.update_subject()">
-                </div>
-                <div class="contact-form-div">
-                    <label class="contact-us-label" for="contact-us-message">Message</label>
-                    <input id="contact-us-message" class="contact-us-input" type="text" aria-label="Message" onchange="contact_us_popup.update_message()">
-                </div>
-                <div class="contact-form-div" id="contact-us-checkbox-div">
-                    <label class="contact-us-label" id="contact-us-checkbox-label" for="contact-us-checkbox">Send a copy to yourself</label>
-                    <input type="checkbox" class="contact-us-checkbox" id="contact-us-checkbox" title="Send a copy to yourself" onchange="contact_us_popup.checked()">
-                </div>
-                <input type="submit" class="contact-us-submit" content="Submit" id="contact-us-submit">
-            </form>
-        </div>
-    </div>
-
 	<div class="service-popup" id="service-popup-bed" onclick="carousel.call('service-popup-bed')">
 		<p class="service-popup-tittle">Bed Linen and Hand Towels</p>
 		<p class="service-popup-text">Of course there are towels and bed linen in your apartment</p>
+	</div>
+
+	<div class="service-popup" id="service-popup-laundry" onclick="carousel.call('service-popup-laundry')">
+		<p class="service-popup-subtittle">Car wash</p>
+		<table>
+			<tr>
+				<td>washing machine</td>
+				<td>3.50 euros</td>
+			</tr>
+			<tr>
+				<td>dryer</td>
+				<td>3.50 euros</td>
+			</tr>
+		</table>
 	</div>
 
 	<div class="service-popup" id="service-popup-internet" onclick="carousel.call('service-popup-internet')">
