@@ -1,5 +1,5 @@
 (function () {
-    var rects = document.querySelectorAll('.tittle-line');
+    var rects = document.querySelectorAll('.title-line');
 
     for (let i = 0; i < rects.length; i++) {
 
@@ -20,7 +20,7 @@
 
 
 (function () {
-    var rects = document.querySelectorAll('.tittle, #contact-map');
+    var rects = document.querySelectorAll('.title, #contact-map');
 
     for (let i = 0; i < rects.length; i++) {
 

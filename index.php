@@ -126,9 +126,9 @@
 	?>
 
 	<article id="booking-container" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<?php echo esc_url($booking_url);?>') no-repeat center center / cover;"> <!-- Book now -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Booking</h3 class="tittle">
+		<div class="titles"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Booking</h3 class="title">
 		</div>
 		<button class="filled-button"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 	</article>
@@ -149,9 +149,9 @@
 	?>
 
 	<article id="features-container"> <!-- Features -->
-		<div class="tittles" id="features-tittle"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Features</h3 class="tittle">
+		<div class="titles" id="features-title"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Features</h3 class="title">
 		</div>
 
 		<div id="features">
@@ -235,9 +235,9 @@
 	</article>
 
 	<article id="rooms-container"> <!-- Rooms -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Rooms</h3 class="tittle">
+		<div class="titles"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Rooms</h3 class="title">
 		</div>
 		<div id="rooms">
 
@@ -258,24 +258,24 @@
 
 			<div class="room" onclick="room_popups.show_popup('apart0')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[0])?>" alt="apartment image">
-				<div class="room-tittle-and-description">
-					<p id="room-tittle-1" class="room-tittle">Apartment</p>
+				<div class="room-title-and-description">
+					<p id="room-title-1" class="room-title">Apartment</p>
 					<p class="room-description"><?php echo esc_html($apartment_text); ?></p>
 				</div>
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart1')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[5])?>" alt="apartment image">
-				<div class="room-tittle-and-description">
-					<p id="room-tittle-2" class="room-tittle">Aappart-raum</p>
+				<div class="room-title-and-description">
+					<p id="room-title-2" class="room-title">Aappart-raum</p>
 					<p class="room-description"><?php echo esc_html($apartment_raum_text); ?></p>
 				</div>
 			</div>
 
 			<div class="room" onclick="room_popups.show_popup('apart2')">
 				<img class="room-img" src="<?php echo esc_url($apartment_urls[9])?>" alt="apartment image">
-				<div class="room-tittle-and-description">
-					<p id="room-tittle-3" class="room-tittle">Apartment-family</p>
+				<div class="room-title-and-description">
+					<p id="room-title-3" class="room-title">Apartment-family</p>
 					<p class="room-description"><?php echo esc_html($apartment_family_text); ?></p>
 				</div>
 			</div>
@@ -284,9 +284,9 @@
 	</article>
 
 	<article id="service-container"> <!-- Service -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Service</h3 class="tittle">
+		<div class="titles"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Service</h3 class="title">
 		</div>
 		<div id="services">
 
@@ -303,42 +303,6 @@
 					array_push($service_urls, wp_get_attachment_url($service_id));
 				}
 			}
-
-            // $service_image_ids = [];
-            // $service_label_ids = [];
-
-            // for ($i = 1;; $i++) {
-            //     if (get_field('service_image_' . $i, get_option($onfront))) {
-            //         array_push($service_image_ids, get_field('service_image_' . $i, get_option($onfront)));
-            //     }
-            //     else break;
-
-            //     if ($price_page_id){
-            //         if (get_field('service_text_' . $i, $price_page_id)) {
-            //             array_push($service_label_ids, get_field('service_text_' . $i, $price_page_id));
-            //         }
-            //         else break;
-            //     }
-            //     else break;
-
-            //     $image_url = wp_get_attachment_url(get_field('service_image_' . $i, get_option($onfront)));
-            //     $id = 'id';
-            //     echo '<div class="service" onclick="carousel.call(' . $id . ')">';
-            //     echo '<img class="service-img" src=' . esc_url($image_url) . '>';
-            //     echo '<p class="service-description">' . esc_html(get_field('service_text_' . $i, $price_page_id)) . '</p>';
-            //     echo '</div>';
-            // }
-
-        //    foreach ($service_label_ids as $label_id) {
-        //        if ($label_id) {
-        //            $label_html = wp_get_attachment_url($label_id);
-
-        //            echo '<div class="service" onclick="carousel.call(' . "id" .')">';
-        //            echo '<img class="service-img" src=' . esc_url($service_image_ids) . '>';
-        //            echo '<p class="service-description">' . esc_html($label_html) . '</p>';
-        //            echo '</div>';
-        //        }
-        //    }
            ?>
 
 
@@ -372,7 +336,7 @@
 				<p class="service-description">Laundrette Facilities</p>
 			</div>
 
-			<div class="service" onclick="carousel.call('id')">
+			<div class="service" onclick="carousel.call('service-popup-inventory')">
 				<img class="service-img" src="<?php echo esc_url($service_urls[6])?>" alt="Inventory">
 				<p class="service-description">Inventory</p>
 			</div>
@@ -391,9 +355,9 @@
 	</article>
 
 	<article id="pricing-container"> <!-- Pricing -->
-		<div class="tittles">
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Pricing</h3 class="tittle">
+		<div class="titles">
+			<div class="title-line"></div>
+			<h3 class="title">Pricing</h3 class="title">
 		</div>
 		<div id="pricing">
 			<ul id="pricing-left-text">
@@ -412,16 +376,6 @@
                     echo '<p>There is no available prices</p>';
                 }
                 ?>
-
-<!--				<li>At exhibition times in Bielefeld and surroundings price-changes are possible</li>-->
-<!--				<li>Cot (maximum two per room): 10.00 Euro per night</li>-->
-<!--				<li>Babybed/cot (maximum two per room) for children up to 12 years: 10.00 Euro per night</li>-->
-<!--				<li>Children in parents bed free of charge</li>-->
-<!--				<li>Apartment with terrace: 10.00 € per night extra charge</li>-->
-<!--				<li>Electric - and Washutensil:<br>Deposit variabel depending on item / no user fee</li>-->
-<!--				<li>WLAN free of charge in the Apartments</li>-->
-<!--				<li>Invoice payable at check-in<br>After our opening times our check-in-terminal is available in four languanges. At that time you can only pay by credit or bank card.</li>-->
-<!--				<li>To check-in at the terminal you need your reservationnumber or the guest name.</li>-->
 			</ul>
 			<div id="pricing-terms">
 				<p id="pricing-right-text"><?php echo esc_html($pricing_right_text)?></p>
@@ -431,9 +385,9 @@
 	</article>
 
 	<article id="gallery-container"> <!-- Gallery -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Gallery</h3 class="tittle">
+		<div class="titles"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Gallery</h3 class="title">
 		</div>
 		<div id="gallery">
 			<?php
@@ -455,9 +409,9 @@
 	</article>
 
 	<article id="contact-container"> <!-- Contact -->
-		<div class="tittles"> <!-- Tittle -->
-			<div class="tittle-line"></div>
-			<h3 class="tittle">Contact</h3 class="tittle">
+		<div class="titles"> <!-- title -->
+			<div class="title-line"></div>
+			<h3 class="title">Contact</h3 class="title">
 		</div>
 		<div id="contact">
 
@@ -494,7 +448,7 @@
 				<div id="contact-terminal">
 					<img id="terminal-img" src="<?php echo esc_url($contact_urls[1])?>">
 					<div id="terminal-text">
-						<p id="terminal-tittle">24 hours check-in terminal</p>
+						<p id="terminal-title">24 hours check-in terminal</p>
 						<p id="terminal-description">Our check-in machine is available in 4 languages outside of reception hours.<br>No cash payments possible during these times!</p>
 					</div>
 				</div>
@@ -506,9 +460,9 @@
 	</article>
 
     <article id="partners-container">
-        <div class="tittles"> <!-- Tittle -->
-            <div class="tittle-line"></div>
-            <h3 class="tittle">Our partners</h3 class="tittle">
+        <div class="titles"> <!-- title -->
+            <div class="title-line"></div>
+            <h3 class="title">Our partners</h3 class="title">
         </div>
 
         <div class="partners-wrapper">
@@ -623,15 +577,15 @@
 			</svg>
 		</button>
 		<div class="nav-buttons-container">
-			<a class="nav-button" href="#booking-container">Booking</a>
-			<a class="nav-button" href="#features-container">Features</a>
-			<a class="nav-button" href="#rooms-container">Rooms</a>
-			<a class="nav-button" href="#service-container">Service</a>
-			<a class="nav-button" href="#pricing-container">Pricing</a>
-			<a class="nav-button" href="#gallery-container">Gallery</a>
-			<a class="nav-button" href="#contact-container">Contact us</a>
-			<!-- <a class="nav-button" href="#footer-container">Our partners</a> -->
-			<a class="nav-button" href="#footer-container">About</a>
+			<a class="nav-button" href="#booking-container" onclick="navigation.hide_navigation()">Booking</a>
+			<a class="nav-button" href="#features-container" onclick="navigation.hide_navigation()">Features</a>
+			<a class="nav-button" href="#rooms-container" onclick="navigation.hide_navigation()">Rooms</a>
+			<a class="nav-button" href="#service-container" onclick="navigation.hide_navigation()">Service</a>
+			<a class="nav-button" href="#pricing-container" onclick="navigation.hide_navigation()">Pricing</a>
+			<a class="nav-button" href="#gallery-container" onclick="navigation.hide_navigation()">Gallery</a>
+			<a class="nav-button" href="#contact-container" onclick="navigation.hide_navigation()">Contact us</a>
+			 <a class="nav-button" href="#partners-container" onclick="navigation.hide_navigation()">Our partners</a>
+			<a class="nav-button" href="#footer-container" onclick="navigation.hide_navigation()">About</a>
 		</div>
 	</nav>
 
@@ -644,7 +598,7 @@
 			<div class="popup-room-bottom">
 				<button class="popup-room-button" id="popup-room-previous" onclick="room_popups.show_prev()"></button>
 				<div class="popup-room-text">
-					<p id="popup-room-tittle" class="popup-room-tittle">Apartment</p>
+					<p id="popup-room-title" class="popup-room-title">Apartment</p>
                     <button class="outlined-button popup-room-description"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 				</div>
 				<button class="popup-room-button" id="popup-room-next" onclick="room_popups.show_next()"></button>
@@ -656,38 +610,38 @@
 	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
 
 	<div class="service-popup" id="service-popup-room" onclick="carousel.call('service-popup-room')">
-		<p class="service-popup-tittle">room</p>
-		<p class="service-popup-subtittle">Room cleaning</p>
+		<p class="service-popup-title">room</p>
+		<p class="service-popup-subtitle">Room cleaning</p>
 		<p class="service-popup-text">Apartment cleaning every 2 days (excluding bed linen).<br>For bookings of 7 nights or more: additional weekly bed linen change</p>
-		<p class="service-popup-subtittle">Final cleaning</p>
+		<p class="service-popup-subtitle">Final cleaning</p>
 		<p class="service-popup-text">Final cleaning of the apartment is included in all overnight rates, except for long-term stays of 30 nights or more.</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-kitchenette" onclick="carousel.call('service-popup-kitchenette')">
-		<p class="service-popup-tittle">Kitchenette</p>
+		<p class="service-popup-title">Kitchenette</p>
 		<p class="service-popup-text">Every one of our apartments has an open plan Kitchenette fitted.<br>Here you can put your kitchen skills to the test</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-breakfast" onclick="carousel.call('service-popup-breakfast')">
-		<p class="service-popup-tittle">Breakfast</p>
+		<p class="service-popup-title">Breakfast</p>
 		<p class="service-popup-text">Breakfast will be from 7:00 to 9:30<br>in the hotel and costs 14€ per person</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-reception" onclick="carousel.call('service-popup-reception')">
-		<p class="service-popup-tittle">Reception</p>
+		<p class="service-popup-title">Reception</p>
 		<div class="service-popup-info-body">
-			<p class="service-popup-subtittle">Hotel Reception – Opening Times</p>
+			<p class="service-popup-subtitle">Hotel Reception – Opening Times</p>
 			<p class="service-popup-text">Monday to Sunday from 7:00 to 15:00<br>Check-in after reception time is possible by a Check-in-Terminal</p>
 		</div>
 	</div>
 
 	<div class="service-popup" id="service-popup-bed" onclick="carousel.call('service-popup-bed')">
-		<p class="service-popup-tittle">Bed Linen and Hand Towels</p>
+		<p class="service-popup-title">Bed Linen and Hand Towels</p>
 		<p class="service-popup-text">Of course there are towels and bed linen in your apartment</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-laundry" onclick="carousel.call('service-popup-laundry')">
-		<p class="service-popup-subtittle">Car wash</p>
+		<p class="service-popup-subtitle">Car wash</p>
 		<table>
 			<tr>
 				<td>washing machine</td>
@@ -700,13 +654,98 @@
 		</table>
 	</div>
 
+    <div class="service-popup" id="service-popup-inventory" onclick="carousel.call('service-popup-inventory')">
+        <p class="service-popup-subtitle">Inventory</p>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>Article description</th>
+                <th>Price per Item for loss/damage</th>
+            </tr>
+            <?php
+            $args = array(
+                'post_type'      => 'page',
+                'meta_key'       => '_wp_page_template',
+                'meta_value'     => 'templates/template-inventory-settings.php',
+                'posts_per_page' => 1,
+                'fields'         => 'ids',
+            );
+
+            $pages_with_template = get_posts( $args );
+            $price_page_id = 0;
+
+            if ( ! empty( $pages_with_template ) ) {
+                $price_page_id = $pages_with_template[0];
+            }
+
+            $item_amounts = [];
+            $item_names = [];
+            $item_costs = [];
+
+            if ( $price_page_id ) {
+                // amounts
+                $i = 1;
+                while (true) {
+                    $field_name = 'inventory_item_amount_' . $i;
+                    $item_amount = get_field($field_name, $price_page_id);
+
+                    if ($item_amount) {
+                        array_push($item_amounts, esc_html($item_amount));
+                        $i++;
+                    } else {break;}
+                }
+
+                // names
+                $i = 1;
+                while (true) {
+                    $field_name = 'inventory_item_name_' . $i;
+                    $item_name = get_field($field_name, $price_page_id);
+
+                    if ($item_name) {
+                        array_push($item_names, esc_html($item_name));
+                        $i++;
+                    } else {break;}
+                }
+
+                // costs
+                $i = 1;
+                while (true) {
+                    $field_name = 'inventory_item_cost_' . $i;
+                    $item_cost = get_field($field_name, $price_page_id);
+
+                    if ($item_cost) {
+                        array_push($item_costs, esc_html($item_cost));
+                        $i++;
+                    } else {break;}
+                }
+            }
+
+            if (count($partner_image_urls) > 0 && count($partner_titles) > 0 && count($partner_descriptions) > 0) {
+                $count = min(count($partner_image_urls), count($partner_titles), count($partner_descriptions));
+
+                for ($i = 0; $i < $count; $i++) {
+                    ?>
+                    <tr>
+                        <td><?php echo esc_html($item_amounts[$i])?></td>
+                        <td><?php echo esc_html($item_names[$i])?></td>
+                        <td><?php echo esc_html($item_costs[$i])?></td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo '<p>There is no available partner cards</p>';
+            }
+            ?>
+        </table>
+    </div>
+
 	<div class="service-popup" id="service-popup-internet" onclick="carousel.call('service-popup-internet')">
-		<p class="service-popup-tittle">Internet</p>
+		<p class="service-popup-title">Internet</p>
 		<p class="service-popup-text">High Speed Wireless LAN for free</p>
 	</div>
 
 	<div class="service-popup" id="service-popup-pets" onclick="carousel.call('service-popup-pets')">
-		<p class="service-popup-tittle">Pets</p>
+		<p class="service-popup-title">Pets</p>
 		<p class="service-popup-text">No pets allowed</p>
 	</div>
 
