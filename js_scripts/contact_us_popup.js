@@ -9,6 +9,8 @@ class ContactUsPopup {
         this.contact_us_message = document.getElementById('contact-us-message')
         this.contact_us_form = document.getElementById('contact-us-form')
 
+        this.aappartel_email = document.getElementById('aappartel-email')
+
         this.name = ""
         this.email = ""
         this.mailto = ""

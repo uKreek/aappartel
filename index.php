@@ -483,8 +483,10 @@
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
-						<button class="outlined-button">See videos</button>
-						<a class="link" href="mailto:info@aappartel.de">
+						<a class="link" href="https://www.youtube.com/@Leon-ly3tq">
+                            <button class="outlined-button">See videos</button>
+                        </a>
+						<a class="link" href="https://mail.google.com/mail/?view=cm&fs=1&to=info@aappartel.de&su=Тема%20сообщения&body=Текст%20сообщения" target="_blank">
                             <button class="outlined-button">info@aappartel.de</button>
                         </a>
 					</div>
@@ -574,7 +576,6 @@
             }
 
             if (count($partner_image_urls) > 0 && count($partner_titles) > 0 && count($partner_descriptions) > 0) {
-                // Предполагаем, что все массивы имеют одинаковую длину
                 $count = min(count($partner_image_urls), count($partner_titles), count($partner_descriptions));
 
                 for ($i = 0; $i < $count; $i++) {
@@ -589,24 +590,9 @@
                     <?php
                 }
             } else {
-                echo '<p>Нет доступных партнёров.</p>';
+                echo '<p>There is no available partner cards</p>';
             }
             ?>
-
-<!--            <div class="partner">-->
-<!--                <img class="partner-logo" alt="partner logo" src="--><?php //echo esc_url($main_urls[1])?><!--"/>-->
-<!--                <div class="partner-text">-->
-<!--                    <h4 class="partner-title">first</h4>-->
-<!--                    <h5 class="partner-description">description</h5>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="partner">-->
-<!--                <img class="partner-logo" alt="partner logo" src="--><?php //echo esc_url($main_urls[2])?><!--"/>-->
-<!--                <div class="partner-text">-->
-<!--                    <h4 class="partner-title">second</h4>-->
-<!--                    <h5 class="partner-description">description</h5>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </article>
 
