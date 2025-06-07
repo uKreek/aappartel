@@ -36,7 +36,7 @@
 
 		<img id="logo" src="<?php echo esc_url($main_urls[0])?>" alt="Logo">
 
-		<button class="svg-button" onclick="navigation.show_navigation()">
+		<button id="nav-button" class="svg-button" onclick="navigation.show_navigation()">
 			<svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<mask id="mask0_523_713" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="13" width="44" height="18">
 					<path d="M44 13H0V30.1111H44V13Z" fill="white" />

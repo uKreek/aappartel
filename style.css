@@ -245,7 +245,7 @@ header {
 	justify-content: space-between;
 	flex-direction: row;
 	align-items: center;
-	padding: clamp(10px, 0.5vw, 30px) clamp(20px, 1vw, 60px);
+	padding: clamp(5px, 0.5vw, 30px) clamp(10px, 1vw, 60px);
 	position: sticky;
 	top: 0;
 	background: #fff;
@@ -386,8 +386,8 @@ header {
 .lang {
 	cursor: pointer;
 	width: 60px;
-	height: 31px;
 	transition: var(--animation-speed);
+	background: #ccc;
 }
 
 
@@ -406,7 +406,7 @@ header {
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-direction: row;
-	gap: 20px;
+	gap: clamp(4px, 2vw, 20px);
 }
 
 #logo-and-langs {

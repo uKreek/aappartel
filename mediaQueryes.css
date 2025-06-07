@@ -36,8 +36,46 @@
   .service-description {
     color: #1d7e00;
   }
+
+  .lang {
+    width: 50px;
+  }
+
+  #logo {
+    height: 36px;
+  }
+  
+  #nav-button {
+    scale: 0.9;
+  }
+}
+
+
+@media (max-width: 520px) {
+  .lang {
+    width: 40px;
+  }
+
+  #logo {
+    height: 29px;
+  }
+
+  #nav-button {
+    scale: 0.8;
+  }
 }
 
 @media (max-width: 360px) {
-  
+  .lang {
+    width: 30px;
+  }
+
+  #logo {
+    height: 24px;
+  }
+
+  #nav-button {
+    scale: 0.7;
+  }
+
 }
