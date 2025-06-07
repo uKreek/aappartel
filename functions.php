@@ -7,6 +7,7 @@ add_action('wp_enqueue_scripts', 'aappartel_scripts');
 
 function aappartel_scripts() {
     wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('mediaQueryes', get_template_directory_uri() . '/mediaQueryes.css');
 
     wp_enqueue_script('animations', get_template_directory_uri() . '/js_scripts/animations.js', array(), '1.0', true);
     wp_enqueue_script('image-slider', get_template_directory_uri() . '/js_scripts/image_slider.js', array(), '1.0', true);

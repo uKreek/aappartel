@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+	#pricing {
+		flex-direction: column;
+		gap: 40px;
+		align-items: center;
+	}
+
+	#pricing-left-text, #pricing-terms {
+		min-width: auto;
+		width: 100%;
+		max-width: none;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+
+	#pricing-terms {
+		align-items: center;
+		text-align: center;
+	}
+
+
+	.filled-button, .outlined-button {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	#contact-buttons a {
+		width: 100%;
+		max-width: 300px;
+	}
+
+  #landing-container-text {
+    align-items: center;
+  }
+
+  .service-description {
+    color: #1d7e00;
+  }
+}
+
+@media (max-width: 360px) {
+  
+}

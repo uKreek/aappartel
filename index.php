@@ -182,82 +182,6 @@
                 echo '<p>No feature cards found</p>';
             endif;
             ?>
-
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[0])?><!--" alt="shower image">-->
-<!--				<p>Shower</p>-->
-<!--			</div>-->
-
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[1])?><!--" alt="bathtub image">-->
-<!--				<p>Bathtub<br>partially</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[2])?><!--" alt="fridge image">-->
-<!--				<p>Fridge</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[3])?><!--" alt="television image">-->
-<!--				<p>Television</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[4])?><!--" alt="stove image">-->
-<!--				<p>Stove</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[5])?><!--" alt="kitchenette image">-->
-<!--				<p>Kitchenette</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[6])?><!--" alt="hair dryer image">-->
-<!--				<p>Hair dryer</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[7])?><!--" alt="safe image">-->
-<!--				<p>Safe</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[8])?><!--" alt="terrace image">-->
-<!--				<p>Terrace<br>(partially)</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[9])?><!--" alt="internet image">-->
-<!--				<p>Internet<br>(free of cost)</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[10])?><!--" alt="coffee machine image">-->
-<!--				<p>Coffee<br>machine</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[11])?><!--" alt="water heater image">-->
-<!--				<p>Water heater</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[12])?><!--" alt="toaster image">-->
-<!--				<p>Toaster</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[13])?><!--" alt="microwave image">-->
-<!--				<p>Microwave</p>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="feature">-->
-<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[14])?><!--" alt="wash center image">-->
-<!--				<p>Washcenter<br>(during opening hours)</p>-->
-<!--			</div>-->
-
 		</div>
 	</article>
 
@@ -579,7 +503,7 @@
 
 	<footer id="footer-container">
 		<div id="footer">
-			<p class="footer-text">© Aappartel 2011 – 2025</p>
+			<p class="footer-text">© Aappartel 2011 – <?php echo date('Y'); ?></p>
 			<div id="footer-terms">
 				<a class="link" href=""><p class="footer-text">Terms and conditions</p></a>
 				<a class="link" href=""><p class="footer-text">Privacy policy</p></a>
@@ -780,9 +704,16 @@
 
 
 	<div id="footer-text-popup" style="display: none;">
-		
-	</div>
+		<button class="svg-button" onclick="">
+			<svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="12" y="13.4143" width="2" height="35.122" transform="rotate(-45 12 13.4143)" fill="#2A2722" />
+				<rect x="12.8936" y="38.2888" width="2" height="35.122" transform="rotate(-135 12.8936 38.2888)" fill="#2A2722" />
+			</svg>
+		</button>
 
+
+
+	</div>
 
 
 	<?php wp_footer(); ?>
