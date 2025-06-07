@@ -71,4 +71,25 @@ function aappartel_scripts() {
         'apart2' => $apartment_urls_2,
     ]);
 }
+add_theme_support('post-thumbnails');
+function create_cpt_with_taxonomy() {
+    register_post_type('card',
+        array(
+            'labels' => array(
+                'name' => _('Cards'),
+                'singular_name' => _('Card')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail'),
+        )
+    );
+
+    register_taxonomy('card_type', 'card', array(
+        'label' => _("Card Type"),
+        'rewrite' => array('slug' => 'card_type'),
+        'hierarchical' => true,
+    ));
+}
+add_action('init', 'create_cpt_with_taxonomy');
 ?>

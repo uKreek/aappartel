@@ -155,81 +155,108 @@
 		</div>
 
 		<div id="features">
+            <?php
+            $args_features = array(
+                'post_type' => 'card',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'card_type',
+                        'field' => 'slug',
+                        'terms' => 'feature'
+                    )
+                ),
+                'posts_per_page' => -1,
+            );
+            $features = new WP_Query($args_features);
+            if ($features->have_posts()) :
+                while ($features->have_posts()) : $features->the_post(); ?>
 
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[0])?>" alt="shower image">
-				<p>Shower</p>
-			</div>
+            <div class="feature">
+                <?php if (has_post_thumbnail()) the_post_thumbnail('medium', array('class' => 'feature-img')); ?>
+                <p><?php echo esc_html(get_the_title()) . '<br>' . wp_kses_post(get_the_content());?></p>
+            </div>
 
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[1])?>" alt="bathtub image">
-				<p>Bathtub<br>partially</p>
-			</div>
+            <?php endwhile;
+            wp_reset_postdata();
+            else:
+                echo '<p>No feature cards found</p>';
+            endif;
+            ?>
 
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[2])?>" alt="fridge image">
-				<p>Fridge</p>
-			</div>
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[0])?><!--" alt="shower image">-->
+<!--				<p>Shower</p>-->
+<!--			</div>-->
 
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[3])?>" alt="television image">
-				<p>Television</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[4])?>" alt="stove image">
-				<p>Stove</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[5])?>" alt="kitchenette image">
-				<p>Kitchenette</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[6])?>" alt="hair dryer image">
-				<p>Hair dryer</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[7])?>" alt="safe image">
-				<p>Safe</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[8])?>" alt="terrace image">
-				<p>Terrace<br>(partially)</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[9])?>" alt="internet image">
-				<p>Internet<br>(free of cost)</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[10])?>" alt="coffee machine image">
-				<p>Coffee<br>machine</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[11])?>" alt="water heater image">
-				<p>Water heater</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[12])?>" alt="toaster image">
-				<p>Toaster</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[13])?>" alt="microwave image">
-				<p>Microwave</p>
-			</div>
-
-			<div class="feature">
-				<img class="feature-img" src="<?php echo esc_url($feature_urls[14])?>" alt="wash center image">
-				<p>Washcenter<br>(during opening hours)</p>
-			</div>
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[1])?><!--" alt="bathtub image">-->
+<!--				<p>Bathtub<br>partially</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[2])?><!--" alt="fridge image">-->
+<!--				<p>Fridge</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[3])?><!--" alt="television image">-->
+<!--				<p>Television</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[4])?><!--" alt="stove image">-->
+<!--				<p>Stove</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[5])?><!--" alt="kitchenette image">-->
+<!--				<p>Kitchenette</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[6])?><!--" alt="hair dryer image">-->
+<!--				<p>Hair dryer</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[7])?><!--" alt="safe image">-->
+<!--				<p>Safe</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[8])?><!--" alt="terrace image">-->
+<!--				<p>Terrace<br>(partially)</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[9])?><!--" alt="internet image">-->
+<!--				<p>Internet<br>(free of cost)</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[10])?><!--" alt="coffee machine image">-->
+<!--				<p>Coffee<br>machine</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[11])?><!--" alt="water heater image">-->
+<!--				<p>Water heater</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[12])?><!--" alt="toaster image">-->
+<!--				<p>Toaster</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[13])?><!--" alt="microwave image">-->
+<!--				<p>Microwave</p>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="feature">-->
+<!--				<img class="feature-img" src="--><?php //echo esc_url($feature_urls[14])?><!--" alt="wash center image">-->
+<!--				<p>Washcenter<br>(during opening hours)</p>-->
+<!--			</div>-->
 
 		</div>
 	</article>
