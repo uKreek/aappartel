@@ -749,6 +749,15 @@
 		<p class="service-popup-text">No pets allowed</p>
 	</div>
 
+
+
+
+	<div id="footer-text-popup" style="display: none;">
+		
+	</div>
+
+
+
 	<?php wp_footer(); ?>
 </body>
 
