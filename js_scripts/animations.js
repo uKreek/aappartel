@@ -38,3 +38,17 @@
     }
 
 })();
+
+
+let lastScrollY = window.scrollY;
+const header = document.getElementsByTagName('header')[0];
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY && window.scrollY > header.offsetHeight) {
+        header.classList.add('hidden-header');
+    }
+    else {
+        header.classList.remove('hidden-header');
+    }
+    lastScrollY = window.scrollY;
+})

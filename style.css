@@ -252,6 +252,11 @@ header {
 	width: -webkit-fill-available;
 	width: -moz-available;
 	border-bottom: 1px solid #d7d7d7;
+	transition: all 0.3s ease-in-out;
+}
+
+.hidden-header {
+	transform: translateY(-100%);
 }
 
 
