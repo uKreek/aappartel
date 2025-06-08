@@ -240,7 +240,7 @@
 			<h3 class="title">Service</h3 class="title">
 		</div>
 		<div id="services">
-
+            <div id="service-popups-wrapper" style="z-index: 2;" onclick="carousel.hide()"></div>
 			<?php
 			$service_ids = [get_field('roomservice_image', $onfront), get_field('kitchen_image', $onfront),
 				get_field('breakfast_image', $onfront), get_field('reception_image', $onfront),
@@ -256,52 +256,45 @@
 			}
            ?>
 
+            <?php
+            $args_services = array(
+                'post_type' => 'card',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'card_type',
+                        'field' => 'slug',
+                        'terms' => 'service'
+                    )
+                ),
+                'posts_per_page' => -1,
+            );
+            $services = new WP_Query($args_services);
+            if ($services->have_posts()) :
+                while ($services->have_posts()) :
+                    $services->the_post();
+                    $popup_content = get_post_meta(get_the_ID(), 'service_popup_content', true);
+                    $popup_subtitle = get_post_meta(get_the_ID(), 'service_popup_subtitle', true); ?>
 
-			<div class="service" onclick="carousel.call('service-popup-room')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[0])?>" alt="Room service">
-				<p class="service-description">Room service</p>
-			</div>
+                    <div class="service" onclick="carousel.call(<?php echo get_the_ID(); ?>)">
+                        <?php if (has_post_thumbnail()) the_post_thumbnail('medium', array('class' => 'service-img')); ?>
+                        <p class="service-description"><?php echo esc_html(get_the_title()) . '<br>' . wp_kses_post(get_the_content());?></p>
+                    </div>
 
-			<div class="service" onclick="carousel.call('service-popup-kitchenette')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[1])?>" alt="Kitchen">
-				<p class="service-description">Kitchen</p>
-			</div>
+                    <div class="service-popup service-popup-text" style="z-index: 3;" id="<?php echo get_the_ID(); ?>">
+                        <p class="service-popup-title"><?php echo esc_html(get_the_title()); ?></p>
+                        <?php if (!empty($popup_subtitle)) :?>
+                            <p class="service-popup-subtitle"><?php echo esc_html($popup_subtitle); ?></p>
+                        <?php endif; ?>
 
-			<div class="service" onclick="carousel.call('service-popup-breakfast')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[2])?>" alt="Breakfast">
-				<p class="service-description">Breakfast</p>
-			</div>
+                        <?php echo $popup_content; ?>
+                    </div>
 
-			<div class="service" onclick="carousel.call('service-popup-reception')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[3])?>" alt="Reception">
-				<p class="service-description">Reception</p>
-			</div>
-
-			<div class="service" onclick="carousel.call('service-popup-bed')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[4])?>" alt="Bed Linen and Hand Towels">
-				<p class="service-description">Bed Linen and Hand Towels</p>
-			</div>
-
-			<div class="service" onclick="carousel.call('service-popup-laundry')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[5])?>" alt="Laundrette Facilities">
-				<p class="service-description">Laundrette Facilities</p>
-			</div>
-
-			<div class="service" onclick="carousel.call('service-popup-inventory')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[6])?>" alt="Inventory">
-				<p class="service-description">Inventory</p>
-			</div>
-
-			<div class="service" onclick="carousel.call('service-popup-internet')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[7])?>" alt="Internet">
-				<p class="service-description">Internet</p>
-			</div>
-
-			<div class="service" onclick="carousel.call('service-popup-pets')">
-				<img class="service-img" src="<?php echo esc_url($service_urls[8])?>" alt="Pets">
-				<p class="service-description">Pets</p>
-			</div>
-
+                <?php endwhile;
+                wp_reset_postdata();
+            else:
+                echo '<p>No service cards found</p>';
+            endif;
+            ?>
 		</div>
 	</article>
 
@@ -557,151 +550,6 @@
 		</div>
 	</div>
 
-	<!-- Slider for service's popups -->
-	<div id="service-popups-wrapper" onclick="carousel.hide()"></div>
-
-	<div class="service-popup" id="service-popup-room" onclick="carousel.call('service-popup-room')">
-		<p class="service-popup-title">room</p>
-		<p class="service-popup-subtitle">Room cleaning</p>
-		<p class="service-popup-text">Apartment cleaning every 2 days (excluding bed linen).<br>For bookings of 7 nights or more: additional weekly bed linen change</p>
-		<p class="service-popup-subtitle">Final cleaning</p>
-		<p class="service-popup-text">Final cleaning of the apartment is included in all overnight rates, except for long-term stays of 30 nights or more.</p>
-	</div>
-
-	<div class="service-popup" id="service-popup-kitchenette" onclick="carousel.call('service-popup-kitchenette')">
-		<p class="service-popup-title">Kitchenette</p>
-		<p class="service-popup-text">Every one of our apartments has an open plan Kitchenette fitted.<br>Here you can put your kitchen skills to the test</p>
-	</div>
-
-	<div class="service-popup" id="service-popup-breakfast" onclick="carousel.call('service-popup-breakfast')">
-		<p class="service-popup-title">Breakfast</p>
-		<p class="service-popup-text">Breakfast will be from 7:00 to 9:30<br>in the hotel and costs 14€ per person</p>
-	</div>
-
-	<div class="service-popup" id="service-popup-reception" onclick="carousel.call('service-popup-reception')">
-		<p class="service-popup-title">Reception</p>
-		<div class="service-popup-info-body">
-			<p class="service-popup-subtitle">Hotel Reception – Opening Times</p>
-			<p class="service-popup-text">Monday to Sunday from 7:00 to 15:00<br>Check-in after reception time is possible by a Check-in-Terminal</p>
-		</div>
-	</div>
-
-	<div class="service-popup" id="service-popup-bed" onclick="carousel.call('service-popup-bed')">
-		<p class="service-popup-title">Bed Linen and Hand Towels</p>
-		<p class="service-popup-text">Of course there are towels and bed linen in your apartment</p>
-	</div>
-
-	<div class="service-popup" id="service-popup-laundry" onclick="carousel.call('service-popup-laundry')">
-		<p class="service-popup-subtitle">Car wash</p>
-		<table>
-			<tr>
-				<td>washing machine</td>
-				<td>3.50 euros</td>
-			</tr>
-			<tr>
-				<td>dryer</td>
-				<td>3.50 euros</td>
-			</tr>
-		</table>
-	</div>
-
-    <div class="service-popup" id="service-popup-inventory" onclick="carousel.call('service-popup-inventory')">
-        <p class="service-popup-subtitle">Inventory</p>
-        <table>
-            <tr>
-                <th>Amount</th>
-                <th>Article description</th>
-                <th>Price per Item for loss/damage</th>
-            </tr>
-            <?php
-            $args = array(
-                'post_type'      => 'page',
-                'meta_key'       => '_wp_page_template',
-                'meta_value'     => 'templates/template-inventory-settings.php',
-                'posts_per_page' => 1,
-                'fields'         => 'ids',
-            );
-
-            $pages_with_template = get_posts( $args );
-            $price_page_id = 0;
-
-            if ( ! empty( $pages_with_template ) ) {
-                $price_page_id = $pages_with_template[0];
-            }
-
-            $item_amounts = [];
-            $item_names = [];
-            $item_costs = [];
-
-            if ( $price_page_id ) {
-                // amounts
-                $i = 1;
-                while (true) {
-                    $field_name = 'inventory_item_amount_' . $i;
-                    $item_amount = get_field($field_name, $price_page_id);
-
-                    if ($item_amount) {
-                        array_push($item_amounts, esc_html($item_amount));
-                        $i++;
-                    } else {break;}
-                }
-
-                // names
-                $i = 1;
-                while (true) {
-                    $field_name = 'inventory_item_name_' . $i;
-                    $item_name = get_field($field_name, $price_page_id);
-
-                    if ($item_name) {
-                        array_push($item_names, esc_html($item_name));
-                        $i++;
-                    } else {break;}
-                }
-
-                // costs
-                $i = 1;
-                while (true) {
-                    $field_name = 'inventory_item_cost_' . $i;
-                    $item_cost = get_field($field_name, $price_page_id);
-
-                    if ($item_cost) {
-                        array_push($item_costs, esc_html($item_cost));
-                        $i++;
-                    } else {break;}
-                }
-            }
-
-            if (count($partner_image_urls) > 0 && count($partner_titles) > 0 && count($partner_descriptions) > 0) {
-                $count = min(count($partner_image_urls), count($partner_titles), count($partner_descriptions));
-
-                for ($i = 0; $i < $count; $i++) {
-                    ?>
-                    <tr>
-                        <td><?php echo esc_html($item_amounts[$i])?></td>
-                        <td><?php echo esc_html($item_names[$i])?></td>
-                        <td><?php echo esc_html($item_costs[$i])?></td>
-                    </tr>
-                    <?php
-                }
-            } else {
-                echo '<p>There is no available partner cards</p>';
-            }
-            ?>
-        </table>
-    </div>
-
-	<div class="service-popup" id="service-popup-internet" onclick="carousel.call('service-popup-internet')">
-		<p class="service-popup-title">Internet</p>
-		<p class="service-popup-text">High Speed Wireless LAN for free</p>
-	</div>
-
-	<div class="service-popup" id="service-popup-pets" onclick="carousel.call('service-popup-pets')">
-		<p class="service-popup-title">Pets</p>
-		<p class="service-popup-text">No pets allowed</p>
-	</div>
-
-
-
 
 	<div id="footer-text-popup" style="display: none;">
 		<button class="svg-button" onclick="">
@@ -710,9 +558,6 @@
 				<rect x="12.8936" y="38.2888" width="2" height="35.122" transform="rotate(-135 12.8936 38.2888)" fill="#2A2722" />
 			</svg>
 		</button>
-
-
-
 	</div>
 
 

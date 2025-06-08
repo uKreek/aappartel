@@ -93,4 +93,47 @@ function create_cpt_with_taxonomy() {
     ));
 }
 add_action('init', 'create_cpt_with_taxonomy');
+
+function add_service_meta_boxes() {
+    add_meta_box(
+        'service_popup_subtitle',
+        'Popup Subtitle',
+        'render_service_popup_subtitle_meta_box',
+        'card',
+        'normal',
+        'high'
+    );
+
+    add_meta_box(
+        'service_popup_content',
+        'Popup Content',
+        'render_service_popup_content_meta_box',
+        'card',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'add_service_meta_boxes');
+
+function render_service_popup_subtitle_meta_box($post) {
+    $subtitle = get_post_meta($post->ID, 'service_popup_subtitle', true);
+    echo '<input type="text" name="service_popup_subtitle" value="' . esc_attr($subtitle) . '" style="width:100%;" />';
+}
+
+function render_service_popup_content_meta_box($post) {
+    $content = get_post_meta($post->ID, 'service_popup_content', true);
+    wp_editor($content, 'popup_content_editor', array('textarea_name' => 'service_popup_content'));
+}
+
+function save_service_popup_meta($post_id) {
+    if (array_key_exists('service_popup_subtitle', $_POST)) {
+        update_post_meta($post_id, 'service_popup_subtitle', $_POST['service_popup_subtitle']);
+    }
+
+    if (array_key_exists('service_popup_content', $_POST)) {
+        update_post_meta($post_id, 'service_popup_content', $_POST['service_popup_content']);
+    }
+}
+
+add_action('save_post', 'save_service_popup_meta');
 ?>
