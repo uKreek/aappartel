@@ -1275,4 +1275,35 @@ header {
 	background: var(--white);
 	display: flex;
 	flex-direction: column;
+	overflow: scroll;
+}
+
+.footer-text-div article {
+	display: flex;
+	align-items: flex-start;
+	gap:normal;
+	padding: 0;
+}
+
+#gallery-popup-wrapper {
+	background: rgba(30, 30, 30, .1);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	display: none;
+}
+
+#gallery-popup-image {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: default;
+	width: 60vw;
+	height: auto;
+	display: none;
 }

@@ -17,6 +17,7 @@ function aappartel_scripts() {
     wp_enqueue_script('language-changer', get_template_directory_uri() . '/js_scripts/language_changer.js', array(), '1.0', true);
     wp_enqueue_script('contact-us', get_template_directory_uri() . '/js_scripts/contact_us_popup.js', array(), '1.0', true);
     wp_enqueue_script('footer-popup', get_template_directory_uri() . '/js_scripts/footer_popup.js', array(), '1.0', true);
+    wp_enqueue_script('gallery-view', get_template_directory_uri() . '/js_scripts/gallery_view.js', array(), '1.0', true);
 
     $onfront = get_option('page_on_front');
 
@@ -95,24 +96,32 @@ function create_cpt_with_taxonomy() {
 }
 add_action('init', 'create_cpt_with_taxonomy');
 
-function add_service_meta_boxes() {
-    add_meta_box(
-        'service_popup_subtitle',
-        'Popup Subtitle',
-        'render_service_popup_subtitle_meta_box',
-        'card',
-        'normal',
-        'high'
-    );
+function add_service_meta_boxes($post_id) {
+    $terms = get_the_terms($post_id, 'card_type');
+    if ($terms && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            if ($term->slug == 'service') {
+                add_meta_box(
+                    'service_popup_subtitle',
+                    'Popup Subtitle',
+                    'render_service_popup_subtitle_meta_box',
+                    'card',
+                    'normal',
+                    'high'
+                );
 
-    add_meta_box(
-        'service_popup_content',
-        'Popup Content',
-        'render_service_popup_content_meta_box',
-        'card',
-        'normal',
-        'high'
-    );
+                add_meta_box(
+                    'service_popup_content',
+                    'Popup Content',
+                    'render_service_popup_content_meta_box',
+                    'card',
+                    'normal',
+                    'high'
+                );
+                break;
+            }
+        }
+    }
 }
 add_action('add_meta_boxes', 'add_service_meta_boxes');
 

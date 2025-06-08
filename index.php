@@ -241,21 +241,6 @@
 		</div>
 		<div id="services">
             <div id="service-popups-wrapper" style="z-index: 2;" onclick="carousel.hide()"></div>
-			<?php
-			$service_ids = [get_field('roomservice_image', $onfront), get_field('kitchen_image', $onfront),
-				get_field('breakfast_image', $onfront), get_field('reception_image', $onfront),
-				get_field('linentowels_image', $onfront), get_field('laundrette_image', $onfront),
-				get_field('inventory_image', $onfront), get_field('service_internet_image', $onfront),
-				get_field('pets_image', $onfront)];
-
-			$service_urls = [];
-			foreach ($service_ids as $service_id) {
-				if ($service_id) {
-					array_push($service_urls, wp_get_attachment_url($service_id));
-				}
-			}
-           ?>
-
             <?php
             $args_services = array(
                 'post_type' => 'card',
@@ -345,7 +330,9 @@
             foreach ($gallery_ids as $gall_id) {
                 if ($gall_id) {
                     $gall_url = wp_get_attachment_url($gall_id);
-                    echo '<img class="gallery-img" src="' . esc_url($gall_url) . '" alt="gallery image"></img>';
+                    echo '<div class="gallery-img" onclick="gallery_popup.show(\'' . esc_url($gall_url) . '\')" style="cursor: pointer;">';
+                    echo '<img class="gallery-img" src="' . esc_url($gall_url) . '" alt="gallery image">';
+                    echo '</div>';
                 }
             }
             ?>
@@ -550,6 +537,9 @@
 		</div>
 	</div>
 
+    <div id="gallery-popup-wrapper" onclick="gallery_popup.hide()"></div>
+    <img id="gallery-popup-image">
+
 
 	<div id="footer-text-popup" style="display: none;">
 		<button class="svg-button" id="footer-text-button" onclick="footer_popup.hide()">
@@ -559,9 +549,32 @@
 			</svg>
 		</button>
 
-        <div>
-            
-        </div>
+        <?php
+        $args_services = array(
+            'post_type' => 'card',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'card_type',
+                    'field' => 'slug',
+                    'terms' => 'footer'
+                )
+            ),
+            'posts_per_page' => -1,
+        );
+        $services = new WP_Query($args_services);
+        if ($services->have_posts()) :
+            while ($services->have_posts()) : $services->the_post(); ?>
+
+                <div class="footer-text-div">
+                    <?php echo get_the_content();?>
+                </div>
+
+            <?php endwhile;
+            wp_reset_postdata();
+        else:
+            echo '<p>No service cards found</p>';
+        endif;
+        ?>
 	</div>
 
 
