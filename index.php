@@ -498,9 +498,9 @@
 		<div id="footer">
 			<p class="footer-text">© Aappartel 2011 – <?php echo date('Y'); ?></p>
 			<div id="footer-terms">
-				<a class="link" href=""><p class="footer-text">Terms and conditions</p></a>
-				<a class="link" href=""><p class="footer-text">Privacy policy</p></a>
-				<a class="link" href=""><p class="footer-text">Disclaimer</p></a>
+				<a class="link" onclick="footer_popup.show()" style="cursor: pointer;"><p class="footer-text">Terms and conditions</p></a>
+				<a class="link" onclick="footer_popup.show()" style="cursor: pointer;"><p class="footer-text">Privacy policy</p></a>
+				<a class="link" onclick="footer_popup.show()" style="cursor: pointer;"><p class="footer-text">Disclaimer</p></a>
 			</div>
 		</div>
 	</footer>
@@ -552,12 +552,16 @@
 
 
 	<div id="footer-text-popup" style="display: none;">
-		<button class="svg-button" onclick="">
+		<button class="svg-button" id="footer-text-button" onclick="footer_popup.hide()">
 			<svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<rect x="12" y="13.4143" width="2" height="35.122" transform="rotate(-45 12 13.4143)" fill="#2A2722" />
 				<rect x="12.8936" y="38.2888" width="2" height="35.122" transform="rotate(-135 12.8936 38.2888)" fill="#2A2722" />
 			</svg>
 		</button>
+
+        <div>
+            
+        </div>
 	</div>
 
 

@@ -16,6 +16,7 @@ function aappartel_scripts() {
     wp_enqueue_script('navigation', get_template_directory_uri() . '/js_scripts/navigation.js', array(), '1.0', true);
     wp_enqueue_script('language-changer', get_template_directory_uri() . '/js_scripts/language_changer.js', array(), '1.0', true);
     wp_enqueue_script('contact-us', get_template_directory_uri() . '/js_scripts/contact_us_popup.js', array(), '1.0', true);
+    wp_enqueue_script('footer-popup', get_template_directory_uri() . '/js_scripts/footer_popup.js', array(), '1.0', true);
 
     $onfront = get_option('page_on_front');
 
