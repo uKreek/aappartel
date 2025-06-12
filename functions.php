@@ -96,8 +96,8 @@ function create_cpt_with_taxonomy() {
 }
 add_action('init', 'create_cpt_with_taxonomy');
 
-function add_service_meta_boxes($post_id) {
-    $terms = get_the_terms($post_id, 'card_type');
+function add_service_meta_boxes($post) {
+    $terms = get_the_terms($post->ID, 'card_type');
     if ($terms && !is_wp_error($terms)) {
         foreach ($terms as $term) {
             if ($term->slug == 'service') {
