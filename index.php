@@ -293,7 +293,6 @@
 
                 <?php
                 if (count($pricing_texts) > 0) {
-                    // Предполагаем, что все массивы имеют одинаковую длину
                     $count = count($pricing_texts);
 
                     for ($i = 0; $i < $count; $i++) {
@@ -308,7 +307,7 @@
 			</ul>
 			<div id="pricing-terms">
 				<p id="pricing-right-text"><?php echo esc_html($pricing_right_text)?></p>
-				<button class="filled-button">Book now</button>
+				<button class="filled-button"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 			</div>
 		</div>
 	</article>
