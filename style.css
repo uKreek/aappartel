@@ -537,7 +537,6 @@ header {
 
 
 .room-img {
-	height: clamp(200px, 40vh, 300px);
 	width: 100%;
 	object-fit: cover;
 	display: block;
@@ -875,14 +874,14 @@ header {
 	justify-content: center;
 }
 
-.partner{
+.partner {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
-.partner-logo{
+.partner-logo {
 	width: 20vw;
 	height: auto;
 }
