@@ -38,7 +38,7 @@
   }
 
   .lang {
-    width: 50px;
+    height: 21px;
   }
 
   #logo {
@@ -53,7 +53,7 @@
 
 @media (max-width: 520px) {
   .lang {
-    width: 40px;
+    height: 17px;
   }
 
   #logo {
@@ -67,7 +67,7 @@
 
 @media (max-width: 360px) {
   .lang {
-    width: 30px;
+    height: 13px;
   }
 
   #logo {

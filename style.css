@@ -390,7 +390,8 @@ header {
 
 .lang {
 	cursor: pointer;
-	width: 60px;
+	/* width: 60px; */
+	height: 26px;
 	transition: var(--animation-speed);
 	background: #ccc;
 }
