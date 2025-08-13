@@ -367,7 +367,7 @@
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
-						<a class="link" href="https://www.youtube.com/@Leon-ly3tq">
+						<a class="link" href="https://www.youtube.com/watch?v=wJOqWi_jKrs">
                             <button class="outlined-button">See videos</button>
                         </a>
 						<a class="link" href="https://mail.google.com/mail/?view=cm&fs=1&to=info@aappartel.de&su=Тема%20сообщения&body=Текст%20сообщения" target="_blank">

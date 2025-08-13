@@ -248,7 +248,7 @@ header {
 	padding: clamp(5px, 0.5vw, 30px) clamp(10px, 1vw, 60px);
 	position: sticky;
 	top: 0;
-	background: #fff;
+	background: #252525;
 	width: -webkit-fill-available;
 	width: -moz-available;
 	border-bottom: 1px solid #d7d7d7;
@@ -391,7 +391,7 @@ header {
 .lang {
 	cursor: pointer;
 	/* width: 60px; */
-	height: 26px;
+	height: calc(26px / 2);
 	transition: var(--animation-speed);
 	background: #ccc;
 }

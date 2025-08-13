@@ -38,7 +38,7 @@
   }
 
   .lang {
-    height: 21px;
+    scale: 0.8;
   }
 
   #logo {
@@ -53,7 +53,7 @@
 
 @media (max-width: 520px) {
   .lang {
-    height: 17px;
+    scale: 0.64;
   }
 
   #logo {
@@ -67,7 +67,7 @@
 
 @media (max-width: 360px) {
   .lang {
-    height: 13px;
+    scale: 0.512;
   }
 
   #logo {
