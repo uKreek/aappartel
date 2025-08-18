@@ -1,18 +1,22 @@
-let aparts = apartments;
+let aparts = apartments;                // images
+let aparts_texts = apartments_texts;    // texts
 
 document.addEventListener('DOMContentLoaded', function () {
     aparts = apartments;
+    aparts_texts = apartments_texts;
 })
 
 class RoomPopup {
-    constructor(aparts) {
+    constructor(aparts, aparts_texts) {
         this.wrapper = document.getElementById('popup-room-wrapper')
         this.popup_room = document.getElementById('popup-room');
         this.room_image = document.getElementById('popup-room-img')
         this.apart_id = null
         this.current = null
         this.aparts = aparts
+        this.aparts_texts = aparts_texts
         this.images = this.aparts['apart0']
+        this.texts = this.aparts_texts['apart0']
         this.previous = document.getElementById('popup-room-previous')
         this.next = document.getElementById('popup-room-next')
         this.now = 0
@@ -43,10 +47,16 @@ class RoomPopup {
         this.apart_id = apart_id;
         this.wrapper.style.display = 'flex';
         this.popup_room.style.display = 'flex';
-        this.images = this.aparts[this.apart_id];
+        this.images = this.aparts[this.apart_id]; // getting images for selected apart_id
+        this.texts = this.aparts_texts[this.apart_id]; // getting texts for selected apart_id
         this.current = this.images[this.now];
         this.room_image.setAttribute('src', this.current);
         document.body.style.overflow = 'hidden';
+
+        // устанавливаю текст для отображающейся картинки (если текст существует)
+        if (this.texts && this.texts[this.now]) {
+            this.popup_title.textContent = this.texts[this.now];
+        }
 
         if (this.now == 0 && this.now + 1 >= this.images.length) {
             this.previous.style.opacity = '50%';
@@ -82,6 +92,11 @@ class RoomPopup {
         }
 
         this.room_image.setAttribute('src', this.current);
+
+        // Меняем текст для новой картинки (если текст существует)
+        if (this.texts && this.texts[this.now]) {
+            this.popup_title.textContent = this.texts[this.now];
+        }
     }
 
     show_next = () => {
@@ -102,6 +117,11 @@ class RoomPopup {
         }
 
         this.room_image.setAttribute('src', this.current);
+
+        // Меняем текст для новой картинки (если текст существует)
+        if (this.texts && this.texts[this.now]) {
+            this.popup_title.textContent = this.texts[this.now];
+        }
     }
 
     hide = () => {
@@ -116,4 +136,4 @@ document.getElementById('popup-room').addEventListener('click', (event) => {
     event.stopPropagation();
 });
 
-const room_popups = new RoomPopup(aparts)
+const room_popups = new RoomPopup(aparts, aparts_texts)

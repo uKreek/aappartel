@@ -130,6 +130,7 @@
 			<div class="title-line"></div>
 			<h3 class="title">Booking</h3 class="title">
 		</div>
+        <?php echo do_shortcode('[hs_booking_engine]'); ?>
 		<button class="filled-button"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 	</article>
 
@@ -364,6 +365,7 @@
 						<a class="link" href="geo:52.02367129984142, 8.535502252825385"><p>Friedrich-Verleger Straße 1, 33602 Bielefeld</p></a>
 					</div>
 					<div id="contact-buttons">
+                        <button class="outlined-button" onclick="contact_us_popup.show_contact_us()">Contact us</button>
 						<a href="https://www.facebook.com/pages/Aappartel-Boardinghouse-City-Center/160591947426185" class="link">
 							<button class="outlined-button">Facebook</button>
 						</a>
@@ -518,6 +520,38 @@
 			<a class="nav-button" href="#footer-container" onclick="navigation.hide_navigation()">About</a>
 		</div>
 	</nav>
+
+    <!-- Contact us popup -->
+    <div id="contact-us-background" onclick="contact_us_popup.hide_contact_us()"></div>
+    <div id="contact-us-popup">
+        <div id="contact-us-wrapper">
+            <p id="contact-us-popup-tittle">Contact us</p>
+            <form id="contact-us-form" method="post">
+                <div class="contact-form-div">
+                    <label class="contact-us-label" for="contact-us-name">Name</label>
+                    <input id="contact-us-name" class="contact-us-input" type="text" name="contact-name" aria-label="Name" required>
+                </div>
+                <div class="contact-form-div">
+                    <label class="contact-us-label" for="contact-us-email">Email</label>
+                    <input id="contact-us-email" class="contact-us-input" type="email" name="contact_email" aria-label="Email" required>
+                </div>
+                <div class="contact-form-div">
+                    <label class="contact-us-label" for="contact-us-subject">Subject</label>
+                    <input id="contact-us-subject" class="contact-us-input" type="text" name="contact-subject" aria-label="Subject" required>
+                </div>
+                <div class="contact-form-div">
+                    <label class="contact-us-label" for="contact-us-message">Message</label>
+                    <textarea id="contact-us-message" class="contact-us-input" name="contact-message" aria-label="Message" required></textarea>
+                </div>
+                <div class="contact-form-div" id="contact-us-checkbox-div">
+                    <label class="contact-us-label" id="contact-us-checkbox-label" for="contact-us-checkbox">Send a copy to yourself</label>
+                    <input type="checkbox" class="contact-us-checkbox" id="contact-us-checkbox" name="send_copy" title="Send a copy to yourself" onchange="contact_us_popup.checked()">
+                </div>
+                <input type="submit" class="contact-us-submit" value="Submit" id="contact-us-submit">
+                <div id="contact-us-message"></div> <!-- Контейнер для сообщений -->
+            </form>
+        </div>
+    </div>
 
 	<!-- Slider for room's popups -->
 	<div id="popup-room-wrapper" onclick="room_popups.hide()">

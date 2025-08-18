@@ -2,6 +2,8 @@ class Slider {
     constructor() {
         this.currentIndex = 0;
         this.slides = document.querySelectorAll('.landing-image-slide');
+        this.titles = ['Apartment', 'Apartment-Raum', 'Apartment-Family']; // Array of titles
+        this.titleElement = document.querySelector('#landing-container-text h1');
         //this.buttons = document.querySelectorAll('.slider-button');
 
         this.init();
@@ -32,6 +34,9 @@ class Slider {
         const offset = -this.currentIndex * 100;
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].style.transform = `translateX(${offset}%)`;
+        }
+        if (this.titleElement && this.titles[this.currentIndex]) {
+            this.titleElement.textContent = this.titles[this.currentIndex];
         }
         //this.updateActiveButton();
     }
