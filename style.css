@@ -251,7 +251,7 @@ header {
 	background: #252525;
 	width: -webkit-fill-available;
 	width: -moz-available;
-	border-bottom: 1px solid #d7d7d7;
+	/* border-bottom: 1px solid #d7d7d7; */
 	transition: all 0.3s ease-in-out;
 }
 
@@ -446,6 +446,10 @@ header {
 #booking-container {
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 	background-position: center;
+}
+
+#booking-container-widget {
+	background: var(--background);
 }
 
 

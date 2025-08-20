@@ -130,7 +130,9 @@
 			<div class="title-line"></div>
 			<h3 class="title">Booking</h3 class="title">
 		</div>
-        <?php echo do_shortcode('[hs_booking_engine]'); ?>
+        <div id="booking-container-widget">
+            <?php echo do_shortcode('[hs_booking_engine]'); ?>
+        </div>
 		<button class="filled-button"><a href="<?php echo esc_html($booking_link); ?>">Book now</a></button>
 	</article>
 
