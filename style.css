@@ -450,6 +450,7 @@ header {
 
 #booking-container-widget {
 	background: var(--background);
+	padding: clamp(12px, 1vw, 40px);
 }
 
 
