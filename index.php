@@ -42,8 +42,8 @@
 					<path d="M44 13H0V30.1111H44V13Z" fill="white" />
 				</mask>
 				<g mask="url(#mask0_523_713)">
-					<path d="M0 14.5569L44 14.5569" stroke="#2A2722" stroke-width="2.93333" />
-					<path d="M44 27.9197L0 27.9198" stroke="#2A2722" stroke-width="2.93333" />
+					<path d="M0 14.5569L44 14.5569" stroke="#fff" stroke-width="2.93333" />
+					<path d="M44 27.9197L0 27.9198" stroke="#fff" stroke-width="2.93333" />
 				</g>
 			</svg>
 		</button>
